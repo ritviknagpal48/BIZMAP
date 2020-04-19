@@ -1254,7 +1254,7 @@ function App() {
           {/* footer */}
           {/* ============================================================== */}
           <footer className="footer text-center">
-            All Rights Reserved by Xtreme admin. Designed and Developed by <a href="https://wrappixel.com/">WrapPixel</a>.
+            Footer Goes Here!!
           </footer>
           {/* ============================================================== */}
           {/* End footer */}
