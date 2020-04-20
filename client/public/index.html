@@ -15,6 +15,35 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+
+    <style>
+      .mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      }
+    </style>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -25,14 +54,40 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
 
-      <link rel="icon" type="image/png" sizes="16x16" href="https://www.wrappixel.com/demos/admin-templates/xtreme-admin/assets/images/favicon.png">
-    <title>Xtreme admin Template - The Ultimate Multipurpose admin template</title>
-	<link rel="canonical" href="https://www.wrappixel.com/templates/xtremeadmin/">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://www.wrappixel.com/demos/admin-templates/xtreme-admin/assets/images/favicon.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <title>
+      Xtreme admin Template - The Ultimate Multipurpose admin template
+    </title>
+    <link
+      rel="canonical"
+      href="https://www.wrappixel.com/templates/xtremeadmin/"
+    />
     <!-- Custom CSS -->
-    <link href="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/chartist.min.css" rel="stylesheet">
-    <link href="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/c3.min.css" rel="stylesheet">
+    <link
+      href="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/chartist.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/c3.min.css"
+      rel="stylesheet"
+    />
     <!-- Custom CSS -->
-    <link href="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/style.min.css" rel="stylesheet">
+    <link
+      href="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/style.min.css"
+      rel="stylesheet"
+    />
     <title>BIZMAP</title>
   </head>
   <body>
@@ -49,8 +104,9 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js"></script>
 
-     <script src="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/jquery.min.js"></script>
+    <script src="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/popper.min.js"></script>
     <script src="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/bootstrap.min.js"></script>
@@ -66,7 +122,7 @@
     <!--Menu sidebar -->
     <script src="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-   <script src="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/feather.min.js"></script>
+    <script src="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/feather.min.js"></script>
     <script src="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/custom.min.js"></script>
     <!--This page JavaScript -->
     <!--chartis chart-->
@@ -78,7 +134,5 @@
     <!--chartjs -->
     <script src="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/Chart.min.js"></script>
     <script src="./Xtreme admin Template - The Ultimate Multipurpose admin template_files/dashboard1.js"></script>
-
-
   </body>
 </html>
