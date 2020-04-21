@@ -9,7 +9,7 @@ class Categories extends Component{
         return(
     <li className='sidebar-item' value="Contact Tracing">
         <a href='#' className='sidebar-link'>
-          <i className='fa fa-phone' />
+          <i className={this.props.icons} />
           <span className='hide-menu' onClick = {()=>this.props.change(this.props.index)}> {this.props.Category} </span>
         </a>
       </li>

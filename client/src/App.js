@@ -5,33 +5,44 @@ import {ActiveCases} from './ActiveCases';
 import {Twitter} from './Twitter';
 import Categories from './Categories';
 
+const Classname = [
+  "fa fa-phone",
+  "fa fa-certificate",
+  "fa fa-users",
+  "fa fa-exclamation-triangle",
+  "fa fa-plus",
+  "fa fa-user",
+  "fa fa-lock",
+  "fa fa-medkit",
+]
+
 const Category = [
-	{category:"Contact Tracing",id:1},
-	{category:"Diagnostics",id:2},
-	{category:"Employee Support",id:3},
-	{category:"Infection Control",id:4},
-	{category:"Medication",id:5},
-	{category:"Patient Engagement",id:6},
-	{category:"Portal",id:7},
-	{category:"PPE",id:8},
-	{category:"Support",id:9},
-	{category:"Vaccinatory",id:10},
-	{category:"Financial Support Providers",id:11},
-	{category:"Telemedicine",id:12},
-	{category:"Tele Education Resources",id:13},
-	{category:"Covid Specific Hospitals",id:14},
-	{category:" Free Food Providers",id:15},
-	{category:"Patient Tracing Apps",id:16},
-	{category:"Self Reporting Apps",id:17},
-	{category:"Data Sets",id:18},
-	{category:"Automobile Related",id:19},
-	{category:"Skill Training",id:20},
-	{category:"Mask Providers",id:21},
-	{category:"Heat Map",id:22},
-	{category:"Volunteering Org",id:23},
-	{category:"Others",id:24},
-	{category:"Unemployed",id:1},
-	{category:"Volunteers",id:1},
+	{category:"Contact Tracing",id:1, className: "fa fa-phone"},
+	{category:"Diagnostics",id:2, className:"fa fa-certificate"},
+	{category:"Employee Support",id:3, className:"fa fa-users"},
+	{category:"Infection Control",id:4, className:"fa fa-exclamation-triangle"},
+	{category:"Medication",id:5, className:"fa fa-plus"},
+	{category:"Patient Engagement",id:6, className:"fa fa-user"},
+	{category:"Portal",id:7, className:"fa fa-lock"},
+	{category:"PPE",id:8, className:"fa fa-medkit"},
+	{category:"Support",id:9, className:'fa fa-cogs'},
+	{category:"Vaccinatory",id:10, className:'fa fa-user-md'},
+	{category:"Financial Support Providers",id:11, className:'fa fa-credit-card'},
+	{category:"Telemedicine",id:12, className:'fa fa-stethoscope'},
+	{category:"Tele Education Resources",id:13, className:'fa fa-mobile'},
+	{category:"Covid Specific Hospitals",id:14, className:'fa fa-hospital'},
+	{category:" Free Food Providers",id:15, className:'fa fa-glass'},
+	{category:"Patient Tracing Apps",id:16, className:'fa fa-search'},
+	{category:"Self Reporting Apps",id:17, className:"fa fa-cogs"},
+	{category:"Data Sets",id:18, className:"fa fa-database"},
+	{category:"Automobile Related",id:19, className:"fa fa-car"},
+	{category:"Skill Training",id:20, className:"fa fa-adjust"},
+	{category:"Mask Providers",id:21, className:"fa fa-thermometer"},
+	{category:"Heat Map",id:22, className:"fa fa-street-view"},
+	{category:"Volunteering Org",id:23, className:"fa fa-building"},
+	{category:"Others",id:24, className:"fa fa-bars"},
+	{category:"Unemployed",id:1, className:"fa fa-male"},
+	{category:"Volunteers",id:1, className:"fa fa-user"},
 ]
 
 class App extends Component {
@@ -44,7 +55,28 @@ class App extends Component {
         {selected:1,color:"#984BFF"},
         {selected:1,color:"#D6D6D6"},
         {selected:1,color:"#77C600"},
-        {selected:1,color:"#77C600"}
+        {selected:1,color:"#FFD500"},
+        {selected:1,color:"#1DC8FE"},
+        {selected:1,color:"#FF8000"},
+        {selected:1,color:"#0953B8"},
+        {selected:1,color:"#00C495"},
+        {selected:1,color:"#984BFF"},
+        {selected:1,color:"#D6D6D6"},
+        {selected:1,color:"#77C600"},
+        {selected:1,color:"#FFD500"},
+        {selected:1,color:"#1DC8FE"},
+        {selected:1,color:"#FF8000"},
+        {selected:1,color:"#0953B8"},
+        {selected:1,color:"#00C495"},
+        {selected:1,color:"#984BFF"},
+        {selected:1,color:"#D6D6D6"},
+        {selected:1,color:"#77C600"},
+        {selected:1,color:"#FFD500"},
+        {selected:1,color:"#1DC8FE"},
+        {selected:1,color:"#FF8000"},
+        {selected:1,color:"#0953B8"},
+        {selected:1,color:"#00C495"},
+        {selected:1,color:"#984BFF"}
       ]
     }
   }
@@ -193,6 +225,7 @@ class App extends Component {
                                   key={index} 
                                   index={category.id}
                                   change = {this.toggle}
+                                  icons={category.className}
                                   ></Categories>
                     })}
                   </ul>
