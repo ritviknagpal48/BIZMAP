@@ -67,288 +67,6 @@ function App() {
                   </a>
                 </li>
                 {/* ============================================================== */}
-                {/* mega menu */}
-                {/* ============================================================== */}
-                <li className='nav-item dropdown mega-dropdown'>
-                  <a
-                    className='nav-link dropdown-toggle waves-effect waves-dark'
-                    href='#'
-                    data-toggle='dropdown'
-                    aria-haspopup='true'
-                    aria-expanded='false'
-                  >
-                    <span className='d-none d-md-block'>
-                      Mega <i className='fa fa-angle-down' />
-                    </span>
-                    <span className='d-block d-md-none'>
-                      <i className='mdi mdi-dialpad font-24' />
-                    </span>
-                  </a>
-                  <div className='dropdown-menu animated bounceInDown'>
-                    <div className='mega-dropdown-menu row'>
-                      <div className='col-lg-3 col-xlg-2 mb-4'>
-                        <h4 className='mb-3'>CAROUSEL</h4>
-                        {/* CAROUSEL */}
-                        <div
-                          id='carouselExampleControls'
-                          className='carousel slide'
-                          data-ride='carousel'
-                        >
-                          <div className='carousel-inner' role='listbox'>
-                            <div className='carousel-item active'>
-                              <div className='container p-0'>
-                                {' '}
-                                <img
-                                  className='d-block img-fluid'
-                                  src='./Xtreme admin Template - The Ultimate Multipurpose admin template_files/img1.jpg'
-                                  alt='First slide'
-                                />
-                              </div>
-                            </div>
-                            <div className='carousel-item'>
-                              <div className='container p-0'>
-                                <img
-                                  className='d-block img-fluid'
-                                  src='./Xtreme admin Template - The Ultimate Multipurpose admin template_files/img2.jpg'
-                                  alt='Second slide'
-                                />
-                              </div>
-                            </div>
-                            <div className='carousel-item'>
-                              <div className='container p-0'>
-                                <img
-                                  className='d-block img-fluid'
-                                  src='./Xtreme admin Template - The Ultimate Multipurpose admin template_files/img3.jpg'
-                                  alt='Third slide'
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <a
-                            className='carousel-control-prev'
-                            href='#'
-                            role='button'
-                            data-slide='prev'
-                          >
-                            {' '}
-                            <span
-                              className='carousel-control-prev-icon'
-                              aria-hidden='true'
-                            />{' '}
-                            <span className='sr-only'>Previous</span>{' '}
-                          </a>
-                          <a
-                            className='carousel-control-next'
-                            href='#'
-                            role='button'
-                            data-slide='next'
-                          >
-                            {' '}
-                            <span
-                              className='carousel-control-next-icon'
-                              aria-hidden='true'
-                            />{' '}
-                            <span className='sr-only'>Next</span>{' '}
-                          </a>
-                        </div>
-                        {/* End CAROUSEL */}
-                      </div>
-                      <div className='col-lg-3 mb-4'>
-                        <h4 className='mb-3'>ACCORDION</h4>
-                        {/* Accordian */}
-                        <div id='accordion'>
-                          <div className='card mb-1'>
-                            <div className='card-header' id='headingOne'>
-                              <h5 className='mb-0'>
-                                <button
-                                  className='btn btn-link'
-                                  data-toggle='collapse'
-                                  data-target='#collapseOne'
-                                  aria-expanded='true'
-                                  aria-controls='collapseOne'
-                                >
-                                  Collapsible Group Item #1
-                                </button>
-                              </h5>
-                            </div>
-                            <div
-                              id='collapseOne'
-                              className='collapse show'
-                              aria-labelledby='headingOne'
-                              data-parent='#accordion'
-                            >
-                              <div className='card-body'>
-                                Anim pariatur cliche reprehenderit, enim eiusmod
-                                high life accusamus terry.
-                              </div>
-                            </div>
-                          </div>
-                          <div className='card mb-1'>
-                            <div className='card-header' id='headingTwo'>
-                              <h5 className='mb-0'>
-                                <button
-                                  className='btn btn-link collapsed'
-                                  data-toggle='collapse'
-                                  data-target='#collapseTwo'
-                                  aria-expanded='false'
-                                  aria-controls='collapseTwo'
-                                >
-                                  Collapsible Group Item #2
-                                </button>
-                              </h5>
-                            </div>
-                            <div
-                              id='collapseTwo'
-                              className='collapse'
-                              aria-labelledby='headingTwo'
-                              data-parent='#accordion'
-                            >
-                              <div className='card-body'>
-                                Anim pariatur cliche reprehenderit, enim eiusmod
-                                high life accusamus terry.
-                              </div>
-                            </div>
-                          </div>
-                          <div className='card mb-1'>
-                            <div className='card-header' id='headingThree'>
-                              <h5 className='mb-0'>
-                                <button
-                                  className='btn btn-link collapsed'
-                                  data-toggle='collapse'
-                                  data-target='#collapseThree'
-                                  aria-expanded='false'
-                                  aria-controls='collapseThree'
-                                >
-                                  Collapsible Group Item #3
-                                </button>
-                              </h5>
-                            </div>
-                            <div
-                              id='collapseThree'
-                              className='collapse'
-                              aria-labelledby='headingThree'
-                              data-parent='#accordion'
-                            >
-                              <div className='card-body'>
-                                Anim pariatur cliche reprehenderit, enim eiusmod
-                                high life accusamus terry.
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='col-lg-3  mb-4'>
-                        <h4 className='mb-3'>CONTACT US</h4>
-                        {/* Contact */}
-                        <form>
-                          <div className='form-group'>
-                            <input
-                              type='text'
-                              className='form-control'
-                              id='exampleInputname1'
-                              placeholder='Enter Name'
-                            />{' '}
-                          </div>
-                          <div className='form-group'>
-                            <input
-                              type='email'
-                              className='form-control'
-                              placeholder='Enter email'
-                            />{' '}
-                          </div>
-                          <div className='form-group'>
-                            <textarea
-                              className='form-control'
-                              id='exampleTextarea'
-                              rows={3}
-                              placeholder='Message'
-                              defaultValue={''}
-                            />
-                          </div>
-                          <button type='submit' className='btn btn-info'>
-                            Submit
-                          </button>
-                        </form>
-                      </div>
-                      <div className='col-lg-3 col-xlg-4 mb-4'>
-                        <h4 className='mb-3'>List style</h4>
-                        {/* List style */}
-                        <ul className='list-style-none'>
-                          <li>
-                            <a href='javascript:void(0)'>
-                              <i className='fa fa-check text-success' /> You can
-                              give link
-                            </a>
-                          </li>
-                          <li>
-                            <a href='javascript:void(0)'>
-                              <i className='fa fa-check text-success' /> Give
-                              link
-                            </a>
-                          </li>
-                          <li>
-                            <a href='javascript:void(0)'>
-                              <i className='fa fa-check text-success' /> Another
-                              Give link
-                            </a>
-                          </li>
-                          <li>
-                            <a href='javascript:void(0)'>
-                              <i className='fa fa-check text-success' /> Forth
-                              link
-                            </a>
-                          </li>
-                          <li>
-                            <a href='javascript:void(0)'>
-                              <i className='fa fa-check text-success' /> Another
-                              fifth link
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                {/* ============================================================== */}
-                {/* End mega menu */}
-                {/* ============================================================== */}
-                {/* ============================================================== */}
-                {/* create new */}
-                {/* ============================================================== */}
-                <li className='nav-item dropdown'>
-                  <a
-                    className='nav-link dropdown-toggle'
-                    href='#'
-                    id='navbarDropdown'
-                    role='button'
-                    data-toggle='dropdown'
-                    aria-haspopup='true'
-                    aria-expanded='false'
-                  >
-                    <span className='d-none d-md-block'>
-                      Create New <i className='fa fa-angle-down' />
-                    </span>
-                    <span className='d-block d-md-none'>
-                      <i className='fa fa-plus' />
-                    </span>
-                  </a>
-                  <div
-                    className='dropdown-menu'
-                    aria-labelledby='navbarDropdown'
-                  >
-                    <a className='dropdown-item' href='#'>
-                      Action
-                    </a>
-                    <a className='dropdown-item' href='#'>
-                      Another action
-                    </a>
-                    <div className='dropdown-divider' />
-                    <a className='dropdown-item' href='#'>
-                      Something else here
-                    </a>
-                  </div>
-                </li>
-                {/* ============================================================== */}
                 {/* Search */}
                 {/* ============================================================== */}
                 <li className='nav-item search-box'>
@@ -756,176 +474,167 @@ function App() {
             {/* Sidebar navigation*/}
             <nav className='sidebar-nav'>
                   <ul aria-expanded='false' className='collapse first-level in'>
-                    <li className='sidebar-item active'>
-                      <a href='#' className='sidebar-link active'>
+                    <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Contact Tracing </span>
+                        <span className='hide-menu' value="Contact Tracing"> Contact Tracing </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Diagnostics </span>
+                        <span className='hide-menu' value="Diagnostics"> Diagnostics </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Employee Support </span>
+                        <span className='hide-menu' value="Employee Support"> Employee Support </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Infection Control </span>
+                        <span className='hide-menu' value="Infection Control"> Infection Control </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Medication </span>
+                        <span className='hide-menu' value="Medication"> Medication </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Patient Engagement </span>
+                        <span className='hide-menu' value="Patient Engagement"> Patient Engagement </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Portal </span>
+                        <span className='hide-menu' value="Portal"> Portal </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> PPE </span>
+                        <span className='hide-menu' value="PPE"> PPE </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Supports </span>
+                        <span className='hide-menu' value="Supports"> Supports </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Vaccinatory </span>
+                        <span className='hide-menu' value="Vaccinatory"> Vaccinatory </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Financial Support Providers </span>
+                        <span className='hide-menu' value="Financial Support Providers"> Financial Support Providers </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Telemedicin </span>
+                        <span className='hide-menu' value="Telemedicine"> Telemedicine </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Tele Education Resources </span>
+                        <span className='hide-menu' value="Tele Education Resources"> Tele Education Resources </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Covid Specific Hospitals </span>
+                        <span className='hide-menu' value="Covid Specific Hospitals"> Covid Specific Hospitals </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Free Food Providers </span>
+                        <span className='hide-menu' value="Free Food Providers"> Free Food Providers </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Patient Tracing Apps </span>
+                        <span className='hide-menu' value="Patient Tracing Apps"> Patient Tracing Apps </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Self Reporting Apps </span>
+                        <span className='hide-menu' value="Self Reporting Apps"> Self Reporting Apps </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Data Sets </span>
+                        <span className='hide-menu' value="Data Sets"> Data Sets </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Automobile related </span>
+                        <span className='hide-menu' value="Automobile Related"> Automobile related </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Skill Training </span>
+                        <span className='hide-menu' value="Skill Training"> Skill Training </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Mask Providers </span>
+                        <span className='hide-menu' value="Mask Providers"> Mask Providers </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> HeatMap </span>
+                        <span className='hide-menu' value="HeatMap"> HeatMap </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Volunteering Org </span>
+                        <span className='hide-menu' value="Volunteering Org"> Volunteering Org </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Others </span>
+                        <span className='hide-menu' value="Others"> Others </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Unemployed </span>
+                        <span className='hide-menu' value="Unemployed"> Unemployed </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-bars' />
-                        <span className='hide-menu'> Volunteers </span>
+                        <span className='hide-menu' value="Volunteers"> Volunteers </span>
                       </a>
                     </li>
                   </ul>
                 </nav>
            </div>
         </aside>
-        {/* ============================================================== */}
-        {/* End Left Sidebar - style you can find in sidebar.scss  */}
-        {/* ============================================================== */}
-        {/* ============================================================== */}
-        {/* Page wrapper  */}
-        {/* ============================================================== */}
         <div className='page-wrapper' style={{ display: 'block' }}>
-          {/* ============================================================== */}
-          {/* Bread crumb and right sidebar toggle */}
-          {/* ============================================================== */}
           <div className='page-breadcrumb'>
             <div className='row'>
               <div className='col-5 align-self-center'>
@@ -1000,7 +709,7 @@ function App() {
           {/* ============================================================== */}
           {/* footer */}
           {/* ============================================================== */}
-          <footer className='footer text-center'>Footer Goes Here!!</footer>
+          <footer className='footer text-center'>Disclamer: The data contained in this website is intended for general reference only and is meant for viewers in India only.</footer>
           {/* ============================================================== */}
           {/* End footer */}
           {/* ============================================================== */}
