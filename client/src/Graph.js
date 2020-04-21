@@ -11,9 +11,9 @@ const navStyle = {
 };
 
 const markerList = [
-  { lat: 17.441013, long: 78.391796, info: 10 },
-  { lat: 17.442889, long: 78.396073, info: 20},
-  { lat: 17.441681, long: 78.394357, info: 10 }
+  { lat: 17.441013, long: 78.391796, info: 10, color:"red" },
+  { lat: 17.442889, long: 78.396073, info: 20, color:"blue"},
+  { lat: 17.441681, long: 78.394357, info: 10, color:"green" }
 ];
 export default class Graph extends Component {
   constructor(props) {
@@ -61,10 +61,6 @@ export default class Graph extends Component {
 
   }
 
-  Info = () =>{
-
-  }
-
   render() {
     const { viewport } = this.state;
     return (
@@ -84,9 +80,10 @@ export default class Graph extends Component {
                 {' '}
                 <Marker longitude={marker.long} latitude={marker.lat}>
                   <i
-                    className='fas fa-mouse-pointer fa-4x'
+                    className='fas fa-map-marker fa-4x'
                     name='hospital'
-                    size='big'
+                    size='small'
+                    style={{color:marker.color}}
                     onClick = {() =>{this.setState({display:{...this.state.display,[index]:!this.state.display[index]}}); console.log(this.state.display[index]) }}
                   />
                 </Marker>{' '}
