@@ -82,7 +82,7 @@ export default class Graph extends Component {
         break;
       }
     }
-    if(this.state.category[i].selected)
+    if(this.props.category[i].selected==1)
     {
       return(
         <Marker longitude={marker.long} latitude={marker.lat}>

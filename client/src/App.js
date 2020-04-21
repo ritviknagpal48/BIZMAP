@@ -62,18 +62,18 @@ class App extends Component {
         {
             this.state.category[i].selected = 0;
         }
-        this.state.category[index].selected = 1;
+        this.state.category[index-1].selected = 1;
         
     }
     if(value!=1)
     {
-        if(this.state.category[index].selected ===1)
+        if(this.state.category[index-1].selected ===1)
         {
-            this.state.category[index].selected = 0;
+            this.state.category[index-1].selected = 0;
         }
         else
         {
-            this.state.category[index].selected = 1;
+            this.state.category[index-1].selected = 1;
         }
     }
     console.log(this.state.category);
@@ -247,7 +247,7 @@ class App extends Component {
             {/* Sales chart */}
             {/* ============================================================== */}
             <div className='row'>
-              <Graph></Graph>
+              <Graph category={this.state.category}></Graph>
             </div>
             {/* ============================================================== */}
             {/* Sales chart */}
