@@ -63,7 +63,7 @@ function App() {
                     href='javascript:void(0)'
                     data-sidebartype='mini-sidebar'
                   >
-                    <i className='mdi mdi-menu font-24' />
+                    <i className='fa fa-bars' />
                   </a>
                 </li>
                 {/* ============================================================== */}
@@ -75,7 +75,7 @@ function App() {
                     className='nav-link waves-effect waves-dark'
                     href='javascript:void(0)'
                   >
-                    <i className='ti-search' />
+                    <i className='fa fa-search' />
                   </a>
                   <form className='app-search position-absolute'>
                     <input
@@ -476,79 +476,79 @@ function App() {
                   <ul aria-expanded='false' className='collapse first-level in'>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
+                        <i className='fa fa-phone' />
                         <span className='hide-menu' value="Contact Tracing"> Contact Tracing </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
+                        <i className='fa fa-certificate' />
                         <span className='hide-menu' value="Diagnostics"> Diagnostics </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
+                        <i className='fa fa-users' />
                         <span className='hide-menu' value="Employee Support"> Employee Support </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
+                        <i className='fa fa-exclamation-triangle' />
                         <span className='hide-menu' value="Infection Control"> Infection Control </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
+                        <i className='fa fa-plus' />
                         <span className='hide-menu' value="Medication"> Medication </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
+                        <i className='fa fa-user' />
                         <span className='hide-menu' value="Patient Engagement"> Patient Engagement </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
+                        <i className='fa fa-lock' />
                         <span className='hide-menu' value="Portal"> Portal </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
+                        <i className='fa fa-medkit' />
                         <span className='hide-menu' value="PPE"> PPE </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
+                        <i className='fa fa-cogs' />
                         <span className='hide-menu' value="Supports"> Supports </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
+                        <i className='fa fa-user-md' />
                         <span className='hide-menu' value="Vaccinatory"> Vaccinatory </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
+                        <i className='fa fa-credit-card' />
                         <span className='hide-menu' value="Financial Support Providers"> Financial Support Providers </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
+                        <i className='fa fa-stethoscope' />
                         <span className='hide-menu' value="Telemedicine"> Telemedicine </span>
                       </a>
                     </li>
                    <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
+                        <i className='fa fa-television' />
                         <span className='hide-menu' value="Tele Education Resources"> Tele Education Resources </span>
                       </a>
                     </li>
