@@ -30,7 +30,8 @@ export default class Graph extends Component {
         bearing: 0,
         pitch: 0,
         width: '100%',
-        height: 500
+        height: 500,
+        category:this.props.category
       },
       display:[false,false,false],
       category:[

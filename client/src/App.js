@@ -51,6 +51,7 @@ class App extends Component {
 
   toggle = (index)=>{
     var value = 1;
+    var array = this.state.category;
     console.log(this.state.category)
     for(var i=0;i<this.state.category.length;i++)
     {
@@ -60,22 +61,23 @@ class App extends Component {
     {
         for(var i=0;i<this.state.category.length;i++)
         {
-            this.state.category[i].selected = 0;
+            array[i].selected = 0;
         }
-        this.state.category[index-1].selected = 1;
+        array[index-1].selected = 1;
         
     }
     if(value!=1)
     {
         if(this.state.category[index-1].selected ===1)
         {
-            this.state.category[index-1].selected = 0;
+            array[index-1].selected = 0;
         }
         else
         {
-            this.state.category[index-1].selected = 1;
+            array[index-1].selected = 1;
         }
     }
+    this.setState({category:array});
     console.log(this.state.category);
     console.log(index);
   }
