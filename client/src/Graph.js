@@ -82,7 +82,7 @@ export default class Graph extends Component {
                   <i
                     className='fas fa-map-marker fa-4x'
                     name='hospital'
-                    size='small'
+                    size='big'
                     style={{color:marker.color}}
                     onClick = {() =>{this.setState({display:{...this.state.display,[index]:!this.state.display[index]}}); console.log(this.state.display[index]) }}
                   />
