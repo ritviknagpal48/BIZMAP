@@ -12,10 +12,12 @@ const navStyle = {
 
 const Category = ["Contact Tracing","Dignostics","Employ Support","Infection Support","Patient Engagement","Medication"];
 
+var idx;
+
 const markerList = [
-  { lat: 17.441013, long: 78.391796, info: 10, color:"red" },
-  { lat: 17.442889, long: 78.396073, info: 20, color:"blue"},
-  { lat: 17.441681, long: 78.394357, info: 10, color:"green" }
+  { lat: 17.441013, long: 78.391796, info: 10, category:"Contact Tracing" },
+  { lat: 17.442889, long: 78.396073, info: 20, category:"Dignostics"},
+  { lat: 17.441681, long: 78.394357, info: 10, category:"Employ Support"}
 ];
 export default class Graph extends Component {
   constructor(props) {
@@ -71,6 +73,32 @@ export default class Graph extends Component {
 
   }
 
+  changeColor(marker,index){
+    var i;
+    for(i=0;i<Category.length;i++)
+    {
+      if(Category[i]==marker.category)
+      {
+        break;
+      }
+    }
+    if(this.state.category[i].selected)
+    {
+      return(
+        <Marker longitude={marker.long} latitude={marker.lat}>
+                  <i
+                    className='fas fa-map-marker fa-4x'
+                    name='hospital'
+                    size='big'
+                    style={{color:this.state.category[i].color}}
+                    onClick = {() =>{this.setState({display:{...this.state.display,[index]:!this.state.display[index]}}); console.log(this.state.display[index]) }}
+                  />
+        </Marker>
+      )
+    }
+    return null;
+  }
+
   render() {
     const { viewport } = this.state;
     return (
@@ -88,16 +116,8 @@ export default class Graph extends Component {
             return (
               <div key={index}>
                 {' '}
-                
-                <Marker longitude={marker.long} latitude={marker.lat}>
-                  <i
-                    className='fas fa-map-marker fa-4x'
-                    name='hospital'
-                    size='big'
-                    style={{color:marker.color}}
-                    onClick = {() =>{this.setState({display:{...this.state.display,[index]:!this.state.display[index]}}); console.log(this.state.display[index]) }}
-                  />
-                </Marker>{' '}
+                {this.changeColor(marker,index)}
+                {' '}
                 {this.renderPopup(index)}
               </div>
             );
