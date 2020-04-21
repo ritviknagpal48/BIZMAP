@@ -7,8 +7,24 @@ import {Twitter} from './Twitter';
 
 
 class App extends React.Component {
+    constructor(props){
+    super(props);
+    this.state = {
+      category:[
+        {selected:true,color:"#0953B8"},
+        {selected:true,color:"#00C495"},
+        {selected:true,color:"#984BFF"},
+        {selected:true,color:"#D6D6D6"},
+        {selected:true,color:"#77C600"},
+        {selected:true,color:"#77C600"}
+      ]
+    }
+  }
+
+  toggle = (e) =>{
+    console.log(this);
+  }
     render(){
-        
         return (
     <div className='App'>
       <div
@@ -95,22 +111,6 @@ class App extends React.Component {
               {/* Right side toggle and nav items */}
               {/* ============================================================== */}
               <ul className='navbar-nav float-right'>
-                {/* ============================================================== */}
-                {/* create new */}
-                {/* ============================================================== */}
-                {/* ============================================================== */}
-                {/* Comment */}
-                {/* ============================================================== */}
-                
-                {/* ============================================================== */}
-                {/* End Messages */}
-                {/* ============================================================== */}
-                {/* ============================================================== */}
-                {/* User profile and search */}
-                {/* ============================================================== */}
-                {/* ============================================================== */}
-                {/* User profile and search */}
-                {/* ============================================================== */}
               </ul>
             </div>
           </nav>
@@ -133,7 +133,7 @@ class App extends React.Component {
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-phone' />
-                        <span className='hide-menu' value="Contact Tracing"> Contact Tracing </span>
+                        <span className='hide-menu' value="Contact Tracing" onClick={(e)=>this.toggle(e)}> Contact Tracing </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
