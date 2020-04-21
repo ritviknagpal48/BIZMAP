@@ -801,61 +801,157 @@ function App() {
                     <li className='sidebar-item active'>
                       <a href='#' className='sidebar-link active'>
                         <i className='mdi mdi-adjust' />
-                        <span className='hide-menu'> Classic </span>
+                        <span className='hide-menu'> Contact Tracing </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='mdi mdi-adjust' />
-                        <span className='hide-menu'> Analytical </span>
+                        <span className='hide-menu'> Diagnostics </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='mdi mdi-adjust' />
-                        <span className='hide-menu'> Cryptocurrency </span>
+                        <span className='hide-menu'> Employee Support </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='mdi mdi-adjust' />
-                        <span className='hide-menu'> Overview </span>
+                        <span className='hide-menu'> Infection Control </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='mdi mdi-adjust' />
-                        <span className='hide-menu'> E-Commerce </span>
+                        <span className='hide-menu'> Medication </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='mdi mdi-adjust' />
-                        <span className='hide-menu'> Sales </span>
+                        <span className='hide-menu'> Patient Engagement </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='mdi mdi-adjust' />
-                        <span className='hide-menu'> General </span>
+                        <span className='hide-menu'> Portal </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='mdi mdi-adjust' />
-                        <span className='hide-menu'> Trendy </span>
+                        <span className='hide-menu'> PPE </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='mdi mdi-adjust' />
-                        <span className='hide-menu'> Campaign </span>
+                        <span className='hide-menu'> Supports </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
                       <a href='#' className='sidebar-link'>
                         <i className='mdi mdi-adjust' />
-                        <span className='hide-menu'> Modern </span>
+                        <span className='hide-menu'> Vaccinatory </span>
+                      </a>
+                    </li>
+                    <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> Financial Support Providers </span>
+                      </a>
+                    </li>
+                   <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> Telemedicin </span>
+                      </a>
+                    </li>
+                   <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> Tele Education Resources </span>
+                      </a>
+                    </li>
+                   <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> Covid Specific Hospitals </span>
+                      </a>
+                    </li>
+                   <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> Free Food Providers </span>
+                      </a>
+                    </li>
+                   <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> Patient Tracing Apps </span>
+                      </a>
+                    </li>
+                   <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> Self Reporting Apps </span>
+                      </a>
+                    </li>
+                   <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> Data Sets </span>
+                      </a>
+                    </li>
+                   <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> Automobile related </span>
+                      </a>
+                    </li>
+                   <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> Skill Training </span>
+                      </a>
+                    </li>
+                   <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> Mask Providers </span>
+                      </a>
+                    </li>
+                   <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> HeatMap </span>
+                      </a>
+                    </li>
+                   <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> Volunteering Org </span>
+                      </a>
+                    </li>
+                   <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> Others </span>
+                      </a>
+                    </li>
+                   <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> Unemployed </span>
+                      </a>
+                    </li>
+                   <li className='sidebar-item'>
+                      <a href='#' className='sidebar-link'>
+                        <i className='mdi mdi-adjust' />
+                        <span className='hide-menu'> Volunteers </span>
                       </a>
                     </li>
                   </ul>
