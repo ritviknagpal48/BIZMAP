@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MapGL, { NavigationControl, Marker, Popup } from 'react-map-gl';
-import { Icon } from 'semantic-ui-react';
+
 const TOKEN =
   'pk.eyJ1IjoiYWJoaWxhc2hhLXNpbmhhIiwiYSI6ImNqdzFwYWN1ajBtOXM0OG1wbHAwdWJlNmwifQ.91s73Dy03voy-wPZEeuV5Q';
 const navStyle = {
@@ -11,8 +11,8 @@ const navStyle = {
 };
 
 const markerList = [
-  { lat: 17.441013, long: 78.391796, info: 10, data: {} },
-  { lat: 17.442889, long: 78.396073, info: 20 },
+  { lat: 17.441013, long: 78.391796, info: 10 },
+  { lat: 17.442889, long: 78.396073, info: 20},
   { lat: 17.441681, long: 78.394357, info: 10 }
 ];
 export default class Graph extends Component {
@@ -28,7 +28,7 @@ export default class Graph extends Component {
         width: '100%',
         height: 500
       },
-      popupInfo: null
+      display:[false,false,false]
     };
   }
 
@@ -41,20 +41,28 @@ export default class Graph extends Component {
   // }
 
   renderPopup(index) {
-    return (
-      this.state.popupInfo && (
-        <Popup
-          tipSize={5}
-          anchor='bottom-right'
-          longitude={markerList[0].long}
-          latitude={markerList[0].lat}
-          onMouseLeave={() => this.setState({ popupInfo: null })}
-          closeOnClick={true}
-        >
-          <p>Available beds:{markerList[index].info}</p>
-        </Popup>
+    if(this.state.display[index])
+    {
+      return (
+          <Popup
+            tipSize={5}
+            anchor='bottom-right'
+            longitude={markerList[index].long}
+            latitude={markerList[index].lat}
+          >
+                  {console.log(markerList[index])}
+            <p>Available beds:{markerList[index].info}</p>
+          </Popup>
       )
-    );
+    }
+    else{
+      return (null)
+    }
+
+  }
+
+  Info = () =>{
+
   }
 
   render() {
@@ -79,8 +87,7 @@ export default class Graph extends Component {
                     className='fas fa-mouse-pointer fa-4x'
                     name='hospital'
                     size='big'
-                    onMouseEnter={() => this.setState({ popupInfo: true })}
-                    onMouseLeave={() => this.setState({ popupInfo: null })}
+                    onClick = {() =>{this.setState({display:{...this.state.display,[index]:!this.state.display[index]}}); console.log(this.state.display[index]) }}
                   />
                 </Marker>{' '}
                 {this.renderPopup(index)}
