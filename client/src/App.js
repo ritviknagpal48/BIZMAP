@@ -129,11 +129,11 @@ class App extends React.Component {
           >
             {/* Sidebar navigation*/}
             <nav className='sidebar-nav'>
-                  <ul aria-expanded='false' className='collapse first-level in'>
-                    <li className='sidebar-item'>
+                  <ul aria-expanded='false' className='collapse first-level in' onClick={(e)=>this.toggle(e)}>
+                    <li className='sidebar-item' value="Contact Tracing">
                       <a href='#' className='sidebar-link'>
                         <i className='fa fa-phone' />
-                        <span className='hide-menu' value="Contact Tracing" onClick={(e)=>this.toggle(e)}> Contact Tracing </span>
+                        <span className='hide-menu'> Contact Tracing </span>
                       </a>
                     </li>
                     <li className='sidebar-item'>
