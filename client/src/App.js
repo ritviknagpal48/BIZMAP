@@ -1,28 +1,74 @@
-import React from 'react';
+import React,{Component} from 'react';
 import Graph from './Graph';
-import { Icon } from 'semantic-ui-react';
 import { DiscussionForum } from './DiscussionForum';
 import {ActiveCases} from './ActiveCases';
 import {Twitter} from './Twitter';
+import Categories from './Categories';
 
+const Category = [
+	{category:"Contact Tracing",id:1},
+	{category:"Diagnostics",id:2},
+	{category:"Employee Support",id:3},
+	{category:"Infection Control",id:4},
+	{category:"Medication",id:5},
+	{category:"Patient Engagement",id:6},
+	{category:"Portal",id:7},
+	{category:"PPE",id:8},
+	{category:"Support",id:9},
+	{category:"Vaccinatory",id:10},
+	{category:"Financial Support Providers",id:11},
+	{category:"Telemedicine",id:12},
+	{category:"Tele Education Resources",id:13},
+	{category:"Covid Specific Hospitals",id:14},
+	{category:" Free Food Providers",id:15},
+	{category:"Patient Tracing Apps",id:16},
+	{category:"Self Reporting Apps",id:17},
+	{category:"Data Sets",id:18},
+	{category:"Automobile Related",id:19},
+	{category:"Skill Training",id:20},
+	{category:"Mask Providers",id:21},
+	{category:"Heat Map",id:22},
+	{category:"Volunteering Org",id:23},
+	{category:"Others",id:24},
+	{category:"Unemployed",id:1},
+	{category:"Volunteers",id:1},
+]
 
-class App extends React.Component {
+class App extends Component {
     constructor(props){
     super(props);
     this.state = {
       category:[
-        {selected:true,color:"#0953B8"},
-        {selected:true,color:"#00C495"},
-        {selected:true,color:"#984BFF"},
-        {selected:true,color:"#D6D6D6"},
-        {selected:true,color:"#77C600"},
-        {selected:true,color:"#77C600"}
+        {selected:1,color:"#0953B8"},
+        {selected:1,color:"#00C495"},
+        {selected:1,color:"#984BFF"},
+        {selected:1,color:"#D6D6D6"},
+        {selected:1,color:"#77C600"},
+        {selected:1,color:"#77C600"}
       ]
     }
   }
 
-  toggle = (e) =>{
-    console.log(this);
+  toggle = (index)=>{
+    var value = 1;
+    console.log(this.state.category)
+    for(var i=0;i<this.state.category.length;i++)
+    {
+        value = value*this.state.category[i].selected;
+    }
+    if(value===1)
+    {
+        for(var i=0;i<this.state.category.length;i++)
+        {
+            if(i!==index)
+            {
+              console.log("index",i);
+              this.setState({category:{...this.state.category,[i]:{selected:0}}});
+            }
+        }
+    }
+    console.log(this.state.category);
+    console.log(index);
   }
     render(){
         return (
@@ -129,163 +175,15 @@ class App extends React.Component {
           >
             {/* Sidebar navigation*/}
             <nav className='sidebar-nav'>
-                  <ul aria-expanded='false' className='collapse first-level in' onClick={(e)=>this.toggle(e)}>
-                    <li className='sidebar-item' value="Contact Tracing">
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-phone' />
-                        <span className='hide-menu'> Contact Tracing </span>
-                      </a>
-                    </li>
-                    <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-certificate' />
-                        <span className='hide-menu' value="Diagnostics"> Diagnostics </span>
-                      </a>
-                    </li>
-                    <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-users' />
-                        <span className='hide-menu' value="Employee Support"> Employee Support </span>
-                      </a>
-                    </li>
-                    <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-exclamation-triangle' />
-                        <span className='hide-menu' value="Infection Control"> Infection Control </span>
-                      </a>
-                    </li>
-                    <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-plus' />
-                        <span className='hide-menu' value="Medication"> Medication </span>
-                      </a>
-                    </li>
-                    <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-user' />
-                        <span className='hide-menu' value="Patient Engagement"> Patient Engagement </span>
-                      </a>
-                    </li>
-                    <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-lock' />
-                        <span className='hide-menu' value="Portal"> Portal </span>
-                      </a>
-                    </li>
-                    <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-medkit' />
-                        <span className='hide-menu' value="PPE"> PPE </span>
-                      </a>
-                    </li>
-                    <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-cogs' />
-                        <span className='hide-menu' value="Supports"> Supports </span>
-                      </a>
-                    </li>
-                    <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-user-md' />
-                        <span className='hide-menu' value="Vaccinatory"> Vaccinatory </span>
-                      </a>
-                    </li>
-                    <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-credit-card' />
-                        <span className='hide-menu' value="Financial Support Providers"> Financial Support Providers </span>
-                      </a>
-                    </li>
-                   <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-stethoscope' />
-                        <span className='hide-menu' value="Telemedicine"> Telemedicine </span>
-                      </a>
-                    </li>
-                   <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-mobile' />
-                        <span className='hide-menu' value="Tele Education Resources"> Tele Education Resources </span>
-                      </a>
-                    </li>
-                   <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-hospital' />
-                        <span className='hide-menu' value="Covid Specific Hospitals"> Covid Specific Hospitals </span>
-                      </a>
-                    </li>
-                   <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-glass' />
-                        <span className='hide-menu' value="Free Food Providers"> Free Food Providers </span>
-                      </a>
-                    </li>
-                   <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-search' />
-                        <span className='hide-menu' value="Patient Tracing Apps"> Patient Tracing Apps </span>
-                      </a>
-                    </li>
-                   <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
-                        <span className='hide-menu' value="Self Reporting Apps"> Self Reporting Apps </span>
-                      </a>
-                    </li>
-                   <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
-                        <span className='hide-menu' value="Data Sets"> Data Sets </span>
-                      </a>
-                    </li>
-                   <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
-                        <span className='hide-menu' value="Automobile Related"> Automobile related </span>
-                      </a>
-                    </li>
-                   <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
-                        <span className='hide-menu' value="Skill Training"> Skill Training </span>
-                      </a>
-                    </li>
-                   <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
-                        <span className='hide-menu' value="Mask Providers"> Mask Providers </span>
-                      </a>
-                    </li>
-                   <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
-                        <span className='hide-menu' value="HeatMap"> HeatMap </span>
-                      </a>
-                    </li>
-                   <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
-                        <span className='hide-menu' value="Volunteering Org"> Volunteering Org </span>
-                      </a>
-                    </li>
-                   <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
-                        <span className='hide-menu' value="Others"> Others </span>
-                      </a>
-                    </li>
-                   <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
-                        <span className='hide-menu' value="Unemployed"> Unemployed </span>
-                      </a>
-                    </li>
-                   <li className='sidebar-item'>
-                      <a href='#' className='sidebar-link'>
-                        <i className='fa fa-bars' />
-                        <span className='hide-menu' value="Volunteers"> Volunteers </span>
-                      </a>
-                    </li>
+                  <ul aria-expanded='false' className='collapse first-level in'>
+                    {Category.map((category,index)=>{
+                      return <Categories 
+                                  Category={category.category} 
+                                  key={index} 
+                                  index={category.id}
+                                  change = {this.toggle}
+                                  ></Categories>
+                    })}
                   </ul>
                 </nav>
            </div>
