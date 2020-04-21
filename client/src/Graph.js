@@ -82,6 +82,7 @@ export default class Graph extends Component {
         break;
       }
     }
+    //hello
     if(this.props.category[i].selected==1)
     {
       return(
