@@ -10,6 +10,8 @@ const navStyle = {
   padding: '10px'
 };
 
+const Category = ["Contact Tracing","Dignostics","Employ Support","Infection Support","Patient Engagement","Medication"];
+
 const markerList = [
   { lat: 17.441013, long: 78.391796, info: 10, color:"red" },
   { lat: 17.442889, long: 78.396073, info: 20, color:"blue"},
@@ -28,7 +30,15 @@ export default class Graph extends Component {
         width: '100%',
         height: 500
       },
-      display:[false,false,false]
+      display:[false,false,false],
+      category:[
+        {selected:true,color:"#0953B8"},
+        {selected:true,color:"#00C495"},
+        {selected:true,color:"#984BFF"},
+        {selected:true,color:"#D6D6D6"},
+        {selected:true,color:"#77C600"},
+        {selected:true,color:"#77C600"}
+      ]
     };
   }
 
@@ -78,6 +88,7 @@ export default class Graph extends Component {
             return (
               <div key={index}>
                 {' '}
+                
                 <Marker longitude={marker.long} latitude={marker.lat}>
                   <i
                     className='fas fa-map-marker fa-4x'
