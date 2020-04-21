@@ -929,18 +929,12 @@ function App() {
           <div className='page-breadcrumb'>
             <div className='row'>
               <div className='col-5 align-self-center'>
-                <h4 className='page-title'>Dashboard</h4>
+                <h4 className='page-title'>Covid-19 Graph</h4>
                 <div className='d-flex align-items-center'>
                   <nav aria-label='breadcrumb'>
                     <ol className='breadcrumb'>
                       <li className='breadcrumb-item'>
                         <a href='#'>Home</a>
-                      </li>
-                      <li
-                        className='breadcrumb-item active'
-                        aria-current='page'
-                      >
-                        Library
                       </li>
                     </ol>
                   </nav>
@@ -964,7 +958,7 @@ function App() {
                   </div>
                   <div className>
                     <small>LAST MONTH</small>
-                    <h4 className='text-info mb-0 font-medium'>$58,256</h4>
+                    <h4 className='text-info mb-0 font-medium'>58,256</h4>
                   </div>
                 </div>
               </div>
