@@ -65,6 +65,17 @@ class App extends Component {
         this.state.category[index].selected = 1;
         
     }
+    if(value!=1)
+    {
+        if(this.state.category[index].selected ===1)
+        {
+            this.state.category[index].selected = 0;
+        }
+        else
+        {
+            this.state.category[index].selected = 1;
+        }
+    }
     console.log(this.state.category);
     console.log(index);
   }
