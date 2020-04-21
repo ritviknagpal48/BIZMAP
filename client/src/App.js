@@ -60,12 +60,10 @@ class App extends Component {
     {
         for(var i=0;i<this.state.category.length;i++)
         {
-            if(i!==index)
-            {
-              console.log("index",i);
-              this.setState({category:{...this.state.category,[i]:{selected:0}}});
-            }
+            this.state.category[i].selected = 0;
         }
+        this.state.category[index].selected = 1;
+        
     }
     console.log(this.state.category);
     console.log(index);
