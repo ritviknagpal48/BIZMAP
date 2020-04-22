@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import Button from 'react-bootstrap/Button'
 
 export const ActiveCases = (props) => {
   const {cases,deaths,recovered,active} = props.data;
@@ -21,7 +22,7 @@ export const ActiveCases = (props) => {
                 <div
                   className='progress-bar bg-info'
                   role='progressbar'
-                  style={{ width: `${recovered/(recovered+deaths+active)*100}%` }}
+                  style={{ width: `${recovered/(recovered+deaths+active)*100}%`}}
                   aria-valuenow={15}
                   aria-valuemin={0}
                   aria-valuemax={100}
@@ -69,91 +70,10 @@ export const ActiveCases = (props) => {
           </div>
         </div>
         <div className='card  card-hover'>
-          <div className='card-body'>
-            <h4 className='card-title'>Bounce Rate</h4>
-            <div className='d-flex no-block align-items-center mt-4'>
-              <div className>
-                <h3 className='font-medium mb-0'>56.33%</h3>
-                <span className>Total Bounce</span>
-              </div>
-              <div className='ml-auto'>
-                <div
-                  style={{ maxWidth: '150px', height: '60px' }}
-                  className='mb-5'
-                >
-                  <div
-                    className='chartjs-size-monitor'
-                    style={{
-                      position: 'absolute',
-                      left: '0px',
-                      top: '0px',
-                      right: '0px',
-                      bottom: '0px',
-                      overflow: 'hidden',
-                      pointerEvents: 'none',
-                      visibility: 'hidden',
-                      zIndex: -1
-                    }}
-                  >
-                    <div
-                      className='chartjs-size-monitor-expand'
-                      style={{
-                        position: 'absolute',
-                        left: 0,
-                        top: 0,
-                        right: 0,
-                        bottom: 0,
-                        overflow: 'hidden',
-                        pointerEvents: 'none',
-                        visibility: 'hidden',
-                        zIndex: -1
-                      }}
-                    >
-                      <div
-                        style={{
-                          position: 'absolute',
-                          width: '1000000px',
-                          height: '1000000px',
-                          left: 0,
-                          top: 0
-                        }}
-                      />
-                    </div>
-                    <div
-                      className='chartjs-size-monitor-shrink'
-                      style={{
-                        position: 'absolute',
-                        left: 0,
-                        top: 0,
-                        right: 0,
-                        bottom: 0,
-                        overflow: 'hidden',
-                        pointerEvents: 'none',
-                        visibility: 'hidden',
-                        zIndex: -1
-                      }}
-                    >
-                      <div
-                        style={{
-                          position: 'absolute',
-                          width: '200%',
-                          height: '200%',
-                          left: 0,
-                          top: 0
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <canvas
-                    id='bouncerate'
-                    width={150}
-                    height={75}
-                    className='chartjs-render-monitor'
-                    style={{ display: 'block', width: '150px', height: '75px' }}
-                  />
-                </div>
-              </div>
-            </div>
+          <div className='card-body' style={{textAlign:"center"}}>
+            <Button as="input" type="submit" value="PM Relief Care Fund" />{' '}
+            <br/><br/>
+            <Button as="input" type="submit" value="Helpline Support" />{' '}
           </div>
         </div>
       </div>
