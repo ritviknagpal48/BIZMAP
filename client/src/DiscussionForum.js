@@ -1,6 +1,31 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
+import { Message } from './Message';
+import axios from 'axios';
 
 export const DiscussionForum = () => {
+  const [messages, setMessages] = useState([]);
+  const [message, setMessage] = useState('');
+  const fetchMessages = async () => {
+    const res = await axios.post('http://localhost:5050/bizmap/get_messages');
+    console.log(res.data.messages);
+    setMessages(res.data.messages);
+  };
+
+  const onClick = async e => {
+    e.preventDefault();
+    const res = await axios.post('http://localhost:5050/bizmap/add_message', {
+      content: message
+    });
+    console.log(res.data);
+  };
+  const onChange = e => {
+    e.preventDefault();
+    setMessage(e.target.value);
+  };
+
+  useEffect(() => {
+    fetchMessages();
+  }, []);
   return (
     <Fragment>
       <div className='col-lg-8 col-xl-6'>
@@ -15,73 +40,13 @@ export const DiscussionForum = () => {
               {/*chat Row */}
               <ul className='chat-list'>
                 {/*chat Row */}
-                <li className='chat-item'>
-                  <div className='chat-img'>
-                    <img
-                      src='./Xtreme admin Template - The Ultimate Multipurpose admin template_files/1.jpg'
-                      alt='user'
-                    />
-                  </div>
-                  <div className='chat-content'>
-                    <h6 className='font-medium'>James Anderson</h6>
-                    <div className='box bg-light-info'>
-                      Lorem Ipsum is simply dummy text of the printing &amp;
-                      type setting industry.
-                    </div>
-                  </div>
-                  <div className='chat-time'>10:56 am</div>
-                </li>
+                {messages.length > 0 &&
+                  messages.map(content => {
+                    return <Message content={content}></Message>;
+                  })}
+
                 {/*chat Row */}
-                <li className='chat-item'>
-                  <div className='chat-img'>
-                    <img
-                      src='./Xtreme admin Template - The Ultimate Multipurpose admin template_files/2.jpg'
-                      alt='user'
-                    />
-                  </div>
-                  <div className='chat-content'>
-                    <h6 className='font-medium'>Bianca Doe</h6>
-                    <div className='box bg-light-info'>
-                      It’s Great opportunity to work.
-                    </div>
-                  </div>
-                  <div className='chat-time'>10:57 am</div>
-                </li>
-                {/*chat Row */}
-                <li className='odd chat-item'>
-                  <div className='chat-content'>
-                    <div className='box bg-light-inverse'>
-                      I would love to join the team.
-                    </div>
-                    <br />
-                  </div>
-                </li>
-                {/*chat Row */}
-                <li className='odd chat-item'>
-                  <div className='chat-content'>
-                    <div className='box bg-light-inverse'>
-                      Whats budget of the new project.
-                    </div>
-                    <br />
-                  </div>
-                  <div className='chat-time'>10:59 am</div>
-                </li>
-                {/*chat Row */}
-                <li className='chat-item'>
-                  <div className='chat-img'>
-                    <img
-                      src='./Xtreme admin Template - The Ultimate Multipurpose admin template_files/3.jpg'
-                      alt='user'
-                    />
-                  </div>
-                  <div className='chat-content'>
-                    <h6 className='font-medium'>Angelina Rhodes</h6>
-                    <div className='box bg-light-info'>
-                      Well we have good budget for the project
-                    </div>
-                  </div>
-                  <div className='chat-time'>11:00 am</div>
-                </li>
+
                 {/*chat Row */}
                 {/* <div id="someDiv"></div> */}
               </ul>
@@ -113,6 +78,8 @@ export const DiscussionForum = () => {
                 <div className='input-field mt-0 mb-0'>
                   <input
                     type='text'
+                    value={message}
+                    onChange={onChange}
                     id='textarea1'
                     placeholder='Type and enter'
                     className='form-control border-0'
@@ -123,6 +90,7 @@ export const DiscussionForum = () => {
                 <a
                   className='btn-circle btn-lg btn-cyan float-right text-white'
                   href='javascript:void(0)'
+                  onClick={onClick}
                 >
                   <i className='fas fa-paper-plane' />
                 </a>

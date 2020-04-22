@@ -25,10 +25,10 @@ mongoose
     useFindAndModify: false
   })
   .then(() => {
-    // console.log("Mongo successfully connected");
+    console.log('Mongo successfully connected');
   })
   .catch(err => {
-    // console.log(err);
+    console.log(err);
   });
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -36,7 +36,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-// app.use('/search', require('./routes/search/search'));
+app.use('/bizmap', require('./routes/bizmap/bizmap'));
 
 //Only for production, doesn't matter, don't delete this
 //Serve static assets if in production
