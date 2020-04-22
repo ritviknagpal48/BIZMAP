@@ -10,14 +10,14 @@ const navStyle = {
   padding: '10px'
 };
 
-const Category = ["Contact Tracing","Dignostics","Employ Support","Infection Support","Patient Engagement","Medication"];
-
+const Category = ["Contact Tracing","Diagnostics","Employee Support","Infection Control","Medication","Patient Engagement","Portal","PPE","Supports","Vaccinatory","Financial Support Providers","Telemedicine","Tele Education Resources","Covid Specific Hospitals","Free Food Providers","Patient Tracing Apps", "Self Reporting Apps", "Data Sets", "Automobile Related", "Skill Training", "Mask Providers", "Heat Map", "Volunteering Org", "Others", "Unemployed", "Volunteers"]
 var idx;
 
 const markerList = [
-  { lat: 17.441013, long: 78.391796, info: 10, category:"Contact Tracing" },
-  { lat: 17.442889, long: 78.396073, info: 20, category:"Dignostics"},
-  { lat: 17.441681, long: 78.394357, info: 10, category:"Employ Support"}
+  { lat: 16.441013, long: 77.391796, info: 10, category:"Contact Tracing" },
+  { lat: 17.442889, long: 78.696073, info: 20, category:"Diagnostics"},
+  { lat: 17.541681, long: 78.394357, info: 10, category:"Employee Support"},
+  {lat: 17.541681, long: 79.394357, info: 10, category:"Infection Control"}
 ];
 export default class Graph extends Component {
   constructor(props) {
