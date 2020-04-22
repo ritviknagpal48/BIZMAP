@@ -11,8 +11,8 @@ class Categories extends Component{
         return(
     <li className='sidebar-item' value="Contact Tracing">
         <a href='#' className='sidebar-link'>
-          <i className={this.props.icons} style={{color:`${this.props.category[this.props.index-1].color}`}} />
-          <span className='hide-menu' onClick = {(e)=>this.props.change(e,this.props.index)} style={{color:`${this.props.category[this.props.index-1].color}`}}> {this.props.Category} </span>
+          <i className={this.props.icons} style={{color:`${this.props.category[this.props.index-1].color}`,textShadow:"0 0 black"}} />
+          <span className='hide-menu' onClick = {(e)=>this.props.change(e,this.props.index)} style={{color:`${this.props.category[this.props.index-1].color}`,textShadow:"0 0 1px black"}}> {this.props.Category} </span>
         </a>
       </li>
         );

@@ -32,18 +32,9 @@ export default class Graph extends Component {
         width: '100%',
         height: "500px",
         padding: "0px",
-        margin: '0px',
-        category:this.props.category
+        margin: '0px'
       },
-      display:[false,false,false],
-      category:[
-        {selected:true,color:"red"},
-        {selected:true,color:"blue"},
-        {selected:true,color:"forestgreen"},
-        {selected:true,color:"black"},
-        {selected:true,color:"darkbrown"},
-        {selected:true,color:"purple"}
-      ]
+      display:[false,false,false]
     };
   }
 
@@ -94,7 +85,7 @@ export default class Graph extends Component {
                     className='fas fa-map-marker fa-4x'
                     name='hospital'
                     size='big'
-                    style={{color:this.state.category[i].color}}
+                    style={{color:this.props.category[i].color}}
                     onClick = {() =>{this.setState({display:{...this.state.display,[index]:!this.state.display[index]}}); console.log(this.state.display[index]) }}
                   />
         </Marker>
