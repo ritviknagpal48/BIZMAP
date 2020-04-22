@@ -71,9 +71,9 @@ export const ActiveCases = (props) => {
         </div>
         <div className='card  card-hover'>
           <div className='card-body' style={{textAlign:"center"}}>
-            <a href="https://pmnrf.gov.in/en/" target="_blank"><Button as="input" type="submit" value="PM Relief Care Fund" /></a>{' '}
+            <a href="https://pmnrf.gov.in/en/" target="_blank"><Button as="input" type="submit" value="PM Relief Care Fund" style={{backgroundColor:"blue"}} /></a>{' '}
             <br/><br/>
-            <a href="https://www.mohfw.gov.in/" target="_blank"><Button as="input" type="submit" value="Helpline Support" /></a>{' '}
+            <a href="https://www.mohfw.gov.in/" target="_blank"><Button as="input" type="submit" value="Helpline Support" style={{backgroundColor:"blue"}} /></a>{' '}
           </div>
         </div>
       </div>
