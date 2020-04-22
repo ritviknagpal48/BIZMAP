@@ -190,7 +190,7 @@ class App extends Component {
                       placeholder='Search & enter'
                     />{' '}
                     <a className='srh-btn'>
-                      <i className='ti-close' />
+                      <i className='fa fa-bars' />
                     </a>
                   </form>
                 </li>
@@ -282,7 +282,9 @@ class App extends Component {
             {/* Sales chart */}
             {/* ============================================================== */}
             <div className='row'>
-              <Graph category={this.state.category}></Graph>
+              
+                <Graph category={this.state.category}></Graph>
+                
             </div>
             {/* ============================================================== */}
             {/* Sales chart */}

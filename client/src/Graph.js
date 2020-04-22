@@ -14,10 +14,10 @@ const Category = ["Contact Tracing","Diagnostics","Employee Support","Infection 
 var idx;
 
 const markerList = [
-  { lat: 16.441013, long: 77.391796, info: 10, category:"Contact Tracing" },
-  { lat: 17.442889, long: 78.696073, info: 20, category:"Diagnostics"},
-  { lat: 17.541681, long: 78.394357, info: 10, category:"Employee Support"},
-  {lat: 17.541681, long: 79.394357, info: 10, category:"Infection Control"}
+  { lat: 16.441013, long: 77.391796, info: "Makes Sanitiser", category:"Contact Tracing", link: "https://www.google.com/" },
+  { lat: 17.442889, long: 78.696073, info: "abcd", category:"Diagnostics",link: "abcd.com"},
+  { lat: 17.541681, long: 78.394357, info: "cvbn", category:"Employee Support", link: "abcd.com"},
+  { lat: 17.541681, long: 79.394357, info: "vbnm", category:"Infection Control", link: "abcd.com"}
 ];
 export default class Graph extends Component {
   constructor(props) {
@@ -52,12 +52,15 @@ export default class Graph extends Component {
       return (
           <Popup
             tipSize={5}
+            max-width= "240px"
             anchor='bottom-right'
             longitude={markerList[index].long}
             latitude={markerList[index].lat}
           >
                   {console.log(markerList[index])}
-            <p>Available beds:{markerList[index].info}</p>
+            <p><strong>Category:</strong> {markerList[index].category}</p>
+            <p><strong>Website:</strong> <a href={markerList[index].link} target="_blank">Link</a></p>
+            <p><strong>Description:</strong> {markerList[index].info}</p>
           </Popup>
       )
     }
