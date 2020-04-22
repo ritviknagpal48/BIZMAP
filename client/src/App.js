@@ -4,6 +4,7 @@ import { DiscussionForum } from './DiscussionForum';
 import {ActiveCases} from './ActiveCases';
 import {Twitter} from './Twitter';
 import Categories from './Categories';
+import Modal from './Modal';
 
 const Classname = [
   "fa fa-phone",
@@ -194,6 +195,18 @@ class App extends Component {
                     </a>
                   </form>
                 </li>
+                {/* ============================================================== */}
+                {/* Volunteer Form Trigger */}
+                {/* ============================================================== */}
+                <li className='nav-item d-none d-md-block'>
+                  <a
+                    className='nav-link waves-effect waves-light'
+                    href='javascript:void(0)'
+                    data-toggle="modal" data-target="#exampleModal"
+                  >
+                    Volunteer Form
+                  </a>
+                </li>
               </ul>
               {/* ============================================================== */}
               {/* Right side toggle and nav items */}
@@ -316,6 +329,7 @@ class App extends Component {
         {/* End Page wrapper  */}
         {/* ============================================================== */}
       </div>
+      <Modal />
     </div>
   );
 }
