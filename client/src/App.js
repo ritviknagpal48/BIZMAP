@@ -5,6 +5,7 @@ import {ActiveCases} from './ActiveCases';
 import {Twitter} from './Twitter';
 import Categories from './Categories';
 import Modal from './Modal';
+import axios from 'axios'
 
 const Classname = [
   "fa fa-phone",
@@ -78,10 +79,32 @@ class App extends Component {
         {selected:1,color:"#0B472B"},
         {selected:1,color:"forestgreen"},
         {selected:1,color:"red"},
-      ]
+      ],
+    data:[
+        {active:0,
+        cases:0,
+        critical:0,
+        deaths:0,
+        recovered:0,
+        todayDeaths:0,}
+        ]
     }
   }
 
+    componentDidMount()
+    {
+        axios.get("https://corona.lmao.ninja/v2/countries/India")
+        .then(response=>{
+            this.setState({data:{...this.state.data,active:response.data.active}})
+            this.setState({data:{...this.state.data,cases:response.data.cases}})
+            this.setState({data:{...this.state.data,critical:response.data.critical}})
+            this.setState({data:{...this.state.data,deaths:response.data.deaths}})
+            this.setState({data:{...this.state.data,recovered:response.data.recovered}})
+            this.setState({data:{...this.state.data,todayDeaths:response.data.todayDeaths}})
+            console.log(response);
+        })
+    }
+    
   toggle = (e,index)=>{
     console.log(this);
     var value = 1;
