@@ -389,7 +389,7 @@ export const Navbar = () => {
                       placeholder='Search & enter'
                     />{' '}
                     <a className='srh-btn'>
-                      <i className='fa fa-bars' />
+                      <i className='fas fa-bars' />
                     </a>
                   </form>
                 </li>

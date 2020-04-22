@@ -16,7 +16,8 @@ export const DiscussionForum = () => {
     const res = await axios.post('http://localhost:5050/bizmap/add_message', {
       content: message
     });
-    console.log(res.data);
+    // console.log(res.data);
+    window.location.reload(false);
   };
   const onChange = e => {
     e.preventDefault();
@@ -31,7 +32,16 @@ export const DiscussionForum = () => {
       <div className='col-lg-8 col-xl-6'>
         <div className='card'>
           <div className='card-body'>
-            <h4 className='card-title'>Recent Chats</h4>
+            <h4
+              className='page-title'
+              style={{
+                fontSize: '1.8rem',
+                marginTop: '20px',
+                textAlign: 'center'
+              }}
+            >
+              Discussion Forum
+            </h4>
             <div
               className='chat-box scrollable position-relative ps-container ps-theme-default ps-active-y'
               style={{ height: '475px' }}

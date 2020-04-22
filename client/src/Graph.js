@@ -77,7 +77,7 @@ export default class Graph extends Component {
       viewport: {
         latitude: 17.44212,
         longitude: 78.391384,
-        zoom: 4,
+        zoom: 3,
         bearing: 0,
         pitch: 0,
         width: '100%',
@@ -139,7 +139,7 @@ export default class Graph extends Component {
       return (
         <Marker longitude={marker.long} latitude={marker.lat}>
           <i
-            className='fas fa-map-marker fa-4x'
+            className='fas fa-map-marker fa-2x'
             name='hospital'
             size='big'
             style={{ color: this.props.category[i].color }}
