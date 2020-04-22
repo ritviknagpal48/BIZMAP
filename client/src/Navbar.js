@@ -11,7 +11,7 @@ export const Navbar = () => {
                 className='nav-toggler waves-effect waves-light d-block d-md-none'
                 href='javascript:void(0)'
               >
-                <i className='ti-menu ti-close' />
+                <i className='fa fa-bars' />
               </a>
               {/* ============================================================== */}
               {/* Logo */}
@@ -65,7 +65,7 @@ export const Navbar = () => {
                 aria-expanded='false'
                 aria-label='Toggle navigation'
               >
-                <i className='ti-more' />
+                <i className='fa fa-search' />
               </a>
             </div>
             {/* ============================================================== */}
