@@ -81,7 +81,8 @@ class App extends Component {
     }
   }
 
-  toggle = (index)=>{
+  toggle = (e,index)=>{
+    console.log(this);
     var value = 1;
     var array = this.state.category;
     console.log(this.state.category)
@@ -110,8 +111,6 @@ class App extends Component {
         }
     }
     this.setState({category:array});
-    console.log(this.state.category);
-    console.log(index);
   }
     render(){
         return (
@@ -226,6 +225,7 @@ class App extends Component {
                                   index={category.id}
                                   change = {this.toggle}
                                   icons={category.className}
+                                  category={this.state.category}
                                   ></Categories>
                     })}
                   </ul>
