@@ -10,14 +10,65 @@ const navStyle = {
   padding: '10px'
 };
 
-const Category = ["Contact Tracing","Diagnostics","Employee Support","Infection Control","Medication","Patient Engagement","Portal","PPE","Supports","Vaccinatory","Financial Support Providers","Telemedicine","Tele Education Resources","Covid Specific Hospitals","Free Food Providers","Patient Tracing Apps", "Self Reporting Apps", "Data Sets", "Automobile Related", "Skill Training", "Mask Providers", "Heat Map", "Volunteering Org", "Others", "Unemployed", "Volunteers"]
+const Category = [
+  'Contact Tracing',
+  'Diagnostics',
+  'Employee Support',
+  'Infection Control',
+  'Medication',
+  'Patient Engagement',
+  'Portal',
+  'PPE',
+  'Supports',
+  'Vaccinatory',
+  'Financial Support Providers',
+  'Telemedicine',
+  'Tele Education Resources',
+  'Covid Specific Hospitals',
+  'Free Food Providers',
+  'Patient Tracing Apps',
+  'Self Reporting Apps',
+  'Data Sets',
+  'Automobile Related',
+  'Skill Training',
+  'Mask Providers',
+  'Heat Map',
+  'Volunteering Org',
+  'Others',
+  'Unemployed',
+  'Volunteers'
+];
 var idx;
 
 const markerList = [
-  { lat: 16.441013, long: 77.391796, info: "Makes Sanitiser", category:"Contact Tracing", link: "https://www.google.com/" },
-  { lat: 17.442889, long: 78.696073, info: "abcd", category:"Diagnostics",link: "abcd.com"},
-  { lat: 17.541681, long: 78.394357, info: "cvbn", category:"Employee Support", link: "abcd.com"},
-  { lat: 17.541681, long: 79.394357, info: "vbnm", category:"Infection Control", link: "abcd.com"}
+  {
+    lat: 16.441013,
+    long: 77.391796,
+    info: 'Makes Sanitiser',
+    category: 'Contact Tracing',
+    link: 'https://www.google.com/'
+  },
+  {
+    lat: 17.442889,
+    long: 78.696073,
+    info: 'abcd',
+    category: 'Diagnostics',
+    link: 'abcd.com'
+  },
+  {
+    lat: 17.541681,
+    long: 78.394357,
+    info: 'cvbn',
+    category: 'Employee Support',
+    link: 'abcd.com'
+  },
+  {
+    lat: 17.541681,
+    long: 79.394357,
+    info: 'vbnm',
+    category: 'Infection Control',
+    link: 'abcd.com'
+  }
 ];
 export default class Graph extends Component {
   constructor(props) {
@@ -30,11 +81,11 @@ export default class Graph extends Component {
         bearing: 0,
         pitch: 0,
         width: '100%',
-        height: "500px",
-        padding: "0px",
+        height: '500px',
+        padding: '0px',
         margin: '0px'
       },
-      display:[false,false,false]
+      display: [false, false, false]
     };
   }
 
@@ -47,52 +98,63 @@ export default class Graph extends Component {
   // }
 
   renderPopup(index) {
-    if(this.state.display[index])
-    {
+    if (this.state.display[index]) {
       return (
-          <Popup
-            tipSize={5}
-            max-width= "240px"
-            anchor='bottom-right'
-            longitude={markerList[index].long}
-            latitude={markerList[index].lat}
-          >
-                  {console.log(markerList[index])}
-            <p><strong>Category:</strong> {markerList[index].category}</p>
-            <p><strong>Website:</strong> <a href={markerList[index].link} target="_blank">Link</a></p>
-            <p><strong>Description:</strong> {markerList[index].info}</p>
-          </Popup>
-      )
+        <Popup
+          tipSize={5}
+          max-width='240px'
+          anchor='bottom-right'
+          longitude={markerList[index].long}
+          latitude={markerList[index].lat}
+        >
+          {console.log(markerList[index])}
+          <p>
+            <strong>Category:</strong> {markerList[index].category}
+          </p>
+          <p>
+            <strong>Website:</strong>{' '}
+            <a href={markerList[index].link} target='_blank'>
+              Link
+            </a>
+          </p>
+          <p>
+            <strong>Description:</strong> {markerList[index].info}
+          </p>
+        </Popup>
+      );
+    } else {
+      return null;
     }
-    else{
-      return (null)
-    }
-
   }
 
-  changeColor(marker,index){
+  changeColor(marker, index) {
     var i;
-    for(i=0;i<Category.length;i++)
-    {
-      if(Category[i]==marker.category)
-      {
+    for (i = 0; i < Category.length; i++) {
+      if (Category[i] == marker.category) {
         break;
       }
     }
     //hello
-    if(this.props.category[i].selected==1)
-    {
-      return(
+    if (this.props.category[i].selected == 1) {
+      return (
         <Marker longitude={marker.long} latitude={marker.lat}>
-                  <i
-                    className='fas fa-map-marker fa-4x'
-                    name='hospital'
-                    size='big'
-                    style={{color:this.props.category[i].color}}
-                    onClick = {() =>{this.setState({display:{...this.state.display,[index]:!this.state.display[index]}}); console.log(this.state.display[index]) }}
-                  />
+          <i
+            className='fas fa-map-marker fa-4x'
+            name='hospital'
+            size='big'
+            style={{ color: this.props.category[i].color }}
+            onClick={() => {
+              this.setState({
+                display: {
+                  ...this.state.display,
+                  [index]: !this.state.display[index]
+                }
+              });
+              console.log(this.state.display[index]);
+            }}
+          />
         </Marker>
-      )
+      );
     }
     return null;
   }
@@ -102,6 +164,7 @@ export default class Graph extends Component {
     return (
       <MapGL
         {...viewport}
+        width='100%'
         onViewportChange={viewport => this.setState({ viewport })}
         mapStyle='mapbox://styles/mapbox/streets-v10'
         mapboxApiAccessToken={TOKEN}
@@ -114,9 +177,7 @@ export default class Graph extends Component {
             return (
               <div key={index}>
                 {' '}
-                {this.changeColor(marker,index)}
-                {' '}
-                {this.renderPopup(index)}
+                {this.changeColor(marker, index)} {this.renderPopup(index)}
               </div>
             );
           })}
