@@ -380,7 +380,7 @@ export const Navbar = () => {
                     className='nav-link waves-effect waves-dark'
                     href='javascript:void(0)'
                   >
-                    <i className='ti-search' />
+                    <i className='fa fa-search' />
                   </a>
                   <form className='app-search position-absolute'>
                     <input
@@ -389,7 +389,7 @@ export const Navbar = () => {
                       placeholder='Search & enter'
                     />{' '}
                     <a className='srh-btn'>
-                      <i className='ti-close' />
+                      <i className='fa fa-bars' />
                     </a>
                   </form>
                 </li>

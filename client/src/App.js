@@ -137,7 +137,7 @@ class App extends Component {
                 className='nav-toggler waves-effect waves-light d-block d-md-none'
                 href='javascript:void(0)'
               >
-                <i className='ti-menu ti-close' />
+                <i className='fa fa-bars' />
               </a>
 
               <a
@@ -149,7 +149,7 @@ class App extends Component {
                 aria-expanded='false'
                 aria-label='Toggle navigation'
               >
-                <i className='ti-more' />
+                <i className='fa fa-search' />
               </a>
             </div>
             {/* ============================================================== */}
