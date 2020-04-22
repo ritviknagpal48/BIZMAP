@@ -15,7 +15,7 @@ const Classname = [
   "fa fa-plus",
   "fa fa-user",
   "fa fa-lock",
-  "fa fa-medkit",
+  "fa fa-medkit"
 ]
 
 const Category = [
@@ -80,14 +80,14 @@ class App extends Component {
         {selected:1,color:"forestgreen"},
         {selected:1,color:"red"},
       ],
-    data:[
+    data:
         {active:0,
         cases:0,
         critical:0,
         deaths:0,
         recovered:0,
-        todayDeaths:0,}
-        ]
+        todayDeaths:0
+      }
     }
   }
 
@@ -95,12 +95,7 @@ class App extends Component {
     {
         axios.get("https://corona.lmao.ninja/v2/countries/India")
         .then(response=>{
-            this.setState({data:{...this.state.data,active:response.data.active}})
-            this.setState({data:{...this.state.data,cases:response.data.cases}})
-            this.setState({data:{...this.state.data,critical:response.data.critical}})
-            this.setState({data:{...this.state.data,deaths:response.data.deaths}})
-            this.setState({data:{...this.state.data,recovered:response.data.recovered}})
-            this.setState({data:{...this.state.data,todayDeaths:response.data.todayDeaths}})
+            this.setState({data:{...this.state.data,active:response.data.active,cases:response.data.cases,critical:response.data.critical,deaths:response.data.deaths,recovered:response.data.recovered,todayDeaths:response.data.todayDeaths}})
             console.log(response);
         })
     }
@@ -149,6 +144,7 @@ class App extends Component {
         data-header-position='fixed'
         data-boxed-layout='full'
       >
+            {console.log(this.state.data)}
         {/* ============================================================== */}
         {/* Topbar header - style you can find in pages.scss */}
         {/* ============================================================== */}
@@ -330,7 +326,7 @@ class App extends Component {
             {/* ============================================================== */}
             <div className='row' style={{marginTop: '20px'}}>
               <DiscussionForum></DiscussionForum>
-              <ActiveCases></ActiveCases>
+              <ActiveCases data={this.state.data}></ActiveCases>
             </div>
 
             <div className="row">

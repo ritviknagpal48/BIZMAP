@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 
-export const ActiveCases = () => {
+export const ActiveCases = (props) => {
+  const {cases,deaths,recovered,active} = props.data;
   return (
     <Fragment>
       <div className='col-lg-4 col-xl-6'>
@@ -13,23 +14,22 @@ export const ActiveCases = () => {
             }}
           >
             <div className='pt-3 text-center'>
-              <i className='mdi mdi-file-chart display-4 text-orange d-block' />
-              <span className='display-4 d-block font-medium'>368</span>
-              <span>Active Visitors on Site</span>
+          <span className='display-4 d-block font-medium' style={{}}><strong>{cases}</strong> </span>
+              <span>Cases</span>
               {/* Progress */}
               <div className='progress mt-5' style={{ height: '4px' }}>
                 <div
                   className='progress-bar bg-info'
                   role='progressbar'
-                  style={{ width: '15%' }}
+                  style={{ width: `${recovered/(recovered+deaths+active)*100}%` }}
                   aria-valuenow={15}
                   aria-valuemin={0}
                   aria-valuemax={100}
                 />
                 <div
-                  className='progress-bar bg-orange'
+                  className='progress-bar bg-danger'
                   role='progressbar'
-                  style={{ width: '30%' }}
+                  style={{ width: `${active/(recovered+deaths+active)*100}%` }}
                   aria-valuenow={30}
                   aria-valuemin={0}
                   aria-valuemax={100}
@@ -37,7 +37,7 @@ export const ActiveCases = () => {
                 <div
                   className='progress-bar bg-warning'
                   role='progressbar'
-                  style={{ width: '65%' }}
+                  style={{ width: `${deaths/(recovered+deaths+active)*100}%` }}
                   aria-valuenow={20}
                   aria-valuemin={0}
                   aria-valuemax={100}
@@ -48,15 +48,15 @@ export const ActiveCases = () => {
               <div className='row mt-4 mb-3'>
                 {/* column */}
                 <div className='col-4 border-right text-left'>
-                  <h3 className='mb-0 font-medium'>60%</h3>Desktop
+          <h3 className='mb-0 font-medium'>{active}</h3>Active Cases
                 </div>
                 {/* column */}
                 <div className='col-4 border-right'>
-                  <h3 className='mb-0 font-medium'>28%</h3>Mobile
+          <h3 className='mb-0 font-medium'>{deaths}</h3>Deaths
                 </div>
                 {/* column */}
                 <div className='col-4 text-right'>
-                  <h3 className='mb-0 font-medium'>12%</h3>Tablet
+          <h3 className='mb-0 font-medium'>{recovered}</h3>Recovered
                 </div>
               </div>
               <a
