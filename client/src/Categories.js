@@ -6,13 +6,13 @@ class Categories extends Component{
     }
 
     render(){
-      if(this.props.category[this.props.index].selected==1)
+      if(this.props.category[this.props.index-1].selected==1)
       {
         return(
     <li className='sidebar-item' value="Contact Tracing">
         <a href='#' className='sidebar-link'>
-          <i className={this.props.icons} />
-          <span className='hide-menu' onClick = {(e)=>this.props.change(e,this.props.index)} style={{color:`${this.props.category[this.props.index].color}`}}> {this.props.Category} </span>
+          <i className={this.props.icons} style={{color:`${this.props.category[this.props.index-1].color}`}} />
+          <span className='hide-menu' onClick = {(e)=>this.props.change(e,this.props.index)} style={{color:`${this.props.category[this.props.index-1].color}`}}> {this.props.Category} </span>
         </a>
       </li>
         );
