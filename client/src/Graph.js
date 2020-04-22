@@ -30,17 +30,19 @@ export default class Graph extends Component {
         bearing: 0,
         pitch: 0,
         width: '100%',
-        height: 500,
+        height: "500px",
+        padding: "0px",
+        margin: '0px',
         category:this.props.category
       },
       display:[false,false,false],
       category:[
-        {selected:true,color:"#0953B8"},
-        {selected:true,color:"#00C495"},
-        {selected:true,color:"#984BFF"},
-        {selected:true,color:"#D6D6D6"},
-        {selected:true,color:"#77C600"},
-        {selected:true,color:"#77C600"}
+        {selected:true,color:"red"},
+        {selected:true,color:"blue"},
+        {selected:true,color:"forestgreen"},
+        {selected:true,color:"black"},
+        {selected:true,color:"darkbrown"},
+        {selected:true,color:"purple"}
       ]
     };
   }
