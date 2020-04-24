@@ -109,6 +109,9 @@ export default class Graph extends Component {
           anchor='bottom-right'
           longitude={markerList[index].long}
           latitude={markerList[index].lat}
+          closeOnClick={false}
+          closeButton={true}
+          onClose = {(e)=>{this.setState({display:{...this.state.display,[index]:!this.state.display[index]}})}}
         >
           {console.log(markerList[index])}
           <p>
