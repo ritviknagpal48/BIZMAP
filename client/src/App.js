@@ -19,6 +19,7 @@ const Classname = [
 ];
 
 const Category = [
+  {category: 'All', id: 0, className: 'fa fa-cogs'},
   { category: 'Contact Tracing', id: 1, className: 'fa fa-phone' },
   { category: 'Diagnostics', id: 2, className: 'fa fa-certificate' },
   { category: 'Employee Support', id: 3, className: 'fa fa-users' },
@@ -86,7 +87,8 @@ class App extends Component {
         { selected: 1, color: 'blue' },
         { selected: 1, color: '#0B472B' },
         { selected: 1, color: 'forestgreen' },
-        { selected: 1, color: 'red' }
+        { selected: 1, color: 'red' },
+        { selected: 1, color: 'black' },
       ],
       data: {
         active: 0,
@@ -128,13 +130,13 @@ class App extends Component {
       for (var i = 0; i < this.state.category.length; i++) {
         array[i].selected = 0;
       }
-      array[index - 1].selected = 1;
+      array[index].selected = 1;
     }
     if (value != 1) {
-      if (this.state.category[index - 1].selected === 1) {
-        array[index - 1].selected = 0;
+      if (this.state.category[index].selected === 1) {
+        array[index].selected = 0;
       } else {
-        array[index - 1].selected = 1;
+        array[index].selected = 1;
       }
     }
     this.setState({ category: array });

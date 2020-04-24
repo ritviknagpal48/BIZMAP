@@ -12,6 +12,7 @@ const navStyle = {
 };
 
 const Category = [
+    'All',
   'Contact Tracing',
   'Diagnostics',
   'Employee Support',
