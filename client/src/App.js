@@ -126,7 +126,6 @@ class App extends Component {
     {
         if(array[0].selected==0)
         {
-          console.log("hello");
             for(var i=0;i<array.length;i++)
             {
                 array[i].selected = 1;
