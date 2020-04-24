@@ -7,17 +7,6 @@ import Categories from './Categories';
 import Modal from './Modal';
 import axios from 'axios';
 
-const Classname = [
-  'fa fa-phone',
-  'fa fa-certificate',
-  'fa fa-users',
-  'fa fa-exclamation-triangle',
-  'fa fa-plus',
-  'fa fa-user',
-  'fa fa-lock',
-  'fa fa-medkit'
-];
-
 const Category = [
   {category: 'All', id: 0, className: 'fa fa-cogs'},
   { category: 'Contact Tracing', id: 1, className: 'fa fa-phone' },

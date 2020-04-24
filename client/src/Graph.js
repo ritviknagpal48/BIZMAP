@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MapGL, { NavigationControl, Marker, Popup } from 'react-map-gl';
-import Axios from 'axios';
+import axios from 'axios';
 
 const TOKEN =
   'pk.eyJ1IjoiYWJoaWxhc2hhLXNpbmhhIiwiYSI6ImNqdzFwYWN1ajBtOXM0OG1wbHAwdWJlNmwifQ.91s73Dy03voy-wPZEeuV5Q';
@@ -89,8 +89,17 @@ export default class Graph extends Component {
         margin: '0px'
       },
       display: [false, false, false]
-      // markerList: []
     };
+  }
+  componentDidMount(){
+    axios.get("http://localhost:5050/graph/all_business")
+    .then(response=>{
+      console.log(response.data);
+
+    })
+    .catch(error=>{
+      console.log(error);
+    });
   }
 
   // showDetails=() => {
@@ -100,9 +109,18 @@ export default class Graph extends Component {
   // hideDetails= ()=> {
   // this.setState({popupInfo: null});
   // }
+  popup = (index) =>{
+    const array = this.state.display;
+    for(var i=0;i<this.state.display.length;i++)
+    {
+      array[i]=false;
+    }
+    array[index] = true;
+    this.setState({display:array});
+  }
 
   renderPopup(index) {
-    if (this.state.display[index]) {
+    if (this.state.display[index]===true) {
       return (
         <Popup
           tipSize={5}
@@ -150,15 +168,7 @@ export default class Graph extends Component {
             name='hospital'
             size='big'
             style={{ color: this.props.category[i].color }}
-            onClick={() => {
-              this.setState({
-                display: {
-                  ...this.state.display,
-                  [index]: !this.state.display[index]
-                }
-              });
-              console.log(this.state.display[index]);
-            }}
+            onClick={() =>this.popup(index)}
           />
         </Marker>
       );
