@@ -152,7 +152,7 @@ class App extends Component {
           data-header-position='fixed'
           data-boxed-layout='full'
         >
-          {console.log(this.state.data)}
+          {/* {console.log(this.state.data)} */}
           {/* ============================================================== */}
           {/* Topbar header - style you can find in pages.scss */}
           {/* ============================================================== */}

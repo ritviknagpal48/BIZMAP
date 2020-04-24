@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MapGL, { NavigationControl, Marker, Popup } from 'react-map-gl';
+import Axios from 'axios';
 
 const TOKEN =
   'pk.eyJ1IjoiYWJoaWxhc2hhLXNpbmhhIiwiYSI6ImNqdzFwYWN1ajBtOXM0OG1wbHAwdWJlNmwifQ.91s73Dy03voy-wPZEeuV5Q';
@@ -70,6 +71,7 @@ const markerList = [
     link: 'abcd.com'
   }
 ];
+
 export default class Graph extends Component {
   constructor(props) {
     super(props);
@@ -86,6 +88,7 @@ export default class Graph extends Component {
         margin: '0px'
       },
       display: [false, false, false]
+      // markerList: []
     };
   }
 

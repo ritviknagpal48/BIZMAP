@@ -37,6 +37,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/bizmap', require('./routes/bizmap/bizmap'));
+app.use('/graph', require('./routes/map/map'));
 
 //Only for production, doesn't matter, don't delete this
 //Serve static assets if in production

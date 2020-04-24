@@ -5,6 +5,9 @@ const mapSchema = mongoose.Schema({
   name: {
     type: String
   },
+  address: {
+    type: String
+  },
   latitude: {
     type: String
   },
@@ -21,8 +24,11 @@ const mapSchema = mongoose.Schema({
   contact: {
     type: String
   },
+  category: {
+    type: String
+  },
   email: { type: String },
-  data: {
+  date: {
     type: String,
     default: Date.now()
   }
