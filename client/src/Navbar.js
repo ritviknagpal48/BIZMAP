@@ -399,40 +399,6 @@ export const Navbar = () => {
               {/* ============================================================== */}
               <ul className='navbar-nav float-right'>
                 {/* ============================================================== */}
-                {/* create new */}
-                {/* ============================================================== */}
-                <li className='nav-item dropdown'>
-                  <a
-                    className='nav-link dropdown-toggle'
-                    href='#'
-                    id='navbarDropdown2'
-                    role='button'
-                    data-toggle='dropdown'
-                    aria-haspopup='true'
-                    aria-expanded='false'
-                  >
-                    <i className='flag-icon flag-icon-us' />
-                  </a>
-                  <div
-                    className='dropdown-menu dropdown-menu-right  animated bounceInDown'
-                    aria-labelledby='navbarDropdown2'
-                  >
-                    <a className='dropdown-item' href='#'>
-                      <i className='flag-icon flag-icon-us' /> English
-                    </a>
-                    <a className='dropdown-item' href='#'>
-                      <i className='flag-icon flag-icon-fr' /> French
-                    </a>
-                    <a className='dropdown-item' href='#'>
-                      <i className='flag-icon flag-icon-es' /> Spanish
-                    </a>
-                    <a className='dropdown-item' href='#'>
-                      <i className='flag-icon flag-icon-de' /> German
-                    </a>
-                  </div>
-                </li>
-                {/* ============================================================== */}
-                {/* Comment */}
                 {/* ============================================================== */}
                 <li className='nav-item dropdown'>
                   <a
@@ -550,70 +516,6 @@ export const Navbar = () => {
                 </li>
                 {/* ============================================================== */}
 
-                {/* ============================================================== */}
-                <li className='nav-item dropdown'>
-                  <a
-                    className='nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic'
-                    href='#'
-                    data-toggle='dropdown'
-                    aria-haspopup='true'
-                    aria-expanded='false'
-                  >
-                    <img
-                      src='./Xtreme admin Template - The Ultimate Multipurpose admin template_files/1.jpg'
-                      alt='user'
-                      className='rounded-circle'
-                      width={31}
-                    />
-                  </a>
-                  <div className='dropdown-menu dropdown-menu-right user-dd animated flipInY'>
-                    <span className='with-arrow'>
-                      <span className='bg-primary' />
-                    </span>
-                    <div className='d-flex no-block align-items-center p-15 bg-primary text-white mb-2'>
-                      <div className>
-                        <img
-                          src='./Xtreme admin Template - The Ultimate Multipurpose admin template_files/1.jpg'
-                          alt='user'
-                          className='img-circle'
-                          width={60}
-                        />
-                      </div>
-                      <div className='ml-2'>
-                        <h4 className='mb-0'>Steave Jobs</h4>
-                        <p className=' mb-0'>varun@gmail.com</p>
-                      </div>
-                    </div>
-                    <a className='dropdown-item' href='javascript:void(0)'>
-                      <i className='ti-user mr-1 ml-1' /> My Profile
-                    </a>
-                    <a className='dropdown-item' href='javascript:void(0)'>
-                      <i className='ti-wallet mr-1 ml-1' /> My Balance
-                    </a>
-                    <a className='dropdown-item' href='javascript:void(0)'>
-                      <i className='ti-email mr-1 ml-1' /> Inbox
-                    </a>
-                    <div className='dropdown-divider' />
-                    <a className='dropdown-item' href='javascript:void(0)'>
-                      <i className='ti-settings mr-1 ml-1' /> Account Setting
-                    </a>
-                    <div className='dropdown-divider' />
-                    <a className='dropdown-item' href='javascript:void(0)'>
-                      <i className='fa fa-power-off mr-1 ml-1' /> Logout
-                    </a>
-                    <div className='dropdown-divider' />
-                    <div className='pl-4 p-10'>
-                      <a
-                        href='javascript:void(0)'
-                        className='btn btn-sm btn-success btn-rounded'
-                      >
-                        View Profile
-                      </a>
-                    </div>
-                  </div>
-                </li>
-                {/* ============================================================== */}
-                {/* User profile and search */}
                 {/* ============================================================== */}
               </ul>
             </div>
