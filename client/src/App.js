@@ -52,8 +52,8 @@ const Category = [
   { category: 'Heat Map', id: 22, className: 'fa fa-street-view' },
   { category: 'Volunteering Org', id: 23, className: 'fa fa-building' },
   { category: 'Others', id: 24, className: 'fas fa-bars' },
-  { category: 'Unemployed', id: 1, className: 'fa fa-male' },
-  { category: 'Volunteers', id: 1, className: 'fa fa-user' }
+  { category: 'Unemployed', id: 25, className: 'fa fa-male' },
+  { category: 'Volunteers', id: 26, className: 'fa fa-user' }
 ];
 
 class App extends Component {
@@ -88,7 +88,6 @@ class App extends Component {
         { selected: 1, color: '#0B472B' },
         { selected: 1, color: 'forestgreen' },
         { selected: 1, color: 'red' },
-        { selected: 1, color: 'black' },
       ],
       data: {
         active: 0,
@@ -123,6 +122,25 @@ class App extends Component {
     var value = 1;
     var array = this.state.category;
     console.log(this.state.category);
+    if(index==0)
+    {
+        if(array[0].selected==0)
+        {
+          console.log("hello");
+            for(var i=0;i<array.length;i++)
+            {
+                array[i].selected = 1;
+            }
+        }
+        else 
+          {
+              for(var i=0;i<array.length;i++)
+            {
+                array[i].selected = 0;
+            }
+          }
+    }
+    else{
     for (var i = 0; i < this.state.category.length; i++) {
       value = value * this.state.category[i].selected;
     }
@@ -132,13 +150,14 @@ class App extends Component {
       }
       array[index].selected = 1;
     }
-    if (value != 1) {
+    else{
       if (this.state.category[index].selected === 1) {
         array[index].selected = 0;
       } else {
         array[index].selected = 1;
       }
     }
+  }
     this.setState({ category: array });
   };
   render() {
