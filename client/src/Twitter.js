@@ -14,7 +14,7 @@ export const Twitter = () => {
       <div className='col-md-6 col-xs-12'>
         <TwitterTimelineEmbed
           sourceType='profile'
-          screenName='saurabhnemade'
+          screenName='MoHFW_INDIA'
           options={{ height: 600 }}
         />
       </div>
