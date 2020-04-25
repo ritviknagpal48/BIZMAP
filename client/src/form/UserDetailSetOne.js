@@ -8,6 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Alert from 'react-bootstrap/Alert';
 
 const Category = [
   'Contact Tracing',
@@ -52,7 +53,7 @@ class UserDetailSetOne extends Component {
       <MuiThemeProvider>
         <React.Fragment>
           <div className='modal-body' style={styles.modal_body}>
-            <h4 className='display-7'>Detail Set One</h4>
+            <h4 className='display-7'>Register Here</h4>
             <TextField
               id='standard-basic'
               label='Organization Name'
@@ -128,7 +129,7 @@ class UserDetailSetOne extends Component {
               style={styles.button}
               onClick={this.props.onSubmit}
             >
-              Submit For Approval
+              Submit For Approval<i id="loadingIcon" class="{this.props.loading}"></i>
             </Button>
           </div>
         </React.Fragment>
