@@ -12,7 +12,7 @@ const navStyle = {
 };
 
 const Category = [
-    'All',
+  'All',
   'Contact Tracing',
   'Diagnostics',
   'Employee Support',
@@ -42,37 +42,6 @@ const Category = [
 ];
 var idx;
 
-const markerList = [
-  {
-    lat: 16.441013,
-    long: 77.391796,
-    info: 'Makes Sanitiser',
-    category: 'Contact Tracing',
-    link: 'https://www.google.com/'
-  },
-  {
-    lat: 17.442889,
-    long: 78.696073,
-    info: 'abcd',
-    category: 'Diagnostics',
-    link: 'abcd.com'
-  },
-  {
-    lat: 17.541681,
-    long: 78.394357,
-    info: 'cvbn',
-    category: 'Employee Support',
-    link: 'abcd.com'
-  },
-  {
-    lat: 17.541681,
-    long: 79.394357,
-    info: 'vbnm',
-    category: 'Infection Control',
-    link: 'abcd.com'
-  }
-];
-
 export default class Graph extends Component {
   constructor(props) {
     super(props);
@@ -88,20 +57,32 @@ export default class Graph extends Component {
         padding: '0px',
         margin: '0px'
       },
-      display: [false, false, false]
+      display: [false, false, false],
+      markerList: []
     };
   }
-  componentDidMount(){
-    axios.get("http://localhost:5050/graph/all_business")
-    .then(response=>{
-      console.log(response.data);
-
-    })
-    .catch(error=>{
-      console.log(error);
-    });
+  componentDidMount() {
+    axios
+      .get('http://localhost:5050/graph/all_business')
+      .then(response => {
+        let arr = [];
+        for (let i = 0; i < response.data.length; ++i) {
+          arr.push({
+            lat: parseFloat(response.data[i].latitude),
+            long: parseFloat(response.data[i].longitude),
+            info: response.data[i].description,
+            category: response.data[i].category,
+            link: response.data[i].email
+          });
+        }
+        this.setState({
+          markerList: arr
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
-
   // showDetails=() => {
   // this.setState({popupInfo: true});
   // }
@@ -109,41 +90,46 @@ export default class Graph extends Component {
   // hideDetails= ()=> {
   // this.setState({popupInfo: null});
   // }
-  popup = (index) =>{
+  popup = index => {
     const array = this.state.display;
-    for(var i=0;i<this.state.display.length;i++)
-    {
-      array[i]=false;
+    for (var i = 0; i < this.state.display.length; i++) {
+      array[i] = false;
     }
     array[index] = true;
-    this.setState({display:array});
-  }
+    this.setState({ display: array });
+  };
 
   renderPopup(index) {
-    if (this.state.display[index]===true) {
+    if (this.state.display[index] === true) {
       return (
         <Popup
           tipSize={5}
           max-width='240px'
           anchor='bottom-right'
-          longitude={markerList[index].long}
-          latitude={markerList[index].lat}
+          longitude={this.state.markerList[index].long}
+          latitude={this.state.markerList[index].lat}
           closeOnClick={false}
           closeButton={true}
-          onClose = {(e)=>{this.setState({display:{...this.state.display,[index]:!this.state.display[index]}})}}
+          onClose={e => {
+            this.setState({
+              display: {
+                ...this.state.display,
+                [index]: !this.state.display[index]
+              }
+            });
+          }}
         >
-          {console.log(markerList[index])}
           <p>
-            <strong>Category:</strong> {markerList[index].category}
+            <strong>Category:</strong> {this.state.markerList[index].category}
           </p>
           <p>
             <strong>Website:</strong>{' '}
-            <a href={markerList[index].link} target='_blank'>
+            <a href={this.state.markerList[index].link} target='_blank'>
               Link
             </a>
           </p>
           <p>
-            <strong>Description:</strong> {markerList[index].info}
+            <strong>Description:</strong> {this.state.markerList[index].info}
           </p>
         </Popup>
       );
@@ -168,7 +154,7 @@ export default class Graph extends Component {
             name='hospital'
             size='big'
             style={{ color: this.props.category[i].color }}
-            onClick={() =>this.popup(index)}
+            onClick={() => this.popup(index)}
           />
         </Marker>
       );
@@ -190,7 +176,7 @@ export default class Graph extends Component {
           <NavigationControl
             onViewportChange={viewport => this.setState({ viewport })}
           />
-          {markerList.map((marker, index) => {
+          {this.state.markerList.map((marker, index) => {
             return (
               <div key={index}>
                 {' '}
