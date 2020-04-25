@@ -19,7 +19,9 @@ class UserForm extends Component {
       field_seven: '',
       field_eight: '',
       loading: "",
-      display:false
+      display:false,
+      loading: "",
+      loadingmssg: "Submit for Approval",
     };
   }
 
@@ -43,6 +45,7 @@ class UserForm extends Component {
       console.log('empty');
     } else {
         this.setState({loading:"fa fa-spinner fa-spin"});
+        this.setState({loadingmssg:"Loading "});
       const res = await Axios.post('http://localhost:5050/graph/add_to_graph', {
         address: this.state.field_three,
         name: this.state.field_one,
@@ -52,7 +55,8 @@ class UserForm extends Component {
         category: this.state.field_four
       });
         this.setState({loading:""});
-      console.log(res.data);
+        this.setState({loadingmssg:"Submit for Approval"});
+        console.log(res.data);
       window.location.reload(false);
     }
   };
@@ -101,7 +105,8 @@ class UserForm extends Component {
         nextStep={this.nextStep}
         handleChange={this.handleChange}
         values={values}
-        loading = {this.state.loading}
+        loading={this.state.loading}
+        loadingmssg = {this.state.loadingmssg}
         onSubmit={this.onSubmit}
         display = {this.state.display}
         change = {() =>this.change}

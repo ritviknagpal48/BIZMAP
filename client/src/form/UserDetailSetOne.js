@@ -55,11 +55,11 @@ class UserDetailSetOne extends Component {
           <div className='modal-body' style={styles.modal_body}>
             <h4 className='display-7'>Register Here</h4>
             {this.props.display && 
-              <div>
+              <div style ={{height:"3rem"}}>
               <Alert variant="danger">
                 Please, fill all the fields in the form
               </Alert>
-                {setTimeout(()=>{this.props.change()},5000)}
+                {console.log(setTimeout(this.props.change(),5000))}
                 {console.log(this.props.display)}
               </div>
             }
@@ -138,7 +138,7 @@ class UserDetailSetOne extends Component {
               style={styles.button}
               onClick={this.props.onSubmit}
             >
-              Submit For Approval<i id="loadingIcon" class="{this.props.loading}"></i>
+              {this.props.loadingmssg}<i style={{paddingLeft:"3px"}} className={this.props.loading}></i>
             </Button>
           </div>
         </React.Fragment>
