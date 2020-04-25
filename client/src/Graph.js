@@ -74,6 +74,7 @@ export default class Graph extends Component {
             category: response.data[i].category,
             link: response.data[i].email
           });
+            console.log("Data",response);
         }
         this.setState({
           markerList: arr
@@ -123,9 +124,9 @@ export default class Graph extends Component {
             <strong>Category:</strong> {this.state.markerList[index].category}
           </p>
           <p>
-            <strong>Website:</strong>{' '}
+            <strong>Email:</strong>{' '}
             <a href={this.state.markerList[index].link} target='_blank'>
-              Link
+                {this.state.markerList[index].link}
             </a>
           </p>
           <p>

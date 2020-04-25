@@ -532,7 +532,6 @@ a.mapboxgl-ctrl-logo.mapboxgl-compact {
     background-color: rgba(0, 0, 0, .05)
 }
 .mapboxgl-popup-content {
-    width: 8rem;
     position: relative;
     background: #fff;
     border-radius: 3px;
