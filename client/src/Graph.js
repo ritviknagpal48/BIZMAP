@@ -101,7 +101,7 @@ export default class Graph extends Component {
   };
 
   renderPopup(index) {
-    if (this.state.display[index] === true) {
+    if (this.state.display[index] === true && this.props.category[index].selected==1) {
       return (
         <Popup
           tipSize={5}
