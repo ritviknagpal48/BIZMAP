@@ -195,7 +195,7 @@ router.post('/add_to_graph', async (req, res) => {
       // expiresIn: 36000
     }
   );
-  const url = `http://localhost:5050/graph/verify/token_value/latitude_value/longitude_value`;
+  const url = `https://covidbizmap.enactusnsut.org/graph/verify/token_value/latitude_value/longitude_value`;
   const token = emailToken;
 
   const output = `

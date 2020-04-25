@@ -6,16 +6,21 @@ export const DiscussionForum = () => {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
   const fetchMessages = async () => {
-    const res = await axios.post('http://localhost:5050/bizmap/get_messages');
+    const res = await axios.post(
+      'https://covidbizmap.enactusnsut.org/bizmap/get_messages'
+    );
     console.log(res.data.messages);
     setMessages(res.data.messages);
   };
 
   const onClick = async e => {
     e.preventDefault();
-    const res = await axios.post('http://localhost:5050/bizmap/add_message', {
-      content: message
-    });
+    const res = await axios.post(
+      'https://covidbizmap.enactusnsut.org/bizmap/add_message',
+      {
+        content: message
+      }
+    );
     // console.log(res.data);
     window.location.reload(false);
   };
