@@ -6,18 +6,22 @@ import Success from './Success';
 import Axios from 'axios';
 
 class UserForm extends Component {
-  state = {
-    step: 1,
-    field_one: '',
-    field_two: '',
-    field_three: '',
-    field_four: 'Volunteers',
-    field_five: '',
-    field_six: '',
-    field_seven: '',
-    field_eight: '',
-    loading: ""
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      step: 1,
+      field_one: '',
+      field_two: '',
+      field_three: '',
+      field_four: 'Volunteers',
+      field_five: '',
+      field_six: '',
+      field_seven: '',
+      field_eight: '',
+      loading: "",
+      display:false
+    };
+  }
 
   nextStep = () => {
     const { step } = this.state;
@@ -35,9 +39,10 @@ class UserForm extends Component {
       this.state.field_five.split(' ').join('') == '' ||
       this.state.field_six.split(' ').join('') == ''
     ) {
+      this.setState({display:true});
       console.log('empty');
     } else {
-        this.setState.loading = "fa fa-spinner fa-spin";
+        this.setState({loading:"fa fa-spinner fa-spin"});
       const res = await Axios.post('http://localhost:5050/graph/add_to_graph', {
         address: this.state.field_three,
         name: this.state.field_one,
@@ -46,7 +51,7 @@ class UserForm extends Component {
         email: this.state.field_six,
         category: this.state.field_four
       });
-        this.setState.loading = "";
+        this.setState({loading:""});
       console.log(res.data);
       window.location.reload(false);
     }
@@ -62,6 +67,11 @@ class UserForm extends Component {
   handleChange = input => e => {
     this.setState({ [input]: e.target.value });
   };
+
+  change = () => {
+    this.setState({display:false});
+    console.log(this.state.display)
+  }
 
   render() {
     const { step } = this.state;
@@ -93,6 +103,8 @@ class UserForm extends Component {
         values={values}
         loading = {this.state.loading}
         onSubmit={this.onSubmit}
+        display = {this.state.display}
+        change = {() =>this.change}
       />
     );
   }

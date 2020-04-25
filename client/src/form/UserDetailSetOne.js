@@ -54,6 +54,15 @@ class UserDetailSetOne extends Component {
         <React.Fragment>
           <div className='modal-body' style={styles.modal_body}>
             <h4 className='display-7'>Register Here</h4>
+            {this.props.display && 
+              <div>
+              <Alert variant="danger">
+                Please, fill all the fields in the form
+              </Alert>
+                {setTimeout(()=>{this.props.change()},5000)}
+                {console.log(this.props.display)}
+              </div>
+            }
             <TextField
               id='standard-basic'
               label='Organization Name'
