@@ -14,7 +14,7 @@ export const Twitter = () => {
             marginBottom: '20px'
           }}
         >
-          COVID-19 Verified News
+          COVID-19 Verified Tweets
         </h2>
       </div>
 

@@ -6,6 +6,7 @@ import { Twitter } from './Twitter';
 import Categories from './Categories';
 import Modal from './Modal';
 import axios from 'axios';
+import { whitesmoke } from 'color-name';
 
 const Category = [
   { category: 'All', id: 0, className: 'fa fa-cogs' },
@@ -158,14 +159,21 @@ class App extends Component {
           {/* Topbar header - style you can find in pages.scss */}
           {/* ============================================================== */}
           <header className='topbar' data-navbarbg='skin1'>
-            <nav className='navbar top-navbar navbar-expand-md navbar-dark'>
-              <div className='navbar-header' data-logobg='skin6'>
+            <nav
+              className='navbar top-navbar navbar-expand-md navbar-dark'
+              style={{ backgroundColor: '#46b7f5' }}
+            >
+              <div
+                className='navbar-header'
+                data-logobg='skin6'
+                style={{ backgroundColor: '#46b7f5' }}
+              >
                 {/* This is for the sidebar toggle which is visible on mobile only */}
                 <a
                   className='nav-toggler waves-effect waves-light d-block d-md-none'
                   href='javascript:void(0)'
                 >
-                  <i className='fas fa-bars' />
+                  <i className='fas fa-bars' style={{ color: 'white' }} />
                 </a>
 
                 <a
@@ -177,7 +185,7 @@ class App extends Component {
                   aria-expanded='false'
                   aria-label='Toggle navigation'
                 >
-                  <i className='fa fa-plus' />
+                  <i className='fa fa-plus' style={{ color: 'white' }} />
                 </a>
               </div>
               {/* ============================================================== */}
@@ -187,6 +195,7 @@ class App extends Component {
                 className='navbar-collapse collapse'
                 id='navbarSupportedContent'
                 data-navbarbg='skin1'
+                style={{ backgroundColor: '#46b7f5' }}
               >
                 {/* ============================================================== */}
                 {/* toggle and nav items */}
@@ -198,7 +207,7 @@ class App extends Component {
                       href='javascript:void(0)'
                       data-sidebartype='mini-sidebar'
                     >
-                      <i className='fas fa-bars' />
+                      <i className='fas fa-bars' style={{ color: 'white' }} />
                     </a>
                   </li>
                   {/* ============================================================== */}
@@ -275,9 +284,31 @@ class App extends Component {
                   className='col-12 align-self-center'
                   style={{ textAlign: 'center' }}
                 >
-                  <h4 className='page-title' style={{ fontSize: '1.8rem' }}>
-                    Covid-19 #BIZMAP
+                  <h4 className='page-title' style={{ fontSize: '2.2rem' }}>
+                    Covid-19 BIZMAP
                   </h4>
+                  <div className='d-flex align-items-center'>
+                    <nav aria-label='breadcrumb'>
+                      <ol className='breadcrumb'>
+                        <li className='breadcrumb-item'>
+                          {/* <a href='#'>Home</a> */}
+                        </li>
+                      </ol>
+                    </nav>
+                  </div>
+                </div>
+                <div
+                  className='col-12 align-self-center'
+                  style={{ textAlign: 'center' }}
+                >
+                  <h6 className='page-title' style={{ fontSize: '1.0rem' }}>
+                    An{' '}
+                    <img
+                      src='/enactus.png'
+                      style={{ height: '40px', marginBottom: '12px' }}
+                    ></img>{' '}
+                    Initiative
+                  </h6>
                   <div className='d-flex align-items-center'>
                     <nav aria-label='breadcrumb'>
                       <ol className='breadcrumb'>
@@ -297,7 +328,13 @@ class App extends Component {
                     style={{ justifyContent: 'center' }}
                   >
                     <div className>
-                      <small>
+                      <small
+                        style={{
+                          fontWeight: 'bold',
+                          fontSize: '1.0rem',
+                          fontStyle: 'italic'
+                        }}
+                      >
                         Featuring All COVID-19 Projects and supports in India
                         with their contact details
                       </small>
@@ -317,15 +354,19 @@ class App extends Component {
                 type='button'
                 data-toggle='modal'
                 data-target='#exampleModal'
-                className='btn btn-primary'
+                className='btn'
                 style={{
                   borderRadius: '70%',
-                  backgroundColor: '#2B60F6',
+                  backgroundColor: '#46b7f5',
                   fontSize: '30px',
                   width: '70px'
                 }}
               >
-                <i className='fa fa-plus' aria-hidden='true'></i>
+                <i
+                  className='fa fa-plus'
+                  style={{ color: 'white' }}
+                  aria-hidden='true'
+                ></i>
               </button>
               {/* </Link> */}
             </div>
