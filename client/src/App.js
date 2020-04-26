@@ -176,21 +176,21 @@ class App extends Component {
                 >
                   <i className='fas fa-bars' style={{ color: 'white' }} />
                 </a>
-                <a className='navbar-brand' href='#'>
+                <a className='navbar-brand' href='https://covidbizmap.enactusnsut.org/'>
                 {/* Logo icon */}
                 <b className='logo-icon'>
                   {/*You can put here icon as well // <i class="wi wi-sunset"></i> //*/}
                   {/* Dark Logo icon */}
                   <img
                     style={{height:"50px",width:"50px"}}
-                    src="logo.png"
+                    src="newlogo.png"
                     alt='homepage'
                     className='dark-logo'
                   />
                   {/* Light Logo icon */}
                   <img
                     style={{height:"50px",width:"50px"}}
-                    src='logo.png'
+                    src='newlogo.png'
                     alt='homepage'
                     className='light-logo'
                   />
@@ -200,15 +200,15 @@ class App extends Component {
                 <span className='logo-text'>
                   {/* dark Logo text */}
                   <img
-                    style={{height:"50px",width:"160px"}}
-                    src='aashray-01.png'
+                    style={{height:"30px",width:"160px"}}
+                    src='logotext.png'
                     alt='homepage'
                     className='dark-logo'
                   />
                   {/* Light Logo text */}
                   <img
-                    style={{height:"50px",width:"160px"}}
-                    src='aashray-01.png'
+                    style={{height:"30px",width:"160px"}}
+                    src='logotext.png'
                     className='light-logo'
                     alt='homepage'
                   />

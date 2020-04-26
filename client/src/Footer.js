@@ -46,7 +46,7 @@ export const Footer = () => {
           </div>
         </div>
         <br />
-        <span style={{ fontSize: '120%' }}>Made with love by <img src="enactus.png" style={{height:"7%",width:"7%"}}></img></span>
+        <span style={{ fontSize: '120%' }}>Made with love by <img src="enactus.png" style={{height:"50px",width:"60px"}}></img></span>
         <br></br>
         Disclamer: The data contained in this website is intended for general
         reference only and is meant for viewers in India only.
