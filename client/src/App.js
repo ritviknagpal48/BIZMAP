@@ -175,7 +175,17 @@ class App extends Component {
                 >
                   <i className='fas fa-bars' style={{ color: 'white' }} />
                 </a>
-
+                <a className='navbar-brand'>
+                  {/* Logo icon */}
+                  <b className='logo-icon'>
+                    <img
+                      src='logo.png'
+                      className='dark-logo'
+                      style={{ height: '60px', width: '60px' }}
+                    />
+                  </b>
+                  {/*End Logo icon */}
+                </a>
                 <a
                   className='topbartoggler d-block d-md-none waves-effect waves-light'
                   href='javascript:void(0)'
