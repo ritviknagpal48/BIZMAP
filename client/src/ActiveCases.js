@@ -6,7 +6,7 @@ export const ActiveCases = props => {
   return (
     <Fragment>
       <div className='col-lg-4 col-xl-6'>
-        <div className='card card-hover'>
+        <div className='card card-hover' style={{ borderRadius: '10px' }}>
           <h4
             className='page-title'
             style={{
@@ -15,7 +15,7 @@ export const ActiveCases = props => {
               textAlign: 'center'
             }}
           >
-            Active Cases
+            Total Cases
           </h4>
           <div
             className='card-body'
@@ -89,12 +89,12 @@ export const ActiveCases = props => {
             </div>
           </div>
         </div>
-        <div className='card  card-hover'>
+        <div className='card  card-hover' style={{ borderRadius: '10px' }}>
           <div className='card-body' style={{ textAlign: 'center' }}>
             <a
               href='https://pmnrf.gov.in/en/'
               className='waves-effect waves-light mt-3 btn btn-lg btn-info accent-4 mb-3'
-              style={{ backgroundColor: '#2B5F2C' }}
+              // style={{ backgroundColor: '#D4EDDA' }}
             >
               PM Relief Care Fund
             </a>{' '}
@@ -103,7 +103,7 @@ export const ActiveCases = props => {
             <a
               href='https://www.mohfw.gov.in/'
               className='waves-effect waves-light mt-3 btn btn-lg btn-info accent-4 mb-3'
-              style={{ backgroundColor: '#721C24' }}
+              // style={{ backgroundColor: '#F8D7DA' }}
             >
               Helpline Support
             </a>{' '}

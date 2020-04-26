@@ -8,7 +8,7 @@ import Modal from './Modal';
 import axios from 'axios';
 
 const Category = [
-  {category: 'All', id: 0, className: 'fa fa-cogs'},
+  { category: 'All', id: 0, className: 'fa fa-cogs' },
   { category: 'Contact Tracing', id: 1, className: 'fa fa-phone' },
   { category: 'Diagnostics', id: 2, className: 'fa fa-certificate' },
   { category: 'Employee Support', id: 3, className: 'fa fa-users' },
@@ -76,7 +76,7 @@ class App extends Component {
         { selected: 1, color: 'blue' },
         { selected: 1, color: '#0B472B' },
         { selected: 1, color: 'forestgreen' },
-        { selected: 1, color: 'red' },
+        { selected: 1, color: 'red' }
       ],
       data: {
         active: 0,
@@ -111,41 +111,33 @@ class App extends Component {
     var value = 1;
     var array = this.state.category;
     console.log(this.state.category);
-    if(index==0)
-    {
-        if(array[0].selected==0)
-        {
-            for(var i=0;i<array.length;i++)
-            {
-                array[i].selected = 1;
-            }
+    if (index == 0) {
+      if (array[0].selected == 0) {
+        for (var i = 0; i < array.length; i++) {
+          array[i].selected = 1;
         }
-        else 
-          {
-              for(var i=0;i<array.length;i++)
-            {
-                array[i].selected = 0;
-            }
-          }
-    }
-    else{
-    for (var i = 0; i < this.state.category.length; i++) {
-      value = value * this.state.category[i].selected;
-    }
-    if (value === 1) {
-      for (var i = 0; i < this.state.category.length; i++) {
-        array[i].selected = 0;
-      }
-      array[index].selected = 1;
-    }
-    else{
-      if (this.state.category[index].selected === 1) {
-        array[index].selected = 0;
       } else {
+        for (var i = 0; i < array.length; i++) {
+          array[i].selected = 0;
+        }
+      }
+    } else {
+      for (var i = 0; i < this.state.category.length; i++) {
+        value = value * this.state.category[i].selected;
+      }
+      if (value === 1) {
+        for (var i = 0; i < this.state.category.length; i++) {
+          array[i].selected = 0;
+        }
         array[index].selected = 1;
+      } else {
+        if (this.state.category[index].selected === 1) {
+          array[index].selected = 0;
+        } else {
+          array[index].selected = 1;
+        }
       }
     }
-  }
     this.setState({ category: array });
   };
   render() {
@@ -313,6 +305,29 @@ class App extends Component {
                   </div>
                 </div>
               </div>
+            </div>
+            <div
+              className='floating-button
+             wow fadeIn
+            '
+              style={{ fontSize: '100' }}
+            >
+              {/* <Link to='/add_options'> */}
+              <button
+                type='button'
+                data-toggle='modal'
+                data-target='#exampleModal'
+                className='btn btn-primary'
+                style={{
+                  borderRadius: '70%',
+                  backgroundColor: '#2B60F6',
+                  fontSize: '30px',
+                  width: '70px'
+                }}
+              >
+                <i className='fa fa-plus' aria-hidden='true'></i>
+              </button>
+              {/* </Link> */}
             </div>
             {/* ============================================================== */}
             {/* End Bread crumb and right sidebar toggle */}

@@ -13,15 +13,12 @@
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
-    <link
-      href="mapboxgl.css"
-      rel="stylesheet"
-    />
+    <link href="mapboxgl.css" rel="stylesheet" />
     <link
       href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="%PUBLIC_URL%/themify-icons.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/themify-icons.css" />
 
     <style>
       body {
@@ -40,6 +37,13 @@
       .mapboxgl-popup {
         max-width: 400px;
         font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      }
+      .floating-button {
+        z-index: 1000;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding: 15px;
       }
     </style>
 

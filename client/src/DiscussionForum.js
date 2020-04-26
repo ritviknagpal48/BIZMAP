@@ -30,7 +30,7 @@ export const DiscussionForum = () => {
   return (
     <Fragment>
       <div className='col-lg-8 col-xl-6'>
-        <div className='card'>
+        <div className='card' style={{ borderRadius: '10px' }}>
           <div className='card-body'>
             <h4
               className='page-title'
