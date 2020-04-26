@@ -7,6 +7,7 @@ import Categories from './Categories';
 import Modal from './Modal';
 import axios from 'axios';
 import { whitesmoke } from 'color-name';
+import { Footer } from './Footer';
 
 const Category = [
   { category: 'All', id: 0, className: 'fa fa-cogs' },
@@ -414,10 +415,7 @@ class App extends Component {
             {/* ============================================================== */}
             {/* footer */}
             {/* ============================================================== */}
-            <footer className='footer text-center'>
-              Disclamer: The data contained in this website is intended for
-              general reference only and is meant for viewers in India only.
-            </footer>
+            <Footer></Footer>
             {/* ============================================================== */}
             {/* End footer */}
             {/* ============================================================== */}
