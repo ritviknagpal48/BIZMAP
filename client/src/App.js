@@ -171,11 +171,16 @@ class App extends Component {
                 {/* This is for the sidebar toggle which is visible on mobile only */}
                 <a
                   className='nav-toggler waves-effect waves-light d-block d-md-none'
-                  href='javascript:void(0)'
-                >
-                  <i className='fas fa-bars' />
+                  href='javascript:void(0)'><i className='fas fa-bars' />
                 </a>
+                <a className="navbar-brand">
+                    {/* Logo icon */}
+                    <b className="logo-icon">
+                        <img src="logo.png" className="dark-logo" style={{height:"60px",width:"60px"}}/>
+                    </b>
+                {/*End Logo icon */}
 
+              </a>
                 <a
                   className='topbartoggler d-block d-md-none waves-effect waves-light'
                   href='javascript:void(0)'
