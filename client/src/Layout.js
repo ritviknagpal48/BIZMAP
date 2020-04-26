@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import App from './App';
+import ReactGa from 'react-ga';
 
 export const Layout = () => {
   useEffect(() => {
