@@ -63,7 +63,7 @@ export default class Graph extends Component {
   }
   componentDidMount() {
     axios
-      .get('https://covidbizmap.enactusnsut.org/graph/all_business')
+      .get('http://localhost:5050/graph/all_business')
       .then(response => {
         let arr = [];
         for (let i = 0; i < response.data.length; ++i) {
@@ -74,7 +74,7 @@ export default class Graph extends Component {
             category: response.data[i].category,
             link: response.data[i].email
           });
-          console.log('Data', response);
+            console.log("Data",response);
         }
         this.setState({
           markerList: arr
@@ -101,10 +101,7 @@ export default class Graph extends Component {
   };
 
   renderPopup(index) {
-    if (
-      this.state.display[index] === true &&
-      this.props.category[index].selected == 1
-    ) {
+    if (this.state.display[index] === true && this.props.category[index].selected==1) {
       return (
         <Popup
           tipSize={5}
@@ -129,7 +126,7 @@ export default class Graph extends Component {
           <p>
             <strong>Email:</strong>{' '}
             <a href={this.state.markerList[index].link} target='_blank'>
-              {this.state.markerList[index].link}
+                {this.state.markerList[index].link}
             </a>
           </p>
           <p>
