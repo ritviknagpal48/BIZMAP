@@ -18,7 +18,7 @@ export const Footer = () => {
           <div className='col-1'>
             <a href='enactusnsit@gmail.com'>
               <i
-                className='fab fa-google fa-2x'
+                className='fab fa-google-plus fa-2x'
                 style={{ color: '#db4a39' }}
               ></i>
             </a>
