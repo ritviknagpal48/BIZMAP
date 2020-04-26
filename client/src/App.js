@@ -176,17 +176,44 @@ class App extends Component {
                 >
                   <i className='fas fa-bars' style={{ color: 'white' }} />
                 </a>
-                <a className='navbar-brand'>
-                  {/* Logo icon */}
-                  <b className='logo-icon'>
-                    <img
-                      src='logo.png'
-                      className='dark-logo'
-                      style={{ height: '60px', width: '60px' }}
-                    />
-                  </b>
-                  {/*End Logo icon */}
-                </a>
+                <a className='navbar-brand' href='#'>
+                {/* Logo icon */}
+                <b className='logo-icon'>
+                  {/*You can put here icon as well // <i class="wi wi-sunset"></i> //*/}
+                  {/* Dark Logo icon */}
+                  <img
+                    style={{height:"50px",width:"50px"}}
+                    src="logo.png"
+                    alt='homepage'
+                    className='dark-logo'
+                  />
+                  {/* Light Logo icon */}
+                  <img
+                    style={{height:"50px",width:"50px"}}
+                    src='logo.png'
+                    alt='homepage'
+                    className='light-logo'
+                  />
+                </b>
+                {/*End Logo icon */}
+                {/* Logo text */}
+                <span className='logo-text'>
+                  {/* dark Logo text */}
+                  <img
+                    style={{height:"50px",width:"160px"}}
+                    src='aashray-01.png'
+                    alt='homepage'
+                    className='dark-logo'
+                  />
+                  {/* Light Logo text */}
+                  <img
+                    style={{height:"50px",width:"160px"}}
+                    src='aashray-01.png'
+                    className='light-logo'
+                    alt='homepage'
+                  />
+                </span>
+              </a>
                 <a
                   className='topbartoggler d-block d-md-none waves-effect waves-light'
                   href='javascript:void(0)'
@@ -367,10 +394,11 @@ class App extends Component {
                 data-target='#exampleModal'
                 className='btn'
                 style={{
-                  borderRadius: '70%',
+                  borderRadius: '50%',
                   backgroundColor: '#46b7f5',
                   fontSize: '30px',
-                  width: '70px'
+                  width: '55px',
+                  height: '55px'
                 }}
               >
                 <i
