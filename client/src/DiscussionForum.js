@@ -1,10 +1,14 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Message } from './Message';
 import axios from 'axios';
+<<<<<<< HEAD
 import { EmailSend } from './EmailSend';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Alert from 'react-bootstrap/Alert';
+=======
+import ReactModal from 'react-responsive-modal';
+>>>>>>> parent of 1ba753d... Modal
 
 export const DiscussionForum = () => {
   const [open, setOpen] = useState(false);
@@ -39,6 +43,7 @@ export const DiscussionForum = () => {
     setMessages(res.data.messages);
   };
 
+<<<<<<< HEAD
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [incomplete, setIncomplete] = useState(false);
@@ -61,6 +66,8 @@ export const DiscussionForum = () => {
     postMessage();
   };
 
+=======
+>>>>>>> parent of 1ba753d... Modal
   const onClick = async e => {
     e.preventDefault();
     handleShow();
@@ -164,6 +171,7 @@ export const DiscussionForum = () => {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       {/* <EmailSend></EmailSend> */}
       <Fragment>
         {/* <Button variant='primary' onClick={handleShow}>
@@ -205,6 +213,8 @@ export const DiscussionForum = () => {
           </Modal.Footer>
         </Modal>
       </Fragment>
+=======
+>>>>>>> parent of 1ba753d... Modal
     </Fragment>
   );
 };
