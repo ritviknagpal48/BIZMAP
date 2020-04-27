@@ -46,14 +46,17 @@ class UserForm extends Component {
     } else {
       this.setState({ loading: 'fa fa-spinner fa-spin' });
       this.setState({ loadingmssg: 'Loading ' });
-      const res = await Axios.post('http://localhost:5050/graph/add_to_graph', {
-        address: this.state.field_three,
-        name: this.state.field_one,
-        description: this.state.field_two,
-        contact: this.state.field_five,
-        links: this.state.field_six,
-        category: this.state.field_four
-      });
+      const res = await Axios.post(
+        'https://covidbizmap.enactusnsut.org/graph/add_to_graph',
+        {
+          address: this.state.field_three,
+          name: this.state.field_one,
+          description: this.state.field_two,
+          contact: this.state.field_five,
+          links: this.state.field_six,
+          category: this.state.field_four
+        }
+      );
       this.setState({ loading: '' });
       this.setState({ loadingmssg: 'Submit for Approval' });
       console.log(res.data);
