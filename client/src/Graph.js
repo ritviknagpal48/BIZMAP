@@ -12,7 +12,7 @@ const navStyle = {
 };
 
 const Category = [
-    'All',
+  'All',
   'Contact Tracing',
   'Diagnostics',
   'Employee Support',
@@ -66,7 +66,7 @@ export default class Graph extends Component {
   }
   componentDidMount() {
     axios
-      .get('https://covidbizmap.enactusnsut.org/graph/all_business')
+      .get('http://localhost:5050/graph/all_business')
       .then(response => {
         let arr = [];
         let array = [];
@@ -127,7 +127,7 @@ export default class Graph extends Component {
             this.setState({
               display: {
                 ...this.state.display,
-                [index]:false
+                [index]: false
               }
             });
           }}

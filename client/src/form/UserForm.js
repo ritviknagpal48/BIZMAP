@@ -47,7 +47,7 @@ class UserForm extends Component {
       this.setState({ loading: 'fa fa-spinner fa-spin' });
       this.setState({ loadingmssg: 'Loading ' });
       const res = await Axios.post(
-        'https://covidbizmap.enactusnsut.org/graph/add_to_graph',
+        'http://localhost:5050/graph/add_to_graph',
         {
           address: this.state.field_three,
           name: this.state.field_one,

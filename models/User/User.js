@@ -1,14 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const forumSchema = mongoose.Schema({
-  content: {
-    type: String
-  },
-  verified: {
-    type: Boolean,
-    default: false
-  },
+const userSchema = mongoose.Schema({
   name: {
     type: String
   },
@@ -20,4 +13,4 @@ const forumSchema = mongoose.Schema({
     default: new Date()
   }
 });
-module.exports = mongoose.model('Forum', forumSchema);
+module.exports = mongoose.model('User', userSchema);

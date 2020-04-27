@@ -5,7 +5,7 @@ import { EmailSend } from './EmailSend';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Alert from 'react-bootstrap/Alert';
-import GoogleLogin from "react-google-login";
+import GoogleLogin from 'react-google-login';
 
 export const DiscussionForum = () => {
   const [open, setOpen] = useState(false);
@@ -30,12 +30,11 @@ export const DiscussionForum = () => {
 
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
+  const [user, setUser] = useState(null);
   const [show, setShow] = useState(false);
 
   const fetchMessages = async () => {
-    const res = await axios.post(
-      'https://covidbizmap.enactusnsut.org/bizmap/get_messages'
-    );
+    const res = await axios.post('http://localhost:5050/bizmap/get_messages');
     console.log(res.data.messages);
     setMessages(res.data.messages);
   };
@@ -46,19 +45,17 @@ export const DiscussionForum = () => {
   const handleShow = () => setShow(true);
   const [incomplete, setIncomplete] = useState(false);
   const postMessage = async () => {
-    if (name.split(' ').join('') == '' || message.split(' ').join('') == '') {
-      setIncomplete(true);
-      setTimeout(() => {
-        setIncomplete(false);
-      }, 5000);
+    if (message.split(' ').join('') == '') {
+      // setIncomplete(true);
+      // setTimeout(() => {
+      //   setIncomplete(false);
+      // }, 5000);
     } else {
-      const res = await axios.post(
-        'https://covidbizmap.enactusnsut.org/bizmap/add_message',
-        {
-          name: name,
-          content: message
-        }
-      );
+      const res = await axios.post('http://localhost:5050/bizmap/add_message', {
+        name: user.name,
+        content: message,
+        image: user.image
+      });
       window.location.reload(false);
     }
   };
@@ -69,10 +66,14 @@ export const DiscussionForum = () => {
 
   const onClick = async e => {
     e.preventDefault();
-    handleShow();
+    if (user) {
+      postMessage();
+    } else {
+      handleShow();
+    }
     // e.preventDefault();
     // const res = await axios.post(
-    //   'https://covidbizmap.enactusnsut.org/bizmap/add_message',
+    //   'http://localhost:5050/bizmap/add_message',
     //   {
     //     content: message
     //   }
@@ -85,9 +86,16 @@ export const DiscussionForum = () => {
     setMessage(e.target.value);
   };
 
-  const responseGoogle = (response) => {
-    console.log(response);
+  const responseGoogle = response => {
+    const obj = response.profileObj;
+    setUser({
+      name: obj.email.split('@')[0],
+      image: obj.imageUrl
+    });
   };
+  useEffect(() => {
+    handleClose();
+  }, [user]);
 
   useEffect(() => {
     fetchMessages();
@@ -182,25 +190,24 @@ export const DiscussionForum = () => {
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title className="Boton">Sign In</Modal.Title>
+            <Modal.Title className='Boton'>Sign In</Modal.Title>
           </Modal.Header>
-          {incomplete && (
+          {/* {incomplete && (
             <Alert variant='danger'>
               Please, fill all the fields in the form
             </Alert>
-          )}
+          )} */}
           <div style={{ padding: '5%', textAlign: 'center' }}>
-          <GoogleLogin
-              clientId="389790068785-osb9rej502bbdbt6kil1jjrvo825o6fr.apps.googleusercontent.com"
-              buttonText="Login with Google"
+            <GoogleLogin
+              clientId='389790068785-osb9rej502bbdbt6kil1jjrvo825o6fr.apps.googleusercontent.com'
+              buttonText='Login with Google'
               onSuccess={responseGoogle}
               onFailure={responseGoogle}
-              cookiePolicy={"single_host_origin"}
-              />
-          
+              cookiePolicy={'single_host_origin'}
+            />
           </div>
-          <Modal.Footer style={{padding:"5% 0 7% 0"}}>
-            <Button variant='secondary' className = "Boton" onClick={handleClose}>
+          <Modal.Footer style={{ padding: '5% 0 7% 0' }}>
+            <Button variant='secondary' className='Boton' onClick={handleClose}>
               Close
             </Button>
           </Modal.Footer>
