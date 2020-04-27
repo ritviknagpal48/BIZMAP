@@ -157,7 +157,7 @@ export const DiscussionForum = () => {
                   href='javascript:void(0)'
                   onClick={onClick}
                 >
-                  <i className='fas fa-paper-plane' />
+                  <EmailSend className='fas fa-paper-plane'></EmailSend>
                 </a>
               </div>
             </div>
