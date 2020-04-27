@@ -49,10 +49,13 @@ export const DiscussionForum = () => {
         setIncomplete(false);
       }, 5000);
     } else {
-      const res = await axios.post('http://localhost:5050/bizmap/add_message', {
-        name: name,
-        content: message
-      });
+      const res = await axios.post(
+        'https://covidbizmap.enactusnsut.org/bizmap/add_message',
+        {
+          name: name,
+          content: message
+        }
+      );
       window.location.reload(false);
     }
   };

@@ -53,7 +53,7 @@ router.post('/add_message', async (req, res) => {
         // expiresIn: 36000
       }
     );
-    const url = `http://localhost:5050/bizmap/verify_message/${messageToken}`;
+    const url = `https://covidbizmap.enactusnsut.org/bizmap/verify_message/${messageToken}`;
 
     const output2 = `
     <!DOCTYPE html>
