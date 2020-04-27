@@ -67,7 +67,7 @@ export default class Graph extends Component {
   }
   componentDidMount() {
     axios
-      .get('http://localhost:5050/graph/all_business')
+      .get('https://covidbizmap.enactusnsut.org/graph/all_business')
       .then(response => {
         let arr = [];
         let array = [];

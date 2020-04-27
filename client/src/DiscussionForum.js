@@ -35,7 +35,7 @@ export const DiscussionForum = () => {
   const [show, setShow] = useState(false);
 
   const fetchMessages = async () => {
-    const res = await axios.post('http://localhost:5050/bizmap/get_messages');
+    const res = await axios.post('https://covidbizmap.enactusnsut.org/bizmap/get_messages');
     console.log(res.data.messages);
     setMessages(res.data.messages);
   };
@@ -52,7 +52,7 @@ export const DiscussionForum = () => {
       //   setIncomplete(false);
       // }, 5000);
     } else {
-      const res = await axios.post('http://localhost:5050/bizmap/add_message', {
+      const res = await axios.post('https://covidbizmap.enactusnsut.org/bizmap/add_message', {
         name: user.name,
         content: message,
         image: user.image
@@ -74,7 +74,7 @@ export const DiscussionForum = () => {
     }
     // e.preventDefault();
     // const res = await axios.post(
-    //   'http://localhost:5050/bizmap/add_message',
+    //   'https://covidbizmap.enactusnsut.org/bizmap/add_message',
     //   {
     //     content: message
     //   }
