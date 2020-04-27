@@ -5,6 +5,13 @@ const forumSchema = mongoose.Schema({
   content: {
     type: String
   },
+  verified: {
+    type: Boolean,
+    default: false
+  },
+  name: {
+    type: String
+  },
   Date: {
     type: String,
     default: Date.now()
