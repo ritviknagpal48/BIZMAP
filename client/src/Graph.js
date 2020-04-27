@@ -59,7 +59,7 @@ export default class Graph extends Component {
         padding: '0px',
         margin: '0px'
       },
-      display: [ ],
+      display: [],
       markerList: []
     };
   }
@@ -80,9 +80,9 @@ export default class Graph extends Component {
             contact: response.data[i].contact
           });
           array.push(false);
-          console.log('Data', response);
+          // console.log('Data', response);
         }
-        this.setState({display:array});
+        this.setState({ display: array });
         this.setState({
           markerList: arr
         });
@@ -131,19 +131,22 @@ export default class Graph extends Component {
           }}
         >
           <div>
-          <p>
-            <strong>Category:</strong> {this.state.markerList[index].category}
-          </p>
-          <p>
-            <strong>Description:</strong> {this.state.markerList[index].info}
-          </p>
-          <p>
-            <strong>Address:</strong> {this.state.markerList[index].address}
-          </p>
-          <p>
-            <strong>Contact:</strong> {this.state.markerList[index].contact}
-          </p>
-          <strong>Useful Links:</strong> <a href={this.state.markerList[index].link} target="_blank">{this.state.markerList[index].link}</a>
+            <p>
+              <strong>Category:</strong> {this.state.markerList[index].category}
+            </p>
+            <p>
+              <strong>Description:</strong> {this.state.markerList[index].info}
+            </p>
+            <p>
+              <strong>Address:</strong> {this.state.markerList[index].address}
+            </p>
+            <p>
+              <strong>Contact:</strong> {this.state.markerList[index].contact}
+            </p>
+            <strong>Useful Links:</strong>{' '}
+            <a href={this.state.markerList[index].link} target='_blank'>
+              {this.state.markerList[index].link}
+            </a>
           </div>
         </Popup>
       );
