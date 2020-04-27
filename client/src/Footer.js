@@ -18,7 +18,7 @@ export const Footer = () => {
           <div className='col-1'>
             <a href='enactusnsit@gmail.com'>
               <i
-                className='fab fa-google fa-2x'
+                className='fab fa-google-plus fa-2x'
                 style={{ color: '#db4a39' }}
               ></i>
             </a>
@@ -46,7 +46,7 @@ export const Footer = () => {
           </div>
         </div>
         <br />
-        <span style={{ fontSize: '120%' }}>Made with love by Enactus NSUT</span>
+        <span style={{ fontSize: '120%' }}>Made with love by <img src="enactus.png" style={{height:"50px",width:"60px"}}></img></span>
         <br></br>
         Disclamer: The data contained in this website is intended for general
         reference only and is meant for viewers in India only.

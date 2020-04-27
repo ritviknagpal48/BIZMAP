@@ -22,13 +22,13 @@ export const Navbar = () => {
                   {/*You can put here icon as well // <i class="wi wi-sunset"></i> //*/}
                   {/* Dark Logo icon */}
                   <img
-                    src='./Xtreme admin Template - The Ultimate Multipurpose admin template_files/logo-icon.png'
+                    src="logo.png"
                     alt='homepage'
                     className='dark-logo'
                   />
                   {/* Light Logo icon */}
                   <img
-                    src='./Xtreme admin Template - The Ultimate Multipurpose admin template_files/logo-light-icon.png'
+                    src='logo.png'
                     alt='homepage'
                     className='light-logo'
                   />
@@ -38,13 +38,13 @@ export const Navbar = () => {
                 <span className='logo-text'>
                   {/* dark Logo text */}
                   <img
-                    src='./Xtreme admin Template - The Ultimate Multipurpose admin template_files/logo-text.png'
+                    src='logo.png'
                     alt='homepage'
                     className='dark-logo'
                   />
                   {/* Light Logo text */}
                   <img
-                    src='./Xtreme admin Template - The Ultimate Multipurpose admin template_files/logo-light-text.png'
+                    src='logo.png'
                     className='light-logo'
                     alt='homepage'
                   />
