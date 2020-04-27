@@ -12,32 +12,33 @@ const navStyle = {
 };
 
 const Category = [
-  'All',
   'Contact Tracing',
   'Diagnostics',
   'Employee Support',
   'Infection Control',
   'Medication',
   'Patient Engagement',
-  'Portal',
+  'Informative portals',
   'PPE',
-  'Supports',
+  'Supports- Hackathon',
   'Vaccinatory',
-  'Financial Support Providers',
-  'Telemedicine',
+  'Financial support providers',
+  'Tele-Medicines',
+  'NGO Networking',
   'Tele Education Resources',
-  'Covid Specific Hospitals',
-  'Free Food Providers',
-  'Patient Tracing Apps',
+  'Covid Specialised Hospitals',
+  'Food Providers',
+  'Patient Engagement',
   'Self Reporting Apps',
-  'Data Sets',
-  'Automobile Related',
+  'Alert/tracking app',
+  'datasets',
+  'Automobile',
+  'Bioinformatics',
   'Skill Training',
   'Mask Providers',
-  'Heat Map',
-  'Volunteering Org',
+  'Heatmaps',
+  'Volunteering orgs',
   'Others',
-  'Unemployed',
   'Volunteers'
 ];
 var idx;
@@ -74,7 +75,7 @@ export default class Graph extends Component {
             category: response.data[i].category,
             link: response.data[i].email
           });
-            console.log("Data",response);
+          console.log('Data', response);
         }
         this.setState({
           markerList: arr
@@ -101,7 +102,10 @@ export default class Graph extends Component {
   };
 
   renderPopup(index) {
-    if (this.state.display[index] === true && this.props.category[index].selected==1) {
+    if (
+      this.state.display[index] === true &&
+      this.props.category[index].selected == 1
+    ) {
       return (
         <Popup
           tipSize={5}
@@ -126,7 +130,7 @@ export default class Graph extends Component {
           <p>
             <strong>Email:</strong>{' '}
             <a href={this.state.markerList[index].link} target='_blank'>
-                {this.state.markerList[index].link}
+              {this.state.markerList[index].link}
             </a>
           </p>
           <p>

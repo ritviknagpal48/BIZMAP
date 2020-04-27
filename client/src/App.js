@@ -21,30 +21,44 @@ const Category = [
   },
   { category: 'Medication', id: 5, className: 'fa fa-plus' },
   { category: 'Patient Engagement', id: 6, className: 'fa fa-user' },
-  { category: 'Portal', id: 7, className: 'fa fa-lock' },
+  { category: 'Informative portals', id: 7, className: 'fa fa-lock' },
   { category: 'PPE', id: 8, className: 'fa fa-medkit' },
-  { category: 'Support', id: 9, className: 'fa fa-cogs' },
+
+  { category: 'Supports- Hackathon', id: 9, className: 'fa fa-cogs' },
   { category: 'Vaccinatory', id: 10, className: 'fa fa-user-md' },
   {
-    category: 'Financial Support Providers',
+    category: 'Financial support providers',
     id: 11,
     className: 'fa fa-credit-card'
   },
-  { category: 'Telemedicine', id: 12, className: 'fa fa-stethoscope' },
+
+  { category: 'Tele-Medicines', id: 12, className: 'fa fa-stethoscope' },
+
   { category: 'Tele Education Resources', id: 13, className: 'fa fa-mobile' },
-  { category: 'Covid Specific Hospitals', id: 14, className: 'fa fa-hospital' },
-  { category: ' Free Food Providers', id: 15, className: 'fa fa-bread-slice' },
-  { category: 'Patient Tracing Apps', id: 16, className: 'fa fa-search' },
+  {
+    category: 'Covid Specialised Hospitals',
+    id: 14,
+    className: 'fa fa-hospital'
+  },
+  { category: 'Food Providers', id: 15, className: 'fa fa-bread-slice' },
+  { category: 'Patient Engagement', id: 16, className: 'fa fa-search' },
   { category: 'Self Reporting Apps', id: 17, className: 'fa fa-cogs' },
-  { category: 'Data Sets', id: 18, className: 'fa fa-database' },
-  { category: 'Automobile Related', id: 19, className: 'fa fa-car' },
+  { category: 'datasets', id: 18, className: 'fa fa-database' },
+  { category: 'Automobile', id: 19, className: 'fa fa-car' },
   { category: 'Skill Training', id: 20, className: 'fa fa-adjust' },
   { category: 'Mask Providers', id: 21, className: 'fa fa-thermometer' },
-  { category: 'Heat Map', id: 22, className: 'fa fa-street-view' },
-  { category: 'Volunteering Org', id: 23, className: 'fa fa-building' },
+  { category: 'Heatmaps', id: 22, className: 'fa fa-street-view' },
+  { category: 'Volunteering orgs', id: 23, className: 'fa fa-building' },
   { category: 'Others', id: 24, className: 'fas fa-bars' },
-  { category: 'Unemployed', id: 25, className: 'fa fa-male' },
-  { category: 'Volunteers', id: 26, className: 'fa fa-user' }
+  // { category: 'Unemployed', id: 25, className: 'fa fa-male' },
+  { category: 'Volunteers', id: 25, className: 'fa fa-user' },
+  { category: 'NGO Networking', id: 26, className: 'fa fa-database' },
+  { category: 'Bioinformatics', id: 27, className: 'fa fa-medkit' },
+  {
+    category: 'Alert/tracking app',
+    id: 28,
+    className: 'fa fa-exclamation-triangle'
+  }
 ];
 
 class App extends Component {
@@ -78,7 +92,10 @@ class App extends Component {
         { selected: 1, color: 'blue' },
         { selected: 1, color: '#0B472B' },
         { selected: 1, color: 'forestgreen' },
-        { selected: 1, color: 'red' }
+        { selected: 1, color: 'red' },
+        { selected: 1, color: 'black' },
+        { selected: 1, color: 'blue' },
+        { selected: 1, color: '#0B472B' }
       ],
       data: {
         active: 0,

@@ -17,26 +17,29 @@ const Category = [
   'Infection Control',
   'Medication',
   'Patient Engagement',
-  'Portal',
+  'Informative portals',
   'PPE',
-  'Supports',
+  'Supports- Hackathon',
   'Vaccinatory',
-  'Financial Support Providers',
-  'Telemedicine',
+  'Financial support providers',
+  'Tele-Medicines',
+  'NGO Networking',
   'Tele Education Resources',
-  'Covid Specific Hospitals',
-  'Free Food Providers',
-  'Patient Tracing Apps',
+  'Covid Specialised Hospitals',
+  'Food Providers',
+  'Patient Engagement',
   'Self Reporting Apps',
-  'Data Sets',
-  'Automobile Related',
+  'Alert/tracking app',
+  'datasets',
+  'Automobile',
+  'Bioinformatics',
+
   'Skill Training',
   'Mask Providers',
-  'Heat Map',
-  'Volunteering Org',
-  'Unemployed',
-  'Volunteers',
-  'Others'
+  'Heatmaps',
+  'Volunteering orgs',
+  'Others',
+  'Volunteers'
 ];
 class UserDetailSetOne extends Component {
   continue = e => {
@@ -53,19 +56,19 @@ class UserDetailSetOne extends Component {
       <MuiThemeProvider>
         <React.Fragment>
           <div className='modal-body' style={styles.modal_body}>
-            <h4 className='display-7'>Register Here</h4>
-            {this.props.display && 
-              <div style ={{height:"3rem"}}>
-              <Alert variant="danger">
-                Please, fill all the fields in the form
-              </Alert>
-                {console.log(setTimeout(this.props.change(),5000))}
+            <h4 className='display-7'>Register</h4>
+            {this.props.display && (
+              <div style={{ height: '3rem' }}>
+                <Alert variant='danger'>
+                  Please, fill all the fields in the form
+                </Alert>
+                {console.log(setTimeout(this.props.change(), 5000))}
                 {console.log(this.props.display)}
               </div>
-            }
+            )}
             <TextField
               id='standard-basic'
-              label='Organization Name'
+              label='Organization Name / Name'
               onChange={handleChange('field_one')}
               value={values.field_one}
               style={styles.text_field}
@@ -74,7 +77,7 @@ class UserDetailSetOne extends Component {
             <br />
             <TextField
               id='standard-basic'
-              label='Description'
+              label='Description / Skills'
               onChange={handleChange('field_two')}
               value={values.field_two}
               style={styles.text_field}
@@ -83,7 +86,7 @@ class UserDetailSetOne extends Component {
             <br />
             <TextField
               id='standard-basic'
-              label='Complete Address'
+              label='Address / Location'
               onChange={handleChange('field_three')}
               value={values.field_three}
               style={styles.text_field}
@@ -123,7 +126,7 @@ class UserDetailSetOne extends Component {
             <br />
             <TextField
               id='standard-basic'
-              label='Email'
+              label='Useful Links'
               onChange={handleChange('field_six')}
               value={values.field_six}
               style={styles.text_field}
@@ -137,8 +140,13 @@ class UserDetailSetOne extends Component {
               color='primary'
               style={styles.button}
               onClick={this.props.onSubmit}
+              style={{ backgroundColor: '#46b7f5' }}
             >
-              {this.props.loadingmssg}<i style={{paddingLeft:"3px"}} className={this.props.loading}></i>
+              {this.props.loadingmssg}
+              <i
+                style={{ paddingLeft: '3px' }}
+                className={this.props.loading}
+              ></i>
             </Button>
           </div>
         </React.Fragment>

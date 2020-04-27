@@ -6,22 +6,22 @@ import Success from './Success';
 import Axios from 'axios';
 
 class UserForm extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       step: 1,
       field_one: '',
       field_two: '',
       field_three: '',
-      field_four: 'Volunteers',
+      field_four: 'I want to volunteer',
       field_five: '',
       field_six: '',
       field_seven: '',
       field_eight: '',
-      loading: "",
-      display:false,
-      loading: "",
-      loadingmssg: "Submit for Approval",
+      loading: '',
+      display: false,
+      loading: '',
+      loadingmssg: 'Submit for Approval'
     };
   }
 
@@ -41,22 +41,22 @@ class UserForm extends Component {
       this.state.field_five.split(' ').join('') == '' ||
       this.state.field_six.split(' ').join('') == ''
     ) {
-      this.setState({display:true});
+      this.setState({ display: true });
       console.log('empty');
     } else {
-        this.setState({loading:"fa fa-spinner fa-spin"});
-        this.setState({loadingmssg:"Loading "});
+      this.setState({ loading: 'fa fa-spinner fa-spin' });
+      this.setState({ loadingmssg: 'Loading ' });
       const res = await Axios.post('http://localhost:5050/graph/add_to_graph', {
         address: this.state.field_three,
         name: this.state.field_one,
         description: this.state.field_two,
         contact: this.state.field_five,
-        email: this.state.field_six,
+        links: this.state.field_six,
         category: this.state.field_four
       });
-        this.setState({loading:""});
-        this.setState({loadingmssg:"Submit for Approval"});
-        console.log(res.data);
+      this.setState({ loading: '' });
+      this.setState({ loadingmssg: 'Submit for Approval' });
+      console.log(res.data);
       window.location.reload(false);
     }
   };
@@ -73,9 +73,9 @@ class UserForm extends Component {
   };
 
   change = () => {
-    this.setState({display:false});
-    console.log(this.state.display)
-  }
+    this.setState({ display: false });
+    console.log(this.state.display);
+  };
 
   render() {
     const { step } = this.state;
@@ -106,10 +106,10 @@ class UserForm extends Component {
         handleChange={this.handleChange}
         values={values}
         loading={this.state.loading}
-        loadingmssg = {this.state.loadingmssg}
+        loadingmssg={this.state.loadingmssg}
         onSubmit={this.onSubmit}
-        display = {this.state.display}
-        change = {() =>this.change}
+        display={this.state.display}
+        change={() => this.change}
       />
     );
   }

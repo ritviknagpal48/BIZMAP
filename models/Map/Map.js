@@ -27,7 +27,7 @@ const mapSchema = mongoose.Schema({
   category: {
     type: String
   },
-  email: { type: String },
+  links: { type: String },
   date: {
     type: String,
     default: Date.now()
