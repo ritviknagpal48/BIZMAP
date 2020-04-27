@@ -30,7 +30,7 @@ const mapSchema = mongoose.Schema({
   links: { type: String },
   date: {
     type: String,
-    default: Date.now()
+    default: Date(Date.now())
   }
 });
 module.exports = mongoose.model('Map', mapSchema);

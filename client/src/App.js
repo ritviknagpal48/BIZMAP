@@ -8,6 +8,14 @@ import Modal from './Modal';
 import axios from 'axios';
 import { whitesmoke } from 'color-name';
 import { Footer } from './Footer';
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller
+} from 'react-scroll';
 
 const Category = [
   { category: 'All', id: 0, className: 'fa fa-cogs' },
@@ -111,10 +119,10 @@ class App extends Component {
         deaths: 0,
         recovered: 0,
         todayDeaths: 0
-      }
+      },
+      open: 'full'
     };
   }
-
   componentDidMount() {
     axios.get('https://corona.lmao.ninja/v2/countries/India').then(response => {
       this.setState({
@@ -131,7 +139,6 @@ class App extends Component {
       console.log(response);
     });
   }
-
   toggle = (e, index) => {
     console.log(this);
     var value = 1;
@@ -202,7 +209,11 @@ class App extends Component {
                 </a>
                 <a
                   className='navbar-brand'
-                  href='https://covidbizmap.enactusnsut.org/'
+                  // smooth={true}
+                  // href='https://covidbizmap.enactusnsut.org/'
+                  onClick={() => {
+                    scroll.scrollToTop();
+                  }}
                 >
                   {/* Logo icon */}
                   <b className='logo-icon'>

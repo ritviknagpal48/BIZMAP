@@ -5,7 +5,8 @@ const Forum = require('../../models/Forum/Forum');
 router.post('/add_message', async (req, res) => {
   try {
     const newMessage = new Forum({
-      content: req.body.content
+      content: req.body.content,
+      Date: req.body.Date
     });
     await newMessage.save();
     return res.status(200).json({

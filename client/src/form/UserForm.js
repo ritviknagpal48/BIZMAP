@@ -13,7 +13,7 @@ class UserForm extends Component {
       field_one: '',
       field_two: '',
       field_three: '',
-      field_four: 'I want to volunteer',
+      field_four: '',
       field_five: '',
       field_six: '',
       field_seven: '',
