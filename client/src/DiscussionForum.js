@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Alert from 'react-bootstrap/Alert';
 import GoogleLogin from 'react-google-login';
+import FacebookLogin from 'react-facebook-login';
 
 export const DiscussionForum = () => {
   const [open, setOpen] = useState(false);
@@ -86,6 +87,13 @@ export const DiscussionForum = () => {
     setMessage(e.target.value);
   };
 
+  const componentClicked = () => {
+    console.log('logging in');
+  };
+
+  const responseFacebook = response => {
+    console.log(response);
+  };
   const responseGoogle = response => {
     const obj = response.profileObj;
     setUser({
@@ -190,7 +198,7 @@ export const DiscussionForum = () => {
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title className='Boton'>Sign In</Modal.Title>
+            <Modal.Title className='Boton'>Sign In To Continue</Modal.Title>
           </Modal.Header>
           {/* {incomplete && (
             <Alert variant='danger'>
@@ -200,11 +208,23 @@ export const DiscussionForum = () => {
           <div style={{ padding: '5%', textAlign: 'center' }}>
             <GoogleLogin
               clientId='389790068785-osb9rej502bbdbt6kil1jjrvo825o6fr.apps.googleusercontent.com'
-              buttonText='Login with Google'
+              buttonText='Sign In with Google'
               onSuccess={responseGoogle}
               onFailure={responseGoogle}
               cookiePolicy={'single_host_origin'}
             />
+            {/* <div style={{ width: '2%' }}></div>
+            <br />
+            <FacebookLogin
+              textButton='Facebook'
+              appId='505495360359430'
+              size='small'
+              autoLoad={false}
+              fields='name,email,picture'
+              onClick={componentClicked}
+              callback={responseFacebook}
+              icon='fa fa-facebook'
+            /> */}
           </div>
           <Modal.Footer style={{ padding: '5% 0 7% 0' }}>
             <Button variant='secondary' className='Boton' onClick={handleClose}>

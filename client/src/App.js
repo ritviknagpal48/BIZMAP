@@ -73,32 +73,32 @@ class App extends Component {
       category: [
         { selected: 1, color: 'forestgreen' },
         { selected: 1, color: 'red' },
-        { selected: 1, color: 'black' },
+        { selected: 1, color: '#F8C146' },
         { selected: 1, color: 'blue' },
         { selected: 1, color: '#0B472B' },
         { selected: 1, color: 'forestgreen' },
         { selected: 1, color: 'red' },
-        { selected: 1, color: 'black' },
+        { selected: 1, color: '#F8C146' },
         { selected: 1, color: 'blue' },
         { selected: 1, color: '#0B472B' },
         { selected: 1, color: 'forestgreen' },
         { selected: 1, color: 'red' },
-        { selected: 1, color: 'black' },
+        { selected: 1, color: '#F8C146' },
         { selected: 1, color: 'blue' },
         { selected: 1, color: '#0B472B' },
         { selected: 1, color: 'forestgreen' },
         { selected: 1, color: 'red' },
-        { selected: 1, color: 'black' },
+        { selected: 1, color: '#F8C146' },
         { selected: 1, color: 'blue' },
         { selected: 1, color: '#0B472B' },
         { selected: 1, color: 'forestgreen' },
         { selected: 1, color: 'red' },
-        { selected: 1, color: 'black' },
+        { selected: 1, color: '#F8C146' },
         { selected: 1, color: 'blue' },
         { selected: 1, color: '#0B472B' },
         { selected: 1, color: 'forestgreen' },
         { selected: 1, color: 'red' },
-        { selected: 1, color: 'black' },
+        { selected: 1, color: '#F8C146' },
         { selected: 1, color: 'blue' },
         { selected: 1, color: '#0B472B' },
         { selected: 1, color: 'forestgreen' },
@@ -343,7 +343,10 @@ class App extends Component {
                   className='col-12 align-self-center'
                   style={{ textAlign: 'center' }}
                 >
-                  <h4 className='page-title wow fadeInUp' style={{ fontSize: '2.2rem' }}>
+                  <h4
+                    className='page-title wow fadeInUp'
+                    style={{ fontSize: '2.2rem' }}
+                  >
                     Covid19 BIZMAP
                   </h4>
                   <div className='d-flex align-items-center'>
@@ -360,7 +363,10 @@ class App extends Component {
                   className='col-12 align-self-center'
                   style={{ textAlign: 'center' }}
                 >
-                  <h6 className='page-title wow fadeInUp' style={{ fontSize: '1.0rem' }}>
+                  <h6
+                    className='page-title wow fadeInUp'
+                    style={{ fontSize: '1.0rem' }}
+                  >
                     An{' '}
                     <img
                       src='/enactus.png'
