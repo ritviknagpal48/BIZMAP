@@ -57,7 +57,9 @@ class UserDetailSetOne extends Component {
       <MuiThemeProvider>
         <React.Fragment>
           <div className='modal-body' style={styles.modal_body}>
-            <h4 className='display-7'>Register</h4>
+            <h4 className='display-7'>
+              Register as an Organization / Volunteer
+            </h4>
             {this.props.display && (
               <div style={{ height: '3rem' }}>
                 <Alert variant='danger'>
@@ -78,7 +80,7 @@ class UserDetailSetOne extends Component {
             <br />
             <TextField
               id='standard-basic'
-              label='Description / Skills'
+              label='Description'
               onChange={handleChange('field_two')}
               value={values.field_two}
               style={styles.text_field}
@@ -127,7 +129,7 @@ class UserDetailSetOne extends Component {
             <br />
             <TextField
               id='standard-basic'
-              label='Useful Links'
+              label='Useful Link'
               onChange={handleChange('field_six')}
               value={values.field_six}
               style={styles.text_field}

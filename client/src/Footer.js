@@ -3,8 +3,11 @@ import React, { Fragment } from 'react';
 export const Footer = () => {
   return (
     <Fragment>
-      <footer className='footer text-center' style={{ background: 'white' }}>
-        <span style={{ fontSize: '130%' }}>
+      <footer
+        className='footer text-center wow fadeInUp'
+        style={{ background: 'white' }}
+      >
+        <span style={{ fontSize: '130%' }} className='wow fadeInUp'>
           Visit at:
           <a href='https://www.enactusnsut.org/' style={{ color: '#46b7f5' }}>
             {' '}
@@ -53,7 +56,7 @@ export const Footer = () => {
           {/* </div> */}
         </div>
         <br />
-        <span style={{ fontSize: '120%' }}>
+        <span className='wow fadeInUp' style={{ fontSize: '120%' }}>
           Made with <i class='fas fa-heart' style={{ color: 'red' }}></i> by{' '}
           <img
             src='enactus.png'

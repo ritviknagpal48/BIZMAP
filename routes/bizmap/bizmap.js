@@ -4,6 +4,7 @@ const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
 const jwt = require('jsonwebtoken');
 const OAuth2 = google.auth.OAuth2;
+const config = require('config');
 const oauth2Client = new OAuth2(
   '389790068785-osb9rej502bbdbt6kil1jjrvo825o6fr.apps.googleusercontent.com',
   'AVbe59TwBKQmN-bBU5DrR-Sh',
@@ -113,11 +114,10 @@ router.post('/add_message', async (req, res) => {
                     style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;"
                   >
                     <p class="text-center" style="margin: 0; color:  #3C4E62">
-                      Hi, Ritvik wants to add a new message to the discussion forum
+                      Hi Team, ${newMessage.name} wants to add a new message to the discussion forum
                     </p>
                     <p class="text-center" style="margin: 0; color:  #3C4E62">
-                      <span style="font-weight: bold">Message: </span> This is a new
-                      message
+                      <span style="font-weight: bold">Message: </span> ${newMessage.content}
                     </p>
                     <p class="text-center" style="margin: 0; color:  #3C4E62">
                       Click on the button below to verify the message
@@ -203,10 +203,9 @@ router.post('/add_message', async (req, res) => {
     // setup email data with unicode symbols
     let mailOptions = {
       from: '"Project Aashray" <aashrayproject@gmail.com>', // sender address
-      to: map.email, // list of receivers
-      subject: 'Business In Review', // Subject line
-      text:
-        'Thanks for registring your business with us. Your business is currently under review.',
+      to: 'aashrayproject@gmail.com', // list of receivers
+      subject: 'New Message', // Subject line
+      text: 'New Message ',
       html: output2
     };
 

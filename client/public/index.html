@@ -14,6 +14,11 @@
       href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+
     <link rel="stylesheet" href="%PUBLIC_URL%/themify-icons.css" />
 
     <style>
@@ -32,8 +37,8 @@
       .mapboxgl-popup {
         max-width: 400px;
         font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-        position:absolute;
-        z-index:1000;
+        position: absolute;
+        z-index: 1000;
       }
       .floating-button {
         z-index: 1000;
@@ -59,9 +64,9 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-        html{
-              scroll-behavior: smooth;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
     </style>
 
     <link
@@ -93,6 +98,11 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
 
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js"></script>
 

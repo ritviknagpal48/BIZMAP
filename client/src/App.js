@@ -165,7 +165,7 @@ class App extends Component {
   };
   render() {
     return (
-      <div className='App' id="home">
+      <div className='App' id='home'>
         <div
           id='main-wrapper'
           data-theme='light'
@@ -197,10 +197,7 @@ class App extends Component {
                 >
                   <i className='fas fa-bars' style={{ color: 'white' }} />
                 </a>
-                <a
-                  className='navbar-brand'
-                  href='#home'
-                >
+                <a className='navbar-brand' href='#home'>
                   {/* Logo icon */}
                   <b className='logo-icon'>
                     {/*You can put here icon as well // <i class="wi wi-sunset"></i> //*/}
@@ -284,7 +281,7 @@ class App extends Component {
                       data-toggle='modal'
                       data-target='#exampleModal'
                     >
-                      Register Your Organisation
+                      Want to be featured on Covid19 Bizmap?
                     </a>
                     {/* </div> */}
                     {/* <div style={{marginTop: '0px', paddingTop: '0px', textAlign: 'center'}}> */}
@@ -346,8 +343,8 @@ class App extends Component {
                   className='col-12 align-self-center'
                   style={{ textAlign: 'center' }}
                 >
-                  <h4 className='page-title' style={{ fontSize: '2.2rem' }}>
-                    Covid-19 BIZMAP
+                  <h4 className='page-title wow fadeInUp' style={{ fontSize: '2.2rem' }}>
+                    Covid19 BIZMAP
                   </h4>
                   <div className='d-flex align-items-center'>
                     <nav aria-label='breadcrumb'>
@@ -363,7 +360,7 @@ class App extends Component {
                   className='col-12 align-self-center'
                   style={{ textAlign: 'center' }}
                 >
-                  <h6 className='page-title' style={{ fontSize: '1.0rem' }}>
+                  <h6 className='page-title wow fadeInUp' style={{ fontSize: '1.0rem' }}>
                     An{' '}
                     <img
                       src='/enactus.png'
@@ -386,7 +383,7 @@ class App extends Component {
                   style={{ textAlign: 'center' }}
                 >
                   <div
-                    className='d-flex no-block align-items-center'
+                    className='d-flex no-block align-items-center wow fadeInUp'
                     style={{ justifyContent: 'center' }}
                   >
                     <div className>

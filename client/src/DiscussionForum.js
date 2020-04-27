@@ -1,12 +1,20 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Message } from './Message';
 import axios from 'axios';
-import {EmailSend} from './EmailSend';
+import { EmailSend } from './EmailSend';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Alert from 'react-bootstrap/Alert';
 
 export const DiscussionForum = () => {
   const [open, setOpen] = useState(false);
+  const [name, setName] = useState('');
   const onOpenModal = () => {
     setOpen(true);
+  };
+  const changeName = e => {
+    e.preventDefault();
+    setName(e.target.value);
   };
   const onCloseModal = () => {
     setOpen(false);
@@ -21,6 +29,8 @@ export const DiscussionForum = () => {
 
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
+  const [show, setShow] = useState(false);
+
   const fetchMessages = async () => {
     const res = await axios.post(
       'https://covidbizmap.enactusnsut.org/bizmap/get_messages'
@@ -29,13 +39,31 @@ export const DiscussionForum = () => {
     setMessages(res.data.messages);
   };
 
-const handleReq = () =>
-{
-    return <EmailSend/>;
-}
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [incomplete, setIncomplete] = useState(false);
+  const postMessage = async () => {
+    if (name.split(' ').join('') == '' || message.split(' ').join('') == '') {
+      setIncomplete(true);
+      setTimeout(() => {
+        setIncomplete(false);
+      }, 5000);
+    } else {
+      const res = await axios.post('http://localhost:5050/bizmap/add_message', {
+        name: name,
+        content: message
+      });
+      window.location.reload(false);
+    }
+  };
+  const onSubmit = e => {
+    console.log('submit');
+    postMessage();
+  };
+
   const onClick = async e => {
     e.preventDefault();
-    onOpenModal();
+    handleShow();
     // e.preventDefault();
     // const res = await axios.post(
     //   'https://covidbizmap.enactusnsut.org/bizmap/add_message',
@@ -127,7 +155,7 @@ const handleReq = () =>
                 <a
                   className='btn-circle btn-lg btn-cyan float-right text-white'
                   href='javascript:void(0)'
-                  onClick={handleReq}
+                  onClick={onClick}
                 >
                   <i className='fas fa-paper-plane' />
                 </a>
@@ -136,7 +164,47 @@ const handleReq = () =>
           </div>
         </div>
       </div>
-    <EmailSend></EmailSend>
+      {/* <EmailSend></EmailSend> */}
+      <Fragment>
+        {/* <Button variant='primary' onClick={handleShow}>
+          Launch demo modal
+        </Button> */}
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Enter your Name</Modal.Title>
+          </Modal.Header>
+          {incomplete && (
+            <Alert variant='danger'>
+              Please, fill all the fields in the form
+            </Alert>
+          )}
+          <div style={{ padding: '5%', textAlign: 'center' }}>
+            <input
+              style={{
+                paddingLeft: '5%',
+                paddingRight: '5%',
+                borderRadius: '5px'
+              }}
+              onChange={changeName}
+              value={name}
+              placeholder='Enter your Name here'
+            ></input>
+          </div>
+          <Modal.Footer>
+            <Button variant='secondary' onClick={handleClose}>
+              Close
+            </Button>
+            <Button
+              variant=''
+              onClick={onSubmit}
+              style={{ backgroundColor: '#46B7F5', color: 'white' }}
+            >
+              Submit for Review
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </Fragment>
     </Fragment>
   );
 };
