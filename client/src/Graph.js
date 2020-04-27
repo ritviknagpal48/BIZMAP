@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import MapGL, { NavigationControl, Marker, Popup } from 'react-map-gl';
 import axios from 'axios';
 
@@ -131,22 +131,43 @@ export default class Graph extends Component {
           }}
         >
           <div>
-            <p>
-              <strong>Category:</strong> {this.state.markerList[index].category}
-            </p>
-            <p>
-              <strong>Description:</strong> {this.state.markerList[index].info}
-            </p>
-            <p>
-              <strong>Address:</strong> {this.state.markerList[index].address}
-            </p>
-            <p>
-              <strong>Contact:</strong> {this.state.markerList[index].contact}
-            </p>
-            <strong>Useful Links:</strong>{' '}
-            <a href={this.state.markerList[index].link} target='_blank'>
-              {this.state.markerList[index].link}
-            </a>
+            {this.state.markerList[index].category && (
+              <p>
+                <strong>Category:</strong>{' '}
+                {this.state.markerList[index].category}
+              </p>
+            )}
+            {this.state.markerList[index].name && (
+              <p>
+                <strong>Stakeholder/Entity:</strong>{' '}
+                {this.state.markerList[index].name}
+              </p>
+            )}
+            {this.state.markerList[index].info && (
+              <p>
+                <strong>Description:</strong>{' '}
+                {this.state.markerList[index].info}
+              </p>
+            )}
+            {this.state.markerList[index].link && (
+              <Fragment>
+                <strong>Useful Links:</strong>{' '}
+                <a href={this.state.markerList[index].link} target='_blank'>
+                  {this.state.markerList[index].link}
+                </a>
+              </Fragment>
+            )}
+            {this.state.markerList[index].address && (
+              <p>
+                <strong>Address:</strong> {this.state.markerList[index].address}
+              </p>
+            )}
+
+            {this.state.markerList[index].contact && (
+              <p>
+                <strong>Contact:</strong> {this.state.markerList[index].contact}
+              </p>
+            )}
           </div>
         </Popup>
       );
