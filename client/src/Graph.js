@@ -80,7 +80,10 @@ export default class Graph extends Component {
             contact: response.data[i].contact
           });
           array.push(false);
+<<<<<<< HEAD
           // console.log('Data', response);
+=======
+>>>>>>> f24dd6ab6ca495129c523017d31f7c26756d74fa
         }
         this.setState({ display: array });
         this.setState({

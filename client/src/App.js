@@ -128,15 +128,12 @@ class App extends Component {
           todayDeaths: response.data.todayDeaths
         }
       });
-      console.log(response);
     });
   }
 
   toggle = (e, index) => {
-    console.log(this);
     var value = 1;
     var array = this.state.category;
-    console.log(this.state.category);
     if (index == 0) {
       if (array[0].selected == 0) {
         for (var i = 0; i < array.length; i++) {
@@ -168,7 +165,7 @@ class App extends Component {
   };
   render() {
     return (
-      <div className='App'>
+      <div className='App' id="home">
         <div
           id='main-wrapper'
           data-theme='light'
@@ -202,7 +199,7 @@ class App extends Component {
                 </a>
                 <a
                   className='navbar-brand'
-                  href='https://covidbizmap.enactusnsut.org/'
+                  href='#home'
                 >
                   {/* Logo icon */}
                   <b className='logo-icon'>
