@@ -11,6 +11,7 @@ import Select from '@material-ui/core/Select';
 import Alert from 'react-bootstrap/Alert';
 
 const Category = [
+  'All',
   'Contact Tracing',
   'Diagnostics',
   'Employee Support',
@@ -29,18 +30,18 @@ const Category = [
   'Food Providers',
   'Patient Engagement',
   'Self Reporting Apps',
-  'Alert/tracking app',
-  'Helpdesk',
   'datasets',
   'Automobile',
-  'Bioinformatics',
-
   'Skill Training',
   'Mask Providers',
   'Heatmaps',
   'Volunteering orgs',
   'Others',
-  'Volunteers'
+  'Want to Volunteer',
+  'Bioinformatics',
+
+  'Alert/tracking app',
+  'Helpdesk'
 ];
 class UserDetailSetOne extends Component {
   continue = e => {

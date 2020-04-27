@@ -525,7 +525,7 @@ router.post('/add_to_graph', async (req, res) => {
 router.get('/all_business', async (req, res) => {
   try {
     const map = await Map.find({ verified: true });
-    console.log(map);
+    // console.log(map);
     return res.status(200).json(map);
   } catch (error) {
     console.log(error);

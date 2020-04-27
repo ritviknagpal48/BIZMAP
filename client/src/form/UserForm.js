@@ -13,7 +13,7 @@ class UserForm extends Component {
       field_one: '',
       field_two: '',
       field_three: '',
-      field_four: 'Volunteers',
+      field_four: 'Want to Volunteer',
       field_five: '',
       field_six: '',
       field_seven: '',
@@ -46,17 +46,14 @@ class UserForm extends Component {
     } else {
       this.setState({ loading: 'fa fa-spinner fa-spin' });
       this.setState({ loadingmssg: 'Loading ' });
-      const res = await Axios.post(
-        'http://localhost:5050/graph/add_to_graph',
-        {
-          address: this.state.field_three,
-          name: this.state.field_one,
-          description: this.state.field_two,
-          contact: this.state.field_five,
-          links: this.state.field_six,
-          category: this.state.field_four
-        }
-      );
+      const res = await Axios.post('http://localhost:5050/graph/add_to_graph', {
+        address: this.state.field_three,
+        name: this.state.field_one,
+        description: this.state.field_two,
+        contact: this.state.field_five,
+        links: this.state.field_six,
+        category: this.state.field_four
+      });
       this.setState({ loading: '' });
       this.setState({ loadingmssg: 'Submit for Approval' });
       console.log(res.data);

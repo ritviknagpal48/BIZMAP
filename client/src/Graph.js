@@ -31,17 +31,18 @@ const Category = [
   'Food Providers',
   'Patient Engagement',
   'Self Reporting Apps',
-  'Alert/tracking app',
-  'Helpdesk',
   'datasets',
   'Automobile',
-  'Bioinformatics',
   'Skill Training',
   'Mask Providers',
   'Heatmaps',
   'Volunteering orgs',
   'Others',
-  'Volunteers'
+  'Want to Volunteer',
+  'Bioinformatics',
+
+  'Alert/tracking app',
+  'Helpdesk'
 ];
 var idx;
 
