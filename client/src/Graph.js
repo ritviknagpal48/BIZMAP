@@ -59,37 +59,7 @@ export default class Graph extends Component {
         padding: '0px',
         margin: '0px'
       },
-      display: [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
-      ],
+      display: [ ],
       markerList: []
     };
   }
@@ -98,6 +68,7 @@ export default class Graph extends Component {
       .get('https://covidbizmap.enactusnsut.org/graph/all_business')
       .then(response => {
         let arr = [];
+        let array = [];
         for (let i = 0; i < response.data.length; ++i) {
           arr.push({
             lat: parseFloat(response.data[i].latitude),
@@ -108,8 +79,10 @@ export default class Graph extends Component {
             address: response.data[i].address,
             contact: response.data[i].contact
           });
+          array.push(false);
           console.log('Data', response);
         }
+        this.setState({display:array});
         this.setState({
           markerList: arr
         });
@@ -157,6 +130,7 @@ export default class Graph extends Component {
             });
           }}
         >
+          <div>
           <p>
             <strong>Category:</strong> {this.state.markerList[index].category}
           </p>
@@ -169,9 +143,8 @@ export default class Graph extends Component {
           <p>
             <strong>Contact:</strong> {this.state.markerList[index].contact}
           </p>
-          <p>
-            <strong>Useful Links:</strong> {this.state.markerList[index].link}
-          </p>
+          <strong>Useful Links:</strong> <a href={this.state.markerList[index].link} target="_blank">{this.state.markerList[index].link}</a>
+          </div>
         </Popup>
       );
     } else {
