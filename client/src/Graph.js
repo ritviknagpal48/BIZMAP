@@ -127,7 +127,7 @@ export default class Graph extends Component {
             this.setState({
               display: {
                 ...this.state.display,
-                [index]: !this.state.display[index]
+                [index]:false
               }
             });
           }}

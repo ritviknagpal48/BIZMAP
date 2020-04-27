@@ -5,6 +5,7 @@ import { EmailSend } from './EmailSend';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Alert from 'react-bootstrap/Alert';
+import GoogleLogin from "react-google-login";
 
 export const DiscussionForum = () => {
   const [open, setOpen] = useState(false);
@@ -82,6 +83,10 @@ export const DiscussionForum = () => {
   const onChange = e => {
     e.preventDefault();
     setMessage(e.target.value);
+  };
+
+  const responseGoogle = (response) => {
+    console.log(response);
   };
 
   useEffect(() => {
@@ -177,7 +182,7 @@ export const DiscussionForum = () => {
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Enter your Name</Modal.Title>
+            <Modal.Title className="Boton">Sign In</Modal.Title>
           </Modal.Header>
           {incomplete && (
             <Alert variant='danger'>
@@ -185,27 +190,18 @@ export const DiscussionForum = () => {
             </Alert>
           )}
           <div style={{ padding: '5%', textAlign: 'center' }}>
-            <input
-              style={{
-                paddingLeft: '5%',
-                paddingRight: '5%',
-                borderRadius: '5px'
-              }}
-              onChange={changeName}
-              value={name}
-              placeholder='Enter your Name here'
-            ></input>
+          <GoogleLogin
+              clientId="389790068785-osb9rej502bbdbt6kil1jjrvo825o6fr.apps.googleusercontent.com"
+              buttonText="Login with Google"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy={"single_host_origin"}
+              />
+          
           </div>
-          <Modal.Footer>
-            <Button variant='secondary' onClick={handleClose}>
+          <Modal.Footer style={{padding:"5% 0 7% 0"}}>
+            <Button variant='secondary' className = "Boton" onClick={handleClose}>
               Close
-            </Button>
-            <Button
-              variant=''
-              onClick={onSubmit}
-              style={{ backgroundColor: '#46B7F5', color: 'white' }}
-            >
-              Submit for Review
             </Button>
           </Modal.Footer>
         </Modal>
