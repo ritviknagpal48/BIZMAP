@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Message } from './Message';
 import axios from 'axios';
-import ReactModal from 'react-responsive-modal';
+import {EmailSend} from './EmailSend';
 
 export const DiscussionForum = () => {
   const [open, setOpen] = useState(false);
@@ -29,6 +29,10 @@ export const DiscussionForum = () => {
     setMessages(res.data.messages);
   };
 
+const handleReq = () =>
+{
+    return <EmailSend/>;
+}
   const onClick = async e => {
     e.preventDefault();
     onOpenModal();
@@ -123,7 +127,7 @@ export const DiscussionForum = () => {
                 <a
                   className='btn-circle btn-lg btn-cyan float-right text-white'
                   href='javascript:void(0)'
-                  onClick={onClick}
+                  onClick={handleReq}
                 >
                   <i className='fas fa-paper-plane' />
                 </a>
@@ -132,6 +136,7 @@ export const DiscussionForum = () => {
           </div>
         </div>
       </div>
+    <EmailSend></EmailSend>
     </Fragment>
   );
 };
