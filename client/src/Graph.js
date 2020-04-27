@@ -77,7 +77,8 @@ export default class Graph extends Component {
             category: response.data[i].category,
             link: response.data[i].links,
             address: response.data[i].address,
-            contact: response.data[i].contact
+            contact: response.data[i].contact,
+            name: response.data[i].name
           });
           array.push(false);
           // console.log('Data', response);
@@ -151,10 +152,12 @@ export default class Graph extends Component {
             )}
             {this.state.markerList[index].link && (
               <Fragment>
-                <strong>Useful Links:</strong>{' '}
-                <a href={this.state.markerList[index].link} target='_blank'>
-                  {this.state.markerList[index].link}
-                </a>
+                <p>
+                  <strong>Useful Links:</strong>{' '}
+                  <a href={this.state.markerList[index].link} target='_blank'>
+                    {this.state.markerList[index].link}
+                  </a>
+                </p>
               </Fragment>
             )}
             {this.state.markerList[index].address && (
