@@ -62,8 +62,17 @@
         html{
               scroll-behavior: smooth;
         }
-    </style>
+        #loading {width: 100%;height: 100%;top: 0px;left: 0px;position: fixed;display: block; z-index: 99}
 
+#loading-image {position: absolute;top: 40%;left: 45%;z-index: 100}
+    </style>
+      <script>
+            window.onload = function(){ 
+                document.getElementById("loading").style.display = "none" ;
+                document.getElementById("root").style.display = "block";
+                
+            }
+      </script>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -92,7 +101,10 @@
     <link href="logowhite.png" rel="icon" />
   </head>
   <body>
-    <div id="root"></div>
+      <div id="loading">
+<img id="loading-image" src="https://abs.twimg.com/a/1496350504/img/t1/Spinner-Dots-30fps-200px.gif" alt="Loading..." />
+</div>
+    <div id="root" style="display: none;"></div>
 
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js"></script>
 
