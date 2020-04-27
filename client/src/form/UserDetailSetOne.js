@@ -30,6 +30,7 @@ const Category = [
   'Patient Engagement',
   'Self Reporting Apps',
   'Alert/tracking app',
+  'Helpdesk',
   'datasets',
   'Automobile',
   'Bioinformatics',

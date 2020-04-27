@@ -1,4 +1,4 @@
 {
-  "mongoURL": "mongodb+srv://ritviknagpal48:retroa55@testingapi-yy853.mongodb.net/test?retryWrites=true&w=majority",
+  "mongoURL": "mongodb+srv://aashrayproject:enactusnsutcovidproject@cluster0-eekx3.mongodb.net/test?retryWrites=true&w=majority",
   "emailSecret": "secretisnomoreasecret"
 }

@@ -31,6 +31,7 @@ const Category = [
   'Patient Engagement',
   'Self Reporting Apps',
   'Alert/tracking app',
+  'Helpdesk',
   'datasets',
   'Automobile',
   'Bioinformatics',
@@ -48,9 +49,9 @@ export default class Graph extends Component {
     super(props);
     this.state = {
       viewport: {
-        latitude: 17.44212,
-        longitude: 78.391384,
-        zoom: 3,
+        latitude: 22.9734,
+        longitude: 78.6569,
+        zoom: 4,
         bearing: 0,
         pitch: 0,
         width: '100%',
@@ -58,7 +59,37 @@ export default class Graph extends Component {
         padding: '0px',
         margin: '0px'
       },
-      display: [false, false, false],
+      display: [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
       markerList: []
     };
   }
@@ -73,7 +104,9 @@ export default class Graph extends Component {
             long: parseFloat(response.data[i].longitude),
             info: response.data[i].description,
             category: response.data[i].category,
-            link: response.data[i].email
+            link: response.data[i].links,
+            address: response.data[i].address,
+            contact: response.data[i].contact
           });
           console.log('Data', response);
         }
@@ -103,13 +136,13 @@ export default class Graph extends Component {
 
   renderPopup(index) {
     if (
-      this.state.display[index] === true &&
-      this.props.category[index].selected == 1
+      this.state.display[index] === true
+      // && this.props.category[index].selected == 1
     ) {
       return (
         <Popup
           tipSize={5}
-          max-width='240px'
+          max-width='340px'
           anchor='bottom-right'
           longitude={this.state.markerList[index].long}
           latitude={this.state.markerList[index].lat}
@@ -128,13 +161,16 @@ export default class Graph extends Component {
             <strong>Category:</strong> {this.state.markerList[index].category}
           </p>
           <p>
-            <strong>Email:</strong>{' '}
-            <a href={this.state.markerList[index].link} target='_blank'>
-              {this.state.markerList[index].link}
-            </a>
+            <strong>Description:</strong> {this.state.markerList[index].info}
           </p>
           <p>
-            <strong>Description:</strong> {this.state.markerList[index].info}
+            <strong>Address:</strong> {this.state.markerList[index].address}
+          </p>
+          <p>
+            <strong>Contact:</strong> {this.state.markerList[index].contact}
+          </p>
+          <p>
+            <strong>Useful Links:</strong> {this.state.markerList[index].link}
           </p>
         </Popup>
       );
@@ -155,7 +191,7 @@ export default class Graph extends Component {
       return (
         <Marker longitude={marker.long} latitude={marker.lat}>
           <i
-            className='fas fa-map-marker fa-2x'
+            className='fas fa-map-marker'
             name='hospital'
             size='big'
             style={{ color: this.props.category[i].color }}
