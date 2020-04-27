@@ -7,7 +7,7 @@ const forumSchema = mongoose.Schema({
   },
   Date: {
     type: String,
-    default: Date().toString()
+    default: Date.now()
   }
 });
 module.exports = mongoose.model('Forum', forumSchema);

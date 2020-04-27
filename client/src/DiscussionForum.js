@@ -18,8 +18,7 @@ export const DiscussionForum = () => {
     const res = await axios.post(
       'https://covidbizmap.enactusnsut.org/bizmap/add_message',
       {
-        content: message,
-        Date: Date().toString
+        content: message
       }
     );
     // console.log(res.data);

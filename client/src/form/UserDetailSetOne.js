@@ -9,8 +9,8 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Alert from 'react-bootstrap/Alert';
+
 const Category = [
-  'All',
   'Contact Tracing',
   'Diagnostics',
   'Employee Support',
@@ -34,6 +34,7 @@ const Category = [
   'datasets',
   'Automobile',
   'Bioinformatics',
+
   'Skill Training',
   'Mask Providers',
   'Heatmaps',
@@ -77,7 +78,7 @@ class UserDetailSetOne extends Component {
             <br />
             <TextField
               id='standard-basic'
-              label='Description'
+              label='Description / Skills'
               onChange={handleChange('field_two')}
               value={values.field_two}
               style={styles.text_field}
@@ -126,7 +127,7 @@ class UserDetailSetOne extends Component {
             <br />
             <TextField
               id='standard-basic'
-              label='Useful Link'
+              label='Useful Links'
               onChange={handleChange('field_six')}
               value={values.field_six}
               style={styles.text_field}
