@@ -12,7 +12,6 @@ const navStyle = {
 };
 
 const Category = [
-    'All',
   'Contact Tracing',
   'Diagnostics',
   'Employee Support',
@@ -160,8 +159,8 @@ export default class Graph extends Component {
         break;
       }
     }
-
-      if (this.props.category[i].selected == 1) {
+    //hello
+    if (this.props.category[i].selected == 1) {
       return (
         <Marker longitude={marker.long} latitude={marker.lat}>
           <i
