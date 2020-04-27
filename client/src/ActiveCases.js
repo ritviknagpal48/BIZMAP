@@ -82,8 +82,8 @@ export const ActiveCases = props => {
               </div>
               <a
                 href='https://www.mygov.in/covid-19'
-                className='waves-effect waves-light mt-3 btn btn-lg btn-info accent-4 mb-3'
-                style={{ backgroundColor: '#46b7f5' }}
+                className='waves-effect waves-light mt-3 btn btn-lg  accent-4 mb-3'
+                style={{ backgroundColor: '#46b7f5', color: 'white' }}
               >
                 View More Details
               </a>
@@ -94,9 +94,9 @@ export const ActiveCases = props => {
           <div className='card-body' style={{ textAlign: 'center' }}>
             <a
               href='https://pmnrf.gov.in/en/'
-              className='waves-effect waves-light mt-3 btn btn-lg btn-info accent-4 mb-3'
+              className='waves-effect waves-light mt-3 btn btn-lg accent-4 mb-3'
               // style={{ backgroundColor: '#D4EDDA' }}
-              style={{ backgroundColor: '#46b7f5' }}
+              style={{ backgroundColor: '#46b7f5', color: 'white' }}
             >
               PM Relief Care Fund
             </a>{' '}
@@ -104,9 +104,9 @@ export const ActiveCases = props => {
             <br />
             <a
               href='https://www.mohfw.gov.in/'
-              className='waves-effect waves-light mt-3 btn btn-lg btn-info accent-4 mb-3'
+              className='waves-effect waves-light mt-3 btn btn-lg accent-4 mb-3'
               // style={{ backgroundColor: '#F8D7DA' }}
-              style={{ backgroundColor: '#46b7f5' }}
+              style={{ backgroundColor: '#46b7f5', color: 'white' }}
             >
               Helpline Support
             </a>{' '}
