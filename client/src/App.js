@@ -111,7 +111,8 @@ class App extends Component {
         deaths: 0,
         recovered: 0,
         todayDeaths: 0
-      }
+      },
+        loading : true,
     };
   }
 
@@ -164,6 +165,14 @@ class App extends Component {
     this.setState({ category: array });
   };
   render() {
+      window.onload = () => { 
+              this.setState({loading:false});    
+          }
+      if(this.state.loading===true)
+          {
+              return (<img id="loading-image" src="loading.gif" alt="Loading..." />)
+          }
+      else{
     return (
       <div className='App' id="home">
         <div
@@ -479,6 +488,7 @@ class App extends Component {
         <Modal />
       </div>
     );
+    }
   }
 }
 

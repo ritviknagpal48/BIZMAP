@@ -129,14 +129,13 @@ const handleReq = () =>
                   href='javascript:void(0)'
                   onClick={handleReq}
                 >
-                  <i className='fas fa-paper-plane' />
+                <EmailSend className='fas fa-paper-plane'></EmailSend>
                 </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    <EmailSend></EmailSend>
     </Fragment>
   );
 };

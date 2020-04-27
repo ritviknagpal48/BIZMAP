@@ -9,9 +9,8 @@ export const EmailSend = () => {
   const handleShow = () => setShow(true);
   return (
     <Fragment>
-      <Button variant='primary' onClick={handleShow}>
-        Launch demo modal
-      </Button>
+      <div onClick={handleShow} class="fa fa-paper-plane">
+      </div>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
