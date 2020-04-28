@@ -56,7 +56,7 @@ export const Footer = () => {
           {/* </div> */}
         </div>
         <br />
-        <span className='wow fadeInUp' style={{ fontSize: '120%' }}>
+        <span className='' style={{ fontSize: '120%' }}>
           Made with <i class='fas fa-heart' style={{ color: 'red' }}></i> by{' '}
           <img
             src='enactus.png'

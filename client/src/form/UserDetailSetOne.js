@@ -36,12 +36,14 @@ const Category = [
   'Mask Providers',
   'Heatmaps',
   'Volunteering orgs',
-  'Others',
   'Want to Volunteer',
   'Bioinformatics',
 
   'Alert/tracking app',
-  'Helpdesk'
+  'Helpdesk',
+  'Animal Care',
+  'Others',
+
 ];
 class UserDetailSetOne extends Component {
   continue = e => {

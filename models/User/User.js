@@ -5,6 +5,9 @@ const userSchema = mongoose.Schema({
   name: {
     type: String
   },
+  username: {
+    type: String
+  },
   image: {
     type: String
   },

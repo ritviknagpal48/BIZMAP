@@ -71,13 +71,15 @@ router.post('/get_messages', async (req, res) => {
 
 router.post('/create_user', async (req, res) => {
   try {
-    const user = await User.find({ name: req.body.name });
+    const user = await User.findOne({ username: req.body.username });
+    // console.log(user);
     if (user) {
       return res.status(200).json({ user: user });
     }
     newUser = new User({
       name: req.body.name,
-      image: req.body.image
+      image: req.body.image,
+      username: req.body.username
     });
     await newUser.save();
     return res.status(200).json({

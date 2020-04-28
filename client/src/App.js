@@ -50,20 +50,24 @@ const Category = [
   { category: 'Mask Providers', id: 22, className: 'fa fa-thermometer' },
   { category: 'Heatmaps', id: 23, className: 'fa fa-street-view' },
   { category: 'Volunteering orgs', id: 24, className: 'fa fa-building' },
-  { category: 'Others', id: 25, className: 'fas fa-bars' },
   // { category: 'Unemployed', id: 25, className: 'fa fa-male' },
-  { category: 'Want to Volunteer', id: 26, className: 'fa fa-user' },
-  { category: 'Bioinformatics', id: 27, className: 'fa fa-medkit' },
+  { category: 'Want to Volunteer', id: 25, className: 'fa fa-user' },
+  { category: 'Bioinformatics', id: 26, className: 'fa fa-medkit' },
   {
     category: 'Alert/tracking app',
-    id: 28,
+    id: 27,
     className: 'fa fa-exclamation-triangle'
   },
   {
     category: 'Helpdesk',
-    id: 29,
+    id: 28,
     className: 'fa fa-medkit'
-  }
+  },
+
+  { category: 'Animal Care', id: 29, className: 'fa fa-search' },
+
+  { category: 'Others', id: 30, className: 'fas fa-bars' }
+
 ];
 
 class App extends Component {

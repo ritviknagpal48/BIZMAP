@@ -16,7 +16,7 @@ export const Message = content => {
           )}
           <div className='box bg-light-info'>{content.content.content}</div>
         </div>
-        <div className='chat-time'>{content.content.Date.split(' G')[0]}</div>
+        {/* <div className='chat-time'>{content.content.Date.split(' G')[0]}</div> */}
       </li>
     </Fragment>
   );
