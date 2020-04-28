@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
 export const Message = content => {
-  // console.log(content);
+  // // console.log(content);
   return (
     <Fragment>
       <li className='chat-item'>

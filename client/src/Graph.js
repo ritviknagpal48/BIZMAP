@@ -85,7 +85,7 @@ export default class Graph extends Component {
             name: response.data[i].name
           });
           array.push(false);
-          // console.log('Data', response);
+          // // console.log('Data', response);
         }
         this.setState({ display: array });
         this.setState({
@@ -93,7 +93,7 @@ export default class Graph extends Component {
         });
       })
       .catch(error => {
-        console.log(error);
+        // console.log(error);
       });
   }
   // showDetails=() => {

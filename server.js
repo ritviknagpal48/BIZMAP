@@ -25,10 +25,10 @@ mongoose
     useFindAndModify: false
   })
   .then(() => {
-    console.log('Mongo successfully connected');
+    // console.log('Mongo successfully connected');
   })
   .catch(err => {
-    console.log(err);
+    // console.log(err);
   });
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -52,5 +52,5 @@ app.get('*', (req, res) => {
 const PORT = process.env.PORT || 5050;
 
 server.listen(PORT, () => {
-  console.log(`Server started on ${PORT}`);
+  // console.log(`Server started on ${PORT}`);
 });

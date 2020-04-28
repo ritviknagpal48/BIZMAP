@@ -29,7 +29,7 @@ router.get('/verify_message/:token', async (req, res) => {
       message: 'verified successfully'
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(500).json({
       error
     });
@@ -48,7 +48,7 @@ router.post('/add_message', async (req, res) => {
       message: 'successfully added'
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(500).json({
       error: error
     });
@@ -62,7 +62,7 @@ router.post('/get_messages', async (req, res) => {
       messages: forum
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(500).json({
       error: error
     });
@@ -72,7 +72,7 @@ router.post('/get_messages', async (req, res) => {
 router.post('/create_user', async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username });
-    // console.log(user);
+    // // console.log(user);
     if (user) {
       return res.status(200).json({ user: user });
     }
@@ -86,7 +86,7 @@ router.post('/create_user', async (req, res) => {
       user: user
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(500).json({
       error
     });

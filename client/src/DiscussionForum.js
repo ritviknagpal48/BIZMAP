@@ -36,7 +36,7 @@ export const DiscussionForum = () => {
 
   const fetchMessages = async () => {
     const res = await axios.post('https://covidbizmap.enactusnsut.org/bizmap/get_messages');
-    console.log(res.data.messages);
+    // console.log(res.data.messages);
     setMessages(res.data.messages);
   };
 
@@ -61,7 +61,7 @@ export const DiscussionForum = () => {
     }
   };
   const onSubmit = e => {
-    console.log('submit');
+    // console.log('submit');
     postMessage();
   };
 
@@ -79,7 +79,7 @@ export const DiscussionForum = () => {
     //     content: message
     //   }
     // );
-    // // console.log(res.data);
+    // // // console.log(res.data);
     // window.location.reload(false);
   };
   const onChange = e => {
@@ -88,11 +88,11 @@ export const DiscussionForum = () => {
   };
 
   const componentClicked = () => {
-    console.log('logging in');
+    // console.log('logging in');
   };
 
   const responseFacebook = response => {
-    console.log(response);
+    // console.log(response);
   };
   const saveUser = async (obj) => {
     const res = await axios.post('https://covidbizmap.enactusnsut.org/bizmap/create_user', {
@@ -100,7 +100,7 @@ export const DiscussionForum = () => {
       username: obj.email.split('@')[0],
       image: obj.imageUrl
     });
-    console.log(res.data);
+    // console.log(res.data);
      setUser({
       name: obj.name,
       username: obj.email.split('@')[0],
@@ -109,7 +109,7 @@ export const DiscussionForum = () => {
   };
   const responseGoogle = response => {
     const obj = response.profileObj;
-    // console.log(obj)
+    // // console.log(obj)
     saveUser(obj);
    
   };

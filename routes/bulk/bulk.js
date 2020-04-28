@@ -4,7 +4,7 @@ const Map = require('../../models/Map/Map');
 
 router.get('/get_excel_file', async (req, res) => {
   // const rows = await xlsxFile('./data.xlsx');
-  // // console.log(rows);
+  // // // console.log(rows);
   // for (let i = 1; i < rows.length; ++i) {
   //   const lat = rows[i][6]
   //     .split(' ')

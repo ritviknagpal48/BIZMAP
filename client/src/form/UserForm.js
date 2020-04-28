@@ -42,7 +42,7 @@ class UserForm extends Component {
       this.state.field_six.split(' ').join('') == ''
     ) {
       this.setState({ display: true });
-      console.log('empty');
+      // console.log('empty');
     } else {
       this.setState({ loading: 'fa fa-spinner fa-spin' });
       this.setState({ loadingmssg: 'Loading ' });
@@ -56,7 +56,7 @@ class UserForm extends Component {
       });
       this.setState({ loading: '' });
       this.setState({ loadingmssg: 'Submit for Approval' });
-      console.log(res.data);
+      // console.log(res.data);
       window.location.reload(false);
     }
   };
@@ -74,7 +74,7 @@ class UserForm extends Component {
 
   change = () => {
     this.setState({ display: false });
-    console.log(this.state.display);
+    // console.log(this.state.display);
   };
 
   render() {

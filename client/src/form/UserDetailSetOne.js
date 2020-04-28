@@ -68,8 +68,8 @@ class UserDetailSetOne extends Component {
                 <Alert variant='danger'>
                   Please, fill all the fields in the form
                 </Alert>
-                {console.log(setTimeout(this.props.change(), 5000))}
-                {console.log(this.props.display)}
+                {// console.log(setTimeout(this.props.change(), 5000))}
+                {// console.log(this.props.display)}
               </div>
             )}
             <TextField

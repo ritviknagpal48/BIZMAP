@@ -155,17 +155,17 @@ router.get('/verify/:token/:latitude/:longitude', async (req, res) => {
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        return; // console.log(error);
+        return; // // console.log(error);
       }
-      // console.log('Message sent: %s', info.messageId);
-      // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+      // // console.log('Message sent: %s', info.messageId);
+      // // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
     });
 
     return res.status(200).json({
       message: 'verified successfully'
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(200).json({
       error
     });
@@ -364,10 +364,10 @@ router.post('/add_to_graph', async (req, res) => {
   // send mail with defined transport object
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      return; // console.log(error);
+      return; // // console.log(error);
     }
-    // console.log('Message sent: %s', info.messageId);
-    // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+    // // console.log('Message sent: %s', info.messageId);
+    // // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
   });
 
   const output2 = `
@@ -512,10 +512,10 @@ router.post('/add_to_graph', async (req, res) => {
   // send mail with defined transport object
   transporter2.sendMail(mailOptions2, (error, info) => {
     if (error) {
-      return; // console.log(error);
+      return; // // console.log(error);
     }
-    // console.log('Message sent: %s', info.messageId);
-    // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+    // // console.log('Message sent: %s', info.messageId);
+    // // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
   });
 
   return res.status(200).json({
@@ -526,10 +526,10 @@ router.post('/add_to_graph', async (req, res) => {
 router.get('/all_business', async (req, res) => {
   try {
     const map = await Map.find({ verified: true });
-    // console.log(map);
+    // // console.log(map);
     return res.status(200).json(map);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(500).json(error);
   }
 });
