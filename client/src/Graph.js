@@ -16,7 +16,7 @@ const Category = [
   'Contact Tracing',
   'Diagnostics',
   'Employee Support',
-  'Infection Control',
+  'Infection control',
   'Medication',
   'Patient Engagement',
   'Informative portals',
@@ -29,7 +29,7 @@ const Category = [
   'Tele Education Resources',
   'Covid Specialised Hospitals',
   'Food Providers',
-  'Patient Engagement',
+
   'Self Reporting Apps',
   'datasets',
   'Automobile',

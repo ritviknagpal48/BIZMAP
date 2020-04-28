@@ -15,7 +15,7 @@ const Category = [
   { category: 'Diagnostics', id: 2, className: 'fa fa-certificate' },
   { category: 'Employee Support', id: 3, className: 'fa fa-users' },
   {
-    category: 'Infection Control',
+    category: 'Infection control',
     id: 4,
     className: 'fa fa-exclamation-triangle'
   },
@@ -42,31 +42,31 @@ const Category = [
     className: 'fa fa-hospital'
   },
   { category: 'Food Providers', id: 16, className: 'fa fa-bread-slice' },
-  { category: 'Patient Engagement', id: 17, className: 'fa fa-search' },
-  { category: 'Self Reporting Apps', id: 18, className: 'fa fa-cogs' },
-  { category: 'datasets', id: 19, className: 'fa fa-database' },
-  { category: 'Automobile', id: 20, className: 'fa fa-car' },
-  { category: 'Skill Training', id: 21, className: 'fa fa-adjust' },
-  { category: 'Mask Providers', id: 22, className: 'fa fa-thermometer' },
-  { category: 'Heatmaps', id: 23, className: 'fa fa-street-view' },
-  { category: 'Volunteering orgs', id: 24, className: 'fa fa-building' },
+
+  { category: 'Self Reporting Apps', id: 17, className: 'fa fa-cogs' },
+  { category: 'datasets', id: 18, className: 'fa fa-database' },
+  { category: 'Automobile', id: 19, className: 'fa fa-car' },
+  { category: 'Skill Training', id: 20, className: 'fa fa-adjust' },
+  { category: 'Mask Providers', id: 21, className: 'fa fa-thermometer' },
+  { category: 'Heatmaps', id: 22, className: 'fa fa-street-view' },
+  { category: 'Volunteering orgs', id: 23, className: 'fa fa-building' },
   // { category: 'Unemployed', id: 25, className: 'fa fa-male' },
-  { category: 'Want to Volunteer', id: 25, className: 'fa fa-user' },
-  { category: 'Bioinformatics', id: 26, className: 'fa fa-medkit' },
+  { category: 'Want to Volunteer', id: 24, className: 'fa fa-user' },
+  { category: 'Bioinformatics', id: 25, className: 'fa fa-medkit' },
   {
     category: 'Alert/tracking app',
-    id: 27,
+    id: 26,
     className: 'fa fa-exclamation-triangle'
   },
   {
     category: 'Helpdesk',
-    id: 28,
+    id: 27,
     className: 'fa fa-medkit'
   },
 
-  { category: 'Animal Care', id: 29, className: 'fa fa-search' },
+  { category: 'Animal Care', id: 28, className: 'fa fa-search' },
 
-  { category: 'Others', id: 30, className: 'fas fa-bars' }
+  { category: 'Others', id: 29, className: 'fas fa-bars' }
 
 ];
 
