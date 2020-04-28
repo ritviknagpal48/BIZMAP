@@ -123,7 +123,7 @@ export const Navbar = () => {
                                 {' '}
                                 <img
                                   className='d-block img-fluid'
-                                  src='./Xtreme admin Template - The Ultimate Multipurpose admin template_files/img1.jpg'
+                                  src='./BIZMAP/img1.jpg'
                                   alt='First slide'
                                 />
                               </div>
@@ -132,7 +132,7 @@ export const Navbar = () => {
                               <div className='container p-0'>
                                 <img
                                   className='d-block img-fluid'
-                                  src='./Xtreme admin Template - The Ultimate Multipurpose admin template_files/img2.jpg'
+                                  src='./BIZMAP/img2.jpg'
                                   alt='Second slide'
                                 />
                               </div>
@@ -141,7 +141,7 @@ export const Navbar = () => {
                               <div className='container p-0'>
                                 <img
                                   className='d-block img-fluid'
-                                  src='./Xtreme admin Template - The Ultimate Multipurpose admin template_files/img3.jpg'
+                                  src='./BIZMAP/img3.jpg'
                                   alt='Third slide'
                                 />
                               </div>

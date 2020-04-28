@@ -181,7 +181,8 @@ router.post('/add_to_graph', async (req, res) => {
     description: req.body.description,
     contact: req.body.contact,
     email: req.body.email,
-    category: req.body.category
+    category: req.body.category,
+    link: req.body.links
   });
   await map.save();
   const emailToken = jwt.sign(
