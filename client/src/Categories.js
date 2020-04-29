@@ -8,7 +8,7 @@ class Categories extends Component {
   render() {
     if (this.props.category[this.props.index].selected == 1) {
       return (
-        <li className='sidebar-item' value='Contact Tracing'>
+        <li className='sidebar-item' value='Contact Tracing' >
           <a href='#' className='sidebar-link'>
             <i
               className={this.props.icons}

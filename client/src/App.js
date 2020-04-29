@@ -8,6 +8,7 @@ import Modal from './Modal';
 import axios from 'axios';
 import { whitesmoke } from 'color-name';
 import { Footer } from './Footer';
+import $ from 'jquery'
 
 const Category = [
   { category: 'All', id: 0, className: 'fa fa-cogs' },
@@ -168,6 +169,21 @@ class App extends Component {
     this.setState({ category: array });
   };
   render() {
+    $('.page-wrapper').click((e)=>{
+      if(e.target.id!="main-wrapper")
+      {
+        console.log(e.target.className);
+        var c = document.getElementById('main-wrapper').className;
+        console.log(c);
+        if(c=='mini-sidebar show-sidebar')
+        {
+          document.getElementById('main-wrapper').className = 'mini-sidebar';
+        }
+      }
+    })
+    $('.left-sidebar').click((e)=>{
+      document.getElementById('main-wrapper').className = 'mini-sidebar';
+    })
     return (
       <div className='App' id='home'>
         <div
