@@ -8,11 +8,10 @@ class Categories extends Component {
   render() {
     if (this.props.category[this.props.index].selected == 1) {
       return (
-        <li className='sidebar-item' value='Contact Tracing' >
+        <li className='sidebar-item' value='Contact Tracing' onClick={e => this.props.change(e, this.props.index)}>
           <a href='#' className='sidebar-link'>
             <i
               className={this.props.icons}
-              onClick={e => this.props.change(e, this.props.index)}
               style={{
                 color: `${this.props.category[this.props.index].color}`,
                 textShadow: '0 0 black'
@@ -20,7 +19,6 @@ class Categories extends Component {
             />
             <span
               className='hide-menu'
-              onClick={e => this.props.change(e, this.props.index)}
               style={{
                 color: `${this.props.category[this.props.index].color}`,
                 textShadow: '0 0 1px black'
@@ -35,15 +33,13 @@ class Categories extends Component {
       );
     } else {
       return (
-        <li className='sidebar-item' value='Contact Tracing'>
+        <li className='sidebar-item' value='Contact Tracing' onClick={e => this.props.change(e, this.props.index)}>
           <a href='#' className='sidebar-link'>
             <i
               className={this.props.icons}
-              onClick={e => this.props.change(e, this.props.index)}
             />
             <span
               className='hide-menu'
-              onClick={e => this.props.change(e, this.props.index)}
             >
               {' '}
               {this.props.Category}{' '}
