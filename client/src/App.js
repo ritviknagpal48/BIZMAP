@@ -8,67 +8,70 @@ import Modal from './Modal';
 import axios from 'axios';
 import { whitesmoke } from 'color-name';
 import { Footer } from './Footer';
-import $ from 'jquery'
+import $ from 'jquery';
 
 const Category = [
   { category: 'All', id: 0, className: 'fa fa-cogs' },
   { category: 'Contact Tracing', id: 1, className: 'fa fa-phone' },
-  { category: 'Diagnostics', id: 2, className: 'fa fa-certificate' },
-  { category: 'Employee Support', id: 3, className: 'fa fa-users' },
+  { category: 'Fund donations', id: 2, className: 'fa fa-user' },
+  { category: 'Donations', id: 3, className: 'fa fa-stethoscope' },
+  { category: 'Mental Health', id: 4, className: 'fa fa-plus' },
+  { category: 'Face shields', id: 5, className: 'fa fa-hospital' },
+  { category: 'Diagnostics', id: 6, className: 'fa fa-certificate' },
+  { category: 'Employee Support', id: 7, className: 'fa fa-users' },
   {
     category: 'Infection control',
-    id: 4,
+    id: 8,
     className: 'fa fa-exclamation-triangle'
   },
-  { category: 'Medication', id: 5, className: 'fa fa-plus' },
-  { category: 'Patient Engagement', id: 6, className: 'fa fa-user' },
-  { category: 'Informative portals', id: 7, className: 'fa fa-lock' },
-  { category: 'PPE', id: 8, className: 'fa fa-medkit' },
+  { category: 'Medication', id: 9, className: 'fa fa-plus' },
+  { category: 'Patient Engagement', id: 10, className: 'fa fa-user' },
+  { category: 'Informative portals', id: 11, className: 'fa fa-lock' },
+  { category: 'PPE', id: 12, className: 'fa fa-medkit' },
 
-  { category: 'Supports- Hackathon', id: 9, className: 'fa fa-cogs' },
-  { category: 'Vaccinatory', id: 10, className: 'fa fa-user-md' },
+  { category: 'Supports- Hackathon', id: 13, className: 'fa fa-cogs' },
+  { category: 'Vaccinatory', id: 14, className: 'fa fa-user-md' },
   {
     category: 'Financial support providers',
-    id: 11,
+    id: 15,
     className: 'fa fa-credit-card'
   },
 
-  { category: 'Tele-Medicines', id: 12, className: 'fa fa-stethoscope' },
-  { category: 'NGO Networking', id: 13, className: 'fa fa-database' },
+  { category: 'Tele-Medicines', id: 16, className: 'fa fa-stethoscope' },
+  { category: 'NGO Networking', id: 17, className: 'fa fa-database' },
 
-  { category: 'Tele Education Resources', id: 14, className: 'fa fa-mobile' },
+  { category: 'Tele Education Resources', id: 18, className: 'fa fa-mobile' },
   {
     category: 'Covid Specialised Hospitals',
-    id: 15,
+    id: 19,
     className: 'fa fa-hospital'
   },
-  { category: 'Food Providers', id: 16, className: 'fa fa-bread-slice' },
+  { category: 'Food Providers', id: 20, className: 'fa fa-bread-slice' },
 
-  { category: 'Self Reporting Apps', id: 17, className: 'fa fa-cogs' },
-  { category: 'datasets', id: 18, className: 'fa fa-database' },
-  { category: 'Automobile', id: 19, className: 'fa fa-car' },
-  { category: 'Skill Training', id: 20, className: 'fa fa-adjust' },
-  { category: 'Mask Providers', id: 21, className: 'fa fa-thermometer' },
-  { category: 'Heatmaps', id: 22, className: 'fa fa-street-view' },
-  { category: 'Volunteering orgs', id: 23, className: 'fa fa-building' },
+  { category: 'Self Reporting Apps', id: 21, className: 'fa fa-cogs' },
+  { category: 'datasets', id: 22, className: 'fa fa-database' },
+  { category: 'Automobile', id: 23, className: 'fa fa-car' },
+  { category: 'Skill Training', id: 24, className: 'fa fa-adjust' },
+  { category: 'Mask Providers', id: 25, className: 'fa fa-thermometer' },
+  { category: 'Heatmaps', id: 26, className: 'fa fa-street-view' },
+  { category: 'Volunteering orgs', id: 27, className: 'fa fa-building' },
   // { category: 'Unemployed', id: 25, className: 'fa fa-male' },
-  { category: 'Want to Volunteer', id: 24, className: 'fa fa-user' },
-  { category: 'Bioinformatics', id: 25, className: 'fa fa-medkit' },
+  { category: 'Want to Volunteer', id: 28, className: 'fa fa-user' },
+  { category: 'Bioinformatics', id: 29, className: 'fa fa-medkit' },
   {
     category: 'Alert/tracking app',
-    id: 26,
+    id: 30,
     className: 'fa fa-exclamation-triangle'
   },
   {
     category: 'Helpdesk',
-    id: 27,
+    id: 31,
     className: 'fa fa-medkit'
   },
 
-  { category: 'Animal Care', id: 28, className: 'fa fa-search' },
+  { category: 'Animal Care', id: 32, className: 'fa fa-search' },
 
-  { category: 'Others', id: 29, className: 'fas fa-bars' }
-
+  { category: 'Others', id: 33, className: 'fas fa-bars' }
 ];
 
 class App extends Component {
@@ -107,7 +110,11 @@ class App extends Component {
         { selected: 1, color: 'blue' },
         { selected: 1, color: '#0B472B' },
         { selected: 1, color: 'forestgreen' },
-        { selected: 1, color: 'red' }
+        { selected: 1, color: 'red' },
+        { selected: 1, color: '#F8C146' },
+        { selected: 1, color: 'blue' },
+        { selected: 1, color: '#0B472B' },
+        { selected: 1, color: 'forestgreen' }
       ],
       data: {
         active: 0,
@@ -169,21 +176,19 @@ class App extends Component {
     this.setState({ category: array });
   };
   render() {
-    $('.page-wrapper').click((e)=>{
-      if(e.target.id!="main-wrapper")
-      {
+    $('.page-wrapper').click(e => {
+      if (e.target.id != 'main-wrapper') {
         console.log(e.target.className);
         var c = document.getElementById('main-wrapper').className;
         console.log(c);
-        if(c=='mini-sidebar show-sidebar')
-        {
+        if (c == 'mini-sidebar show-sidebar') {
           document.getElementById('main-wrapper').className = 'mini-sidebar';
         }
       }
-    })
-    $('.left-sidebar').click((e)=>{
+    });
+    $('.left-sidebar').click(e => {
       document.getElementById('main-wrapper').className = 'mini-sidebar';
-    })
+    });
     return (
       <div className='App' id='home'>
         <div

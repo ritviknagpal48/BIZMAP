@@ -13,6 +13,10 @@ import Alert from 'react-bootstrap/Alert';
 const Category = [
   'All',
   'Contact Tracing',
+  'Fund donations',
+  'Donations',
+  'Mental Health',
+  'Face shields',
   'Diagnostics',
   'Employee Support',
   'Infection control',
@@ -42,8 +46,7 @@ const Category = [
   'Alert/tracking app',
   'Helpdesk',
   'Animal Care',
-  'Others',
-
+  'Others'
 ];
 class UserDetailSetOne extends Component {
   continue = e => {
@@ -68,7 +71,6 @@ class UserDetailSetOne extends Component {
                 <Alert variant='danger'>
                   Please, fill all the fields in the form
                 </Alert>
-                
               </div>
             )}
             <TextField

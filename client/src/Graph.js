@@ -14,6 +14,10 @@ const navStyle = {
 const Category = [
   'All',
   'Contact Tracing',
+  'Fund donations',
+  'Donations',
+  'Mental Health',
+  'Face shields',
   'Diagnostics',
   'Employee Support',
   'Infection control',
@@ -43,8 +47,7 @@ const Category = [
   'Alert/tracking app',
   'Helpdesk',
   'Animal Care',
-  'Others',
-
+  'Others'
 ];
 var idx;
 
