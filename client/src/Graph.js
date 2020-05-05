@@ -218,7 +218,6 @@ export default class Graph extends Component {
         mapStyle='mapbox://styles/mapbox/streets-v10'
         mapboxApiAccessToken={TOKEN}
       >
-        {console.log(this.state.display)}
         <div className='nav' style={navStyle}>
           <NavigationControl
             onViewportChange={viewport => this.setState({ viewport })}

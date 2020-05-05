@@ -9,6 +9,8 @@ import axios from 'axios';
 import { whitesmoke } from 'color-name';
 import { Footer } from './Footer';
 import $ from 'jquery';
+import Button from 'react-bootstrap/Button';
+import Boostrapmodal from 'react-bootstrap/Modal';
 
 const Category = [
   { category: 'All', id: 0, className: 'fa fa-cogs' },
@@ -123,7 +125,8 @@ class App extends Component {
         deaths: 0,
         recovered: 0,
         todayDeaths: 0
-      }
+      },
+      show: false,
     };
   }
 
@@ -141,6 +144,10 @@ class App extends Component {
         }
       });
     });
+  }
+
+  handleClose = () =>{
+    this.setState({show:false});
   }
 
   toggle = (e, index) => {
@@ -398,12 +405,27 @@ class App extends Component {
                       style={{ height: '40px', marginBottom: '12px' }}
                     ></img>{' '}
                     Initiative
+                  <i className = "fa fa-info-circle" style = {{margin:"0px 1%"}} onClick={() =>{this.setState({show:true})}}></i>
+                  <Boostrapmodal show={this.state.show} onHide={this.handleClose}>
+                        <Boostrapmodal.Header closeButton>
+                        </Boostrapmodal.Header>
+                        {/* {incomplete && (
+                          <Alert variant='danger'>
+                            Please, fill all the fields in the form
+                          </Alert>
+                        )} */}
+                        <Boostrapmodal.Footer style={{ padding: '5% 0 7% 0' }}>
+                          <Button variant='secondary' className='Boton' onClick={this.handleClose}>
+                            Close
+                          </Button>
+                        </Boostrapmodal.Footer>
+                    </Boostrapmodal>
                   </h6>
                   <div className='d-flex align-items-center'>
                     <nav aria-label='breadcrumb'>
                       <ol className='breadcrumb'>
                         <li className='breadcrumb-item'>
-                          {/* <a href='#'>Home</a> */}
+                      
                         </li>
                       </ol>
                     </nav>
@@ -504,6 +526,7 @@ class App extends Component {
           {/* End Page wrapper  */}
           {/* ============================================================== */}
         </div>
+        
         <Modal />
       </div>
     );
