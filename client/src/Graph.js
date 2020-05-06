@@ -107,6 +107,7 @@ export default class Graph extends Component {
   // this.setState({popupInfo: null});
   // }
   popup = index => {
+
     const array = this.state.display;
     for (var i = 0; i < this.state.display.length; i++) {
       array[i] = false;
@@ -130,12 +131,9 @@ export default class Graph extends Component {
           closeOnClick={false}
           closeButton={true}
           onClose={e => {
-            this.setState({
-              display: {
-                ...this.state.display,
-                [index]: false
-              }
-            });
+            var array = this.state.display;
+            array[index] = false;
+            this.setState({display:array});
           }}
         >
           <div>
