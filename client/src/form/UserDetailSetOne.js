@@ -11,7 +11,7 @@ import Select from '@material-ui/core/Select';
 import Alert from 'react-bootstrap/Alert';
 
 const Category = [
-  'All',
+  // 'All',
   'Contact Tracing',
   'Fund donations',
   'Donations',

@@ -126,7 +126,7 @@ class App extends Component {
         recovered: 0,
         todayDeaths: 0
       },
-      show: false,
+      show: false
     };
   }
 
@@ -146,9 +146,9 @@ class App extends Component {
     });
   }
 
-  handleClose = () =>{
-    this.setState({show:false});
-  }
+  handleClose = () => {
+    this.setState({ show: false });
+  };
 
   toggle = (e, index) => {
     var value = 1;
@@ -405,28 +405,32 @@ class App extends Component {
                       style={{ height: '40px', marginBottom: '12px' }}
                     ></img>{' '}
                     Initiative
-                  <i className = "fa fa-info-circle" style = {{margin:"0px 1%"}} onClick={() =>{this.setState({show:true})}}></i>
-                  <Boostrapmodal show={this.state.show} onHide={this.handleClose}>
-                        <Boostrapmodal.Header closeButton>
-                        </Boostrapmodal.Header>
-                        {/* {incomplete && (
+                    {/* <i className = "fa fa-info-circle" style = {{margin:"0px 1%"}} onClick={() =>{this.setState({show:true})}}></i> */}
+                    <Boostrapmodal
+                      show={this.state.show}
+                      onHide={this.handleClose}
+                    >
+                      <Boostrapmodal.Header closeButton></Boostrapmodal.Header>
+                      {/* {incomplete && (
                           <Alert variant='danger'>
                             Please, fill all the fields in the form
                           </Alert>
                         )} */}
-                        <Boostrapmodal.Footer style={{ padding: '5% 0 7% 0' }}>
-                          <Button variant='secondary' className='Boton' onClick={this.handleClose}>
-                            Close
-                          </Button>
-                        </Boostrapmodal.Footer>
+                      <Boostrapmodal.Footer style={{ padding: '5% 0 7% 0' }}>
+                        <Button
+                          variant='secondary'
+                          className='Boton'
+                          onClick={this.handleClose}
+                        >
+                          Close
+                        </Button>
+                      </Boostrapmodal.Footer>
                     </Boostrapmodal>
                   </h6>
                   <div className='d-flex align-items-center'>
                     <nav aria-label='breadcrumb'>
                       <ol className='breadcrumb'>
-                        <li className='breadcrumb-item'>
-                      
-                        </li>
+                        <li className='breadcrumb-item'></li>
                       </ol>
                     </nav>
                   </div>
@@ -526,7 +530,7 @@ class App extends Component {
           {/* End Page wrapper  */}
           {/* ============================================================== */}
         </div>
-        
+
         <Modal />
       </div>
     );
