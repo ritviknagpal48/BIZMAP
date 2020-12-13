@@ -35,7 +35,7 @@ export const DiscussionForum = () => {
   const [show, setShow] = useState(false);
 
   const fetchMessages = async () => {
-    const res = await axios.post('https://covidbizmap.enactusnsut.com/bizmap/get_messages');
+    const res = await axios.post('https://project-aashray.herokuapp.com/bizmap/get_messages');
     // console.log(res.data.messages);
     setMessages(res.data.messages);
   };
@@ -52,7 +52,7 @@ export const DiscussionForum = () => {
       //   setIncomplete(false);
       // }, 5000);
     } else {
-      const res = await axios.post('https://covidbizmap.enactusnsut.com/bizmap/add_message', {
+      const res = await axios.post('https://project-aashray.herokuapp.com/bizmap/add_message', {
         name: user.name,
         content: message,
         image: user.image
@@ -74,7 +74,7 @@ export const DiscussionForum = () => {
     }
     // e.preventDefault();
     // const res = await axios.post(
-    //   'https://covidbizmap.enactusnsut.com/bizmap/add_message',
+    //   'https://project-aashray.herokuapp.com/bizmap/add_message',
     //   {
     //     content: message
     //   }
@@ -95,7 +95,7 @@ export const DiscussionForum = () => {
     // console.log(response);
   };
   const saveUser = async (obj) => {
-    const res = await axios.post('https://covidbizmap.enactusnsut.com/bizmap/create_user', {
+    const res = await axios.post('https://project-aashray.herokuapp.com/bizmap/create_user', {
       name: obj.name,
       username: obj.email.split('@')[0],
       image: obj.imageUrl

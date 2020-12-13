@@ -72,7 +72,7 @@ export default class Graph extends Component {
   }
   componentDidMount() {
     axios
-      .get('https://covidbizmap.enactusnsut.com/graph/all_business')
+      .get('https://project-aashray.herokuapp.com/graph/all_business')
       .then(response => {
         let arr = [];
         let array = [];
